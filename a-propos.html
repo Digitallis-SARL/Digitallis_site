@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>À propos — 15 ans au service de l'acquisition digitale | Digitallis</title>
+<meta name="description" content="Depuis 15 ans, Digitallis aide les entreprises à transformer leur visibilité en clients. 900+ entreprises accompagnées aux Antilles et en Europe.">
+<meta name="keywords" content="à propos Digitallis, agence Guadeloupe histoire, équipe Digitallis, fondateur agence digitale Antilles">
+<link rel="canonical" href="https://www.digitallis.fr/a-propos">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="À propos — 15 ans au service de l'acquisition digitale | Digitallis">
+<meta property="og:description" content="Depuis 15 ans, Digitallis aide les entreprises à transformer leur visibilité en clients. 900+ entreprises accompagnées aux Antilles et en Europe.">
+<meta property="og:url" content="https://www.digitallis.fr/a-propos">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "À propos de Digitallis",
+  "url": "https://www.digitallis.fr/a-propos",
+  "inLanguage": "fr-FR",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "Digitallis",
+    "url": "https://www.digitallis.fr/",
+    "foundingDate": "2010",
+    "description": "Agence d'acquisition digitale et IA en Guadeloupe. 15+ ans d'expérience, 900+ entreprises accompagnées, note Google 4.5/5.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "195 rue François Fresneau",
+      "addressLocality": "Baie-Mahault",
+      "postalCode": "97122",
+      "addressRegion": "Guadeloupe",
+      "addressCountry": "FR"
+    }
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<style>
+  /* ─── Hero visual : timeline radiale 15 ans ─── */
+  .about-visual {
+    position: relative; aspect-ratio: 1/1; max-width: 480px; margin: 0 auto;
+  }
+  .about-core {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 180px; height: 180px; border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #fff, #FACC14 35%, #E6B800 75%);
+    box-shadow: 0 40px 120px rgba(250, 204, 20, 0.4);
+    animation: orbFloat 7s ease-in-out infinite;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Outfit', sans-serif; font-weight: 800;
+    font-size: 44px; letter-spacing: -0.03em; color: var(--ink);
+    z-index: 2;
+  }
+  .about-core::before {
+    content: ''; position: absolute; top: 18%; left: 22%;
+    width: 30%; height: 22%; border-radius: 50%;
+    background: rgba(255,255,255,0.55); filter: blur(20px);
+  }
+  .about-core-label {
+    position: absolute; top: calc(50% + 60px); left: 50%; transform: translateX(-50%);
+    font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600;
+    letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink);
+    z-index: 3;
+  }
+  .about-ring {
+    position: absolute; inset: 0;
+    border: 1px dashed rgba(250, 204, 20, 0.35);
+    border-radius: 50%;
+    animation: spin 40s linear infinite;
+  }
+  .about-ring.r2 {
+    inset: 12%;
+    border-color: rgba(250, 204, 20, 0.22);
+    animation: spin 28s linear infinite reverse;
+  }
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  .about-chip {
+    position: absolute; background: var(--card);
+    border: 1px solid var(--border); border-radius: 100px;
+    padding: 10px 16px; box-shadow: var(--shadow-md);
+    font-size: 12px; font-weight: 600; color: var(--text);
+    white-space: nowrap;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.05em;
+    animation: badgeFloat 5s ease-in-out infinite;
+  }
+  .about-chip span { color: var(--accent-dk); font-weight: 700; }
+  .about-chip.c1 { top: 4%; left: 8%; animation-delay: 0s; }
+  .about-chip.c2 { top: 16%; right: -4%; animation-delay: 1s; }
+  .about-chip.c3 { bottom: 18%; left: -6%; animation-delay: 2s; }
+  .about-chip.c4 { bottom: 4%; right: 10%; animation-delay: 3s; }
+
+  /* ─── Histoire : 2-col narrative ─── */
+  .story-wrap {
+    max-width: 920px; margin: 0 auto; padding: 120px 40px;
+  }
+  .story-lead {
+    font-size: clamp(19px, 1.5vw, 23px);
+    color: var(--text); line-height: 1.5; font-weight: 400;
+    margin-bottom: 28px; max-width: 60ch;
+  }
+  .story-lead em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; }
+  .story-p {
+    font-size: 17px; color: var(--text-soft); line-height: 1.7;
+    margin-bottom: 20px; max-width: 60ch;
+  }
+  .story-p strong { color: var(--text); font-weight: 600; }
+  .story-pull {
+    position: relative; padding: 28px 32px; margin: 36px 0;
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 16px 16px 0;
+    font-family: 'Outfit', sans-serif; font-weight: 500;
+    font-size: 19px; line-height: 1.5; letter-spacing: -0.01em;
+    color: var(--text); max-width: 60ch;
+  }
+  .story-pull em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; }
+  @media (max-width: 768px) {
+    .story-wrap { padding: 80px 24px; }
+  }
+
+  /* ─── Conviction/Mission : blocs épurés ─── */
+  .conviction-section {
+    padding: 140px 0;
+  }
+  .conviction-wrap {
+    max-width: 920px; margin: 0 auto; padding: 0 40px;
+  }
+  .conviction-wrap .story-p,
+  .conviction-wrap .story-pull {
+    max-width: 64ch;
+  }
+
+  /* ─── Mission (dark) ─── */
+  .mission-section {
+    background: var(--ink); color: #fff;
+    padding: 140px 0; position: relative; overflow: hidden;
+  }
+  .mission-section::before {
+    content: ''; position: absolute; top: -100px; right: -200px;
+    width: 700px; height: 700px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(250, 204, 20, 0.14), transparent 70%);
+    pointer-events: none;
+  }
+  .mission-wrap {
+    max-width: 920px; margin: 0 auto; padding: 0 40px; position: relative;
+  }
+  .mission-wrap .eyebrow { color: rgba(255,255,255,0.6); }
+  .mission-wrap .eyebrow::before { background: var(--accent); }
+  .mission-wrap .section-title { color: #fff; }
+  .mission-wrap .section-title em { color: var(--accent); }
+  .mission-wrap .story-p {
+    color: rgba(255,255,255,0.72); max-width: 64ch;
+  }
+  .mission-wrap .story-p strong { color: #fff; }
+
+  /* ─── Values grid (5 cards, last spans full) ─── */
+  .values-grid {
+    margin-top: 64px;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+    background: var(--border);
+    border-radius: 24px; overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .value-card {
+    background: var(--card); padding: 40px 32px;
+    position: relative; overflow: hidden; transition: background 0.4s;
+  }
+  .value-card::before {
+    content: ''; position: absolute; inset: -1px; pointer-events: none;
+    background: radial-gradient(circle 220px at var(--mx, 50%) var(--my, 50%), rgba(250, 204, 20, 0.12), transparent);
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .value-card:hover::before { opacity: 1; }
+  .value-card .num {
+    font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600;
+    color: var(--accent-dk); letter-spacing: 0.15em;
+    margin-bottom: 24px; display: block;
+  }
+  .value-card h3 {
+    font-size: 22px; font-weight: 600; letter-spacing: -0.015em;
+    margin-bottom: 10px; color: var(--text);
+  }
+  .value-card h3 em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; }
+  .value-card p {
+    font-size: 15px; color: var(--text-soft); line-height: 1.6;
+  }
+  @media (max-width: 960px) { .values-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 620px) { .values-grid { grid-template-columns: 1fr; } }
+
+  /* ─── Stats dark section ─── */
+  .stats-section {
+    background: var(--ink); color: #fff; padding: 140px 0;
+    position: relative; overflow: hidden;
+  }
+  .stats-section::before {
+    content: ''; position: absolute; bottom: -200px; left: -150px;
+    width: 600px; height: 600px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(250, 204, 20, 0.12), transparent 70%);
+    pointer-events: none;
+  }
+  .stats-wrap {
+    max-width: 1200px; margin: 0 auto; padding: 0 40px; position: relative;
+  }
+  .stats-wrap .eyebrow { color: rgba(255,255,255,0.6); }
+  .stats-wrap .section-title { color: #fff; }
+  .stats-wrap .section-title em { color: var(--accent); }
+  .stats-wrap .section-lead { color: rgba(255,255,255,0.65); }
+  .stats-grid {
+    margin-top: 72px;
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px;
+  }
+  .stat-box {
+    padding: 36px 28px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    transition: all 0.4s var(--ease);
+  }
+  .stat-box:hover {
+    border-color: var(--accent);
+    background: rgba(250, 204, 20, 0.05);
+    transform: translateY(-4px);
+  }
+  .stat-num {
+    font-family: 'Outfit', sans-serif; font-weight: 700;
+    font-size: 56px; color: var(--accent); letter-spacing: -0.04em;
+    line-height: 1; margin-bottom: 14px;
+  }
+  .stat-num em {
+    font-family: 'Instrument Serif', serif; font-style: italic;
+    font-weight: 400; font-size: 48px;
+  }
+  .stat-lbl {
+    font-size: 15px; color: rgba(255,255,255,0.72); line-height: 1.4;
+  }
+  @media (max-width: 880px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 480px) { .stats-grid { grid-template-columns: 1fr; } }
+
+  /* ─── Certifications cards ─── */
+  .certs-grid {
+    margin-top: 64px;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  }
+  .cert-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 20px; padding: 36px 32px;
+    transition: all 0.35s var(--ease);
+  }
+  .cert-card:hover {
+    border-color: var(--accent); transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+  .cert-card .ico {
+    width: 52px; height: 52px; border-radius: 14px;
+    background: linear-gradient(135deg, #FACC14, #E6B800);
+    color: var(--ink); flex-shrink: 0;
+    display: inline-flex; align-items: center; justify-content: center;
+    margin-bottom: 24px;
+  }
+  .cert-card h3 {
+    font-size: 20px; font-weight: 600; letter-spacing: -0.015em;
+    margin-bottom: 10px;
+  }
+  .cert-card h3 em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; }
+  .cert-card p {
+    font-size: 15px; color: var(--text-soft); line-height: 1.6;
+  }
+  @media (max-width: 880px) { .certs-grid { grid-template-columns: 1fr; } }
+
+  /* ─── Diff section (alternative approach) ─── */
+  .diff-list {
+    margin-top: 56px; display: flex; flex-direction: column; gap: 16px;
+    max-width: 900px;
+  }
+  .diff-item {
+    display: grid; grid-template-columns: 1fr auto 1fr; gap: 32px;
+    padding: 28px 32px; background: var(--card); border: 1px solid var(--border);
+    border-radius: 20px; align-items: center;
+    transition: all 0.35s var(--ease);
+  }
+  .diff-item:hover { border-color: var(--accent); box-shadow: var(--shadow-md); }
+  .diff-them {
+    font-family: 'Outfit', sans-serif; font-size: 16px;
+    color: var(--muted); line-height: 1.5;
+  }
+  .diff-them::before {
+    content: 'Ailleurs'; display: block;
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 6px;
+  }
+  .diff-arrow {
+    color: var(--accent-dk); flex-shrink: 0;
+  }
+  .diff-us {
+    font-family: 'Outfit', sans-serif; font-size: 17px; font-weight: 500;
+    color: var(--text); line-height: 1.5; letter-spacing: -0.01em;
+  }
+  .diff-us em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; }
+  .diff-us::before {
+    content: 'Chez Digitallis'; display: block;
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--accent-dk); margin-bottom: 6px;
+  }
+  @media (max-width: 760px) {
+    .diff-item { grid-template-columns: 1fr; gap: 16px; padding: 24px; }
+    .diff-arrow { transform: rotate(90deg); justify-self: start; }
+  }
+</style>
+</head>
+<body class="page-light">
+
+<div class="cursor-glow" id="glow"></div>
+
+<nav class="nav" id="nav">
+  <a href="index.html" aria-label="Digitallis">
+    <img src="assets/LOGO-DIGITALIS-2026-V2-GRIS.png" alt="Digitallis" class="nav-logo nav-logo-dark"><img src="assets/LOGO-DIGITALIS-2026-V2-BLANC.png" alt="" aria-hidden="true" class="nav-logo nav-logo-light">
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Accueil</a>
+    <div class="nav-dd">
+      <a href="expertises.html">Expertises</a>
+      <div class="nav-dd-menu">
+        <a href="expertise-sites.html"><span>Création de sites</span><span class="dd-sub">Vitrine · One page · Landing</span></a>
+        <a href="expertise-seo.html"><span>Référencement SEO</span><span class="dd-sub">Visibilité Google durable</span></a>
+        <a href="expertise-google-ads.html"><span>Google Ads</span><span class="dd-sub">Search · PMax · Display</span></a>
+        <a href="expertise-reseaux-sociaux.html"><span>Réseaux sociaux</span><span class="dd-sub">Facebook · Instagram · TikTok</span></a>
+        <a href="expertise-ia.html"><span>Intelligence artificielle</span><span class="dd-sub">Allissia · Automatisations</span></a>
+        <a href="expertise-geo.html"><span>Visibilité IA (GEO)</span><span class="dd-sub">ChatGPT · Perplexity</span></a>
+      </div>
+    </div>
+    <a href="allisia.html">Allissia</a>
+    <a href="a-propos.html" class="active">À propos</a>
+    <a href="contact.html">Contact</a>
+    <a href="audit.html" class="nav-cta">Audit gratuit</a>
+  </div>
+</nav>
+
+<!-- ───── PAGE HEADER ───── -->
+<header class="page-header">
+  <div class="page-header-inner">
+    <div class="fade-up">
+      <div class="allisia-label"><span class="pulse"></span> À propos · Digitallis</div>
+      <h1>Depuis 15 ans, nous transformons la visibilité <em>en clients</em>.</h1>
+      <p class="lead">
+        Digitallis accompagne les entreprises aux Antilles et en Europe dans leur acquisition digitale. Plus de 900 entreprises nous ont déjà fait confiance pour gagner en visibilité, générer plus de contacts et structurer leur croissance.
+      </p>
+      <div class="ctas">
+        <a href="#histoire" class="btn btn-primary magnetic">
+          Notre histoire
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="audit.html" class="btn btn-ghost magnetic">Audit gratuit</a>
+      </div>
+    </div>
+    <div class="about-visual fade-up">
+      <div class="about-ring"></div>
+      <div class="about-ring r2"></div>
+      <div class="about-core">15</div>
+      <div class="about-core-label">années</div>
+      <div class="about-chip c1"><span>900+</span> entreprises</div>
+      <div class="about-chip c2"><span>100+</span> clients actifs</div>
+      <div class="about-chip c3"><span>4.5/5</span> Google</div>
+      <div class="about-chip c4">Google <span>Partner</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- ───── NOTRE HISTOIRE ───── -->
+<section id="histoire" class="theme-cream">
+  <div class="story-wrap">
+    <div class="fade-up">
+      <div class="eyebrow">Notre histoire</div>
+      <h2 class="section-title">D'une agence web à une structure <em>d'acquisition</em> complète.</h2>
+    </div>
+    <div class="fade-up">
+      <p class="story-lead">
+        Digitallis est née en Guadeloupe avec une mission simple : <em>aider les entreprises à être trouvées par leurs clients sur internet</em>.
+      </p>
+      <p class="story-p">
+        Au départ, cela passait naturellement par la création de sites internet, le référencement et les réseaux sociaux. Mais très vite, une réalité s'est imposée.
+      </p>
+      <div class="story-pull">
+        Un site seul ne suffit pas. Du SEO seul ne suffit pas. Des publications seules <em>ne suffisent pas</em>.
+      </div>
+      <p class="story-p">
+        Nous avons vu trop d'entreprises investir dans des actions isolées sans logique d'ensemble. Un site sans trafic. Du trafic sans conversion. Des demandes sans suivi. Des prospects perdus faute de réponse ou de système.
+      </p>
+      <p class="story-p">
+        C'est ce constat qui a fait évoluer Digitallis. En 15 ans, nous sommes passés d'une agence de création digitale à une structure capable de concevoir de véritables <strong>systèmes d'acquisition</strong> : des dispositifs complets qui rendent une entreprise visible, crédible, joignable et performante.
+      </p>
+      <p class="story-p">
+        <strong>Aujourd'hui, nous combinons visibilité, conversion, automatisation et intelligence artificielle</strong> pour aider nos clients à générer des clients qualifiés — pas seulement du trafic.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ───── BANDEAU VISUEL ÉQUIPE ───── -->
+<section style="padding: 0; position: relative; height: 60vh; min-height: 420px; max-height: 600px; overflow: hidden;">
+  <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=2000&q=80&auto=format&fit=crop" alt="L'équipe Digitallis en consultation stratégique" loading="lazy" width="2000" height="1200" style="width:100%; height:100%; object-fit: cover; position: absolute; inset: 0;">
+  <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(28,31,38,0.45) 0%, rgba(28,31,38,0.75) 100%);"></div>
+  <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 0 40px;">
+    <div style="max-width: 720px; text-align: center; color: #fff;">
+      <div class="eyebrow" style="color: rgba(255,255,255,0.6); justify-content: center;">Une équipe locale</div>
+      <h2 style="font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(28px, 4vw, 44px); line-height: 1.15; letter-spacing: -0.025em; color: #fff;">
+        Présents en <em style="color: var(--accent);">Guadeloupe</em>, déployés sur toute la France.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<!-- ───── NOTRE CONVICTION ───── -->
+<section class="conviction-section theme-cream">
+  <div class="conviction-wrap">
+    <div class="fade-up">
+      <div class="eyebrow">Notre conviction</div>
+      <h2 class="section-title">Pas des actions dispersées. <em>Un système qui fonctionne</em>.</h2>
+    </div>
+    <div class="fade-up">
+      <p class="story-p">
+        Chez Digitallis, nous ne croyons pas aux prestations isolées empilées les unes sur les autres.
+      </p>
+      <p class="story-p">
+        Nous croyons à une approche plus simple et plus exigeante : <strong>être visible là où les clients cherchent</strong>, donner envie d'être contacté, répondre vite, qualifier les demandes, suivre les opportunités, mesurer ce qui fonctionne réellement.
+      </p>
+      <div class="story-pull">
+        Nous ne faisons pas « un peu de marketing ». Nous organisons <em>l'acquisition de clients</em>.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── NOTRE MISSION (dark) ───── -->
+<section class="mission-section">
+  <div class="mission-wrap" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 64px; align-items: center;">
+    <div class="fade-up">
+      <div class="eyebrow">Notre mission</div>
+      <h2 class="section-title">Concevoir des systèmes qui génèrent <em>des clients qualifiés</em>.</h2>
+      <p class="story-p">
+        Nous aidons les entreprises qui veulent sortir du hasard, du bouche-à-oreille subi et des actions marketing dispersées.
+      </p>
+      <p class="story-p">
+        Notre rôle n'est pas seulement de produire. Notre rôle est de <strong>structurer</strong>. Structurer la visibilité. Structurer la conversion. Structurer le traitement des demandes. Structurer la croissance.
+      </p>
+    </div>
+    <div class="fade-up" style="position: relative; aspect-ratio: 4/5; border-radius: 24px; overflow: hidden; border: 1px solid rgba(255,255,255,0.10); box-shadow: 0 40px 100px rgba(0,0,0,0.4);">
+      <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1200&q=80&auto=format&fit=crop" alt="Stratégie d'acquisition digitale Digitallis" loading="lazy" width="1200" height="1500" style="width:100%; height:100%; object-fit: cover;">
+      <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(28,31,38,0.6) 100%);"></div>
+      <div style="position: absolute; bottom: 24px; left: 24px; right: 24px;">
+        <span class="query-tag" style="background: rgba(250,204,20,0.95); color: var(--ink); border-color: transparent;">Approche structurée</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (max-width: 860px) {
+    .mission-section .mission-wrap { grid-template-columns: 1fr !important; gap: 40px !important; }
+  }
+</style>
+
+<!-- ───── NOTRE APPROCHE ───── -->
+<section>
+  <div class="section-wrap-narrow">
+    <div class="fade-up">
+      <div class="eyebrow">Notre approche</div>
+      <h2 class="section-title">On ne génère pas du trafic. <em>On génère des clients</em>.</h2>
+      <p class="story-p" style="max-width:62ch;margin-top:24px;">
+        Chaque action a un objectif. Chaque levier doit servir un résultat. Chaque euro investi doit être piloté avec lucidité.
+      </p>
+      <p class="story-p" style="max-width:62ch;">
+        Nous ne cherchons pas à impressionner avec du jargon, des outils ou des promesses floues. Nous cherchons à construire des dispositifs <strong>clairs, mesurables et utiles</strong>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ───── ALLISIA (highlight) ───── -->
+<section class="theme-cream">
+  <div class="section-wrap-narrow">
+    <div class="fade-up">
+      <div class="allisia-label"><span class="pulse"></span> Allissia · Notre évolution</div>
+      <h2 class="section-title">Allissia incarne l'évolution <em>de Digitallis</em>.</h2>
+      <p class="story-p" style="max-width:62ch;margin-top:24px;">
+        Ce n'est pas une technologie mise en avant pour elle-même. C'est une <strong>intelligence utile</strong>, pensée pour aider les entreprises à ne plus perdre d'opportunités commerciales.
+      </p>
+      <p class="story-p" style="max-width:62ch;">
+        Allissia peut répondre, qualifier, relancer, orienter et soutenir le traitement des demandes quand l'humain n'est pas disponible ou quand la rapidité d'exécution fait la différence.
+      </p>
+      <div class="story-pull" style="max-width:62ch;">
+        Avec Allissia, Digitallis renforce sa promesse historique : rendre les entreprises plus visibles, plus réactives et <em>plus performantes</em>.
+      </div>
+      <a href="allisia.html" class="btn btn-primary magnetic" style="margin-top:16px;">
+        Découvrir Allissia
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ───── NOS VALEURS ───── -->
+<section>
+  <div class="section-wrap">
+    <div class="fade-up" style="max-width:760px;">
+      <div class="eyebrow">Nos valeurs</div>
+      <h2 class="section-title">Nos valeurs se voient dans <em>notre façon de travailler</em>.</h2>
+      <p class="section-lead">
+        Pas de posture. Des principes qui guident chaque projet, chaque livrable, chaque décision.
+      </p>
+    </div>
+
+    <div class="values-grid fade-up" data-spotlight>
+      <div class="value-card">
+        <span class="num">01</span>
+        <h3><em>Clarté</em></h3>
+        <p>Nous préférons un message simple qui convertit à un discours compliqué qui impressionne.</p>
+      </div>
+      <div class="value-card">
+        <span class="num">02</span>
+        <h3><em>Exigence</em></h3>
+        <p>Nous cherchons des résultats réels, pas des métriques flatteuses sans impact business.</p>
+      </div>
+      <div class="value-card">
+        <span class="num">03</span>
+        <h3><em>Proximité</em></h3>
+        <p>Nous connaissons les réalités des entreprises locales, de terrain, et les contraintes du quotidien.</p>
+      </div>
+      <div class="value-card">
+        <span class="num">04</span>
+        <h3><em>Transparence</em></h3>
+        <p>Nous disons ce qui fonctionne, ce qui ne fonctionne pas, et ce qu'il faut prioriser en premier.</p>
+      </div>
+      <div class="value-card">
+        <span class="num">05</span>
+        <h3><em>Utilité</em></h3>
+        <p>La technologie n'a de valeur que si elle améliore vraiment l'acquisition, la conversion ou l'organisation.</p>
+      </div>
+      <div class="value-card">
+        <span class="num">06</span>
+        <h3><em>Engagement</em></h3>
+        <p>Nous traitons chaque projet comme le nôtre. Vos résultats sont notre meilleure carte de visite.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── EN CHIFFRES (dark) ───── -->
+<section class="stats-section">
+  <div class="stats-wrap">
+    <div class="fade-up" style="max-width:760px;">
+      <div class="eyebrow">En chiffres</div>
+      <h2 class="section-title">Une présence construite <em>sur le terrain</em>.</h2>
+      <p class="section-lead">
+        15 ans d'accompagnement, 900+ entreprises, une centaine de clients actifs. Des chiffres simples qui racontent une méthode qui tient dans la durée.
+      </p>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-box fade-up">
+        <div class="stat-num">15<em>+</em></div>
+        <div class="stat-lbl">Années d'expérience au service des entreprises</div>
+      </div>
+      <div class="stat-box fade-up">
+        <div class="stat-num">900<em>+</em></div>
+        <div class="stat-lbl">Entreprises accompagnées aux Antilles et en Europe</div>
+      </div>
+      <div class="stat-box fade-up">
+        <div class="stat-num">100<em>+</em></div>
+        <div class="stat-lbl">Clients actifs suivis mensuellement</div>
+      </div>
+      <div class="stat-box fade-up">
+        <div class="stat-num">4.5<em>/5</em></div>
+        <div class="stat-lbl">Note Google — la voix de nos clients</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── CERTIFICATIONS ───── -->
+<section>
+  <div class="section-wrap">
+    <div class="fade-up" style="max-width:760px;">
+      <div class="eyebrow">Certifications & garanties</div>
+      <h2 class="section-title">Des standards <em>d'excellence</em>.</h2>
+      <p class="section-lead">
+        Des certifications qui prouvent notre niveau technique et une conformité réglementaire traitée comme un socle, pas comme une option.
+      </p>
+    </div>
+
+    <div class="certs-grid fade-up">
+      <div class="cert-card">
+        <div class="ico">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <h3><em>Google</em> Partner</h3>
+        <p>Une reconnaissance officielle de notre expertise sur l'écosystème Google Ads — seuils de performance et certifications à jour.</p>
+      </div>
+      <div class="cert-card">
+        <div class="ico">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <h3>Conformité <em>RGPD</em></h3>
+        <p>Des outils, des méthodes et des traitements pensés avec exigence sur la protection des données — hébergement Europe.</p>
+      </div>
+      <div class="cert-card">
+        <div class="ico">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <h3>Antilles <em>&amp; Europe</em></h3>
+        <p>Ancrage fort en Guadeloupe, avec une capacité d'accompagnement en Martinique, en France et en Europe continentale.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── CE QUI NOUS DIFFERENCIE ───── -->
+<section class="theme-cream">
+  <div class="section-wrap">
+    <div class="fade-up" style="max-width:760px;">
+      <div class="eyebrow">Ce qui nous différencie</div>
+      <h2 class="section-title">Pas seulement ce que nous faisons. <em>La façon dont nous pensons le problème</em>.</h2>
+      <p class="section-lead">
+        Trois déplacements de regard qui changent tout dans la construction d'un système d'acquisition.
+      </p>
+    </div>
+
+    <div class="diff-list fade-up">
+      <div class="diff-item">
+        <div class="diff-them">Des prestations séparées, empilées les unes sur les autres.</div>
+        <div class="diff-arrow">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+        <div class="diff-us">Un <em>système cohérent</em> où chaque levier alimente le suivant.</div>
+      </div>
+      <div class="diff-item">
+        <div class="diff-them">De la visibilité comme objectif final, mesurée en impressions.</div>
+        <div class="diff-arrow">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+        <div class="diff-us">Des <em>clients qualifiés</em> comme seule métrique qui compte.</div>
+      </div>
+      <div class="diff-item">
+        <div class="diff-them">La technologie mise en avant pour impressionner.</div>
+        <div class="diff-arrow">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+        <div class="diff-us">La technologie au <em>service de la performance</em>.</div>
+      </div>
+    </div>
+
+    <div class="story-pull fade-up" style="max-width:840px;margin-top:56px;">
+      <strong>Digitallis n'est pas une agence qui exécute des actions digitales.</strong> Digitallis conçoit des <em>systèmes d'acquisition complets</em> pour transformer la visibilité en clients.
+    </div>
+  </div>
+</section>
+
+<!-- ───── FINAL CTA ───── -->
+<section class="final-cta theme-cream">
+  <div class="fade-up">
+    <h2>Plus de clients. <em>Une stratégie claire.</em></h2>
+    <p>On regarde ensemble où vous perdez des contacts et comment construire le système qui les capte 24/7.</p>
+    <div class="ctas">
+      <a href="audit.html" class="btn btn-primary magnetic">
+        Recevoir mon audit gratuit
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="expertise-ia.html" class="btn btn-ghost magnetic">Voir notre expertise IA</a>
+    </div>
+  </div>
+</section>
+
+<!-- ───── FOOTER ───── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="assets/LOGO-DIGITALIS-2026-V2-GRIS.png" alt="Digitallis" class="logo-f">
+      <p>Systèmes d'acquisition digitale & IA pour PME. Antilles, France, Europe.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Expertises</h4>
+      <ul>
+        <li><a href="expertise-sites.html">Création de sites</a></li>
+        <li><a href="expertise-seo.html">Référencement SEO</a></li>
+        <li><a href="expertise-google-ads.html">Google Ads</a></li>
+        <li><a href="expertise-reseaux-sociaux.html">Réseaux sociaux</a></li>
+        <li><a href="expertise-ia.html">Intelligence artificielle</a></li>
+        <li><a href="expertise-geo.html">Visibilité IA (GEO)</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+590602182020">06 02 18 20 20</a></li>
+        <li><a href="mailto:info@digitallis.fr">info@digitallis.fr</a></li>
+        <li style="color:rgba(255,255,255,0.6);font-size:14px;">195 rue François Fresneau<br>97122 Baie-Mahault<br>Guadeloupe</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Agence</h4>
+      <ul>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="blog.html">Le Blog</a></li>
+        <li><a href="audit.html">Audit gratuit</a></li>
+        <li><a href="mailto:info@digitallis.fr">Devis personnalisé</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Digitallis · Tous droits réservés</span>
+    <span>Baie-Mahault · Guadeloupe · FR</span>
+  </div>
+</footer>
+
+<script src="shared.js"></script>
+
+</body>
+</html>

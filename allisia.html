@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Allissia — Système d'acquisition IA 24/7 | Digitallis</title>
+<meta name="description" content="Allissia est le système d'acquisition IA de Digitallis. Radar, Voice, Optimus, Cortex — 4 modules qui analysent, répondent, créent et optimisent votre acquisition 24h/24.">
+<meta name="keywords" content="Allissia, agent IA Guadeloupe, agent vocal entreprise, chatbot IA PME, Digitallis IA, automatisation appels, acquisition IA Antilles">
+<link rel="canonical" href="https://www.digitallis.fr/allisia">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Allissia — Système d'acquisition IA 24/7 | Digitallis">
+<meta property="og:description" content="Allissia répond à vos clients quand vous ne pouvez pas, qualifie les demandes et vous alerte sur WhatsApp. Agent vocal et chatbot IA propulsé par Digitallis.">
+<meta property="og:url" content="https://www.digitallis.fr/allisia">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:image" content="https://www.digitallis.fr/assets/og-allissia.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Allissia — Agent IA d'acquisition",
+  "serviceType": "Agent IA conversationnel (vocal et chatbot)",
+  "description": "Allissia est l'assistant IA de Digitallis. Agent vocal et chatbot 24/7 qui répond aux clients, qualifie les demandes et envoie un récap WhatsApp instantané. Idéal pour les PME, restaurants, artisans et commerces qui perdent des appels et opportunités.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Digitallis",
+    "url": "https://www.digitallis.fr/"
+  },
+  "areaServed": [
+    { "@type": "Place", "name": "Guadeloupe" },
+    { "@type": "Place", "name": "Martinique" },
+    { "@type": "Country", "name": "France" }
+  ],
+  "audience": {
+    "@type": "BusinessAudience",
+    "audienceType": "PME, TPE, artisans, commerces, restaurants"
+  },
+  "url": "https://www.digitallis.fr/allisia"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Qu'est-ce qu'Allissia ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Allissia est l'assistant intelligent de Digitallis. Agent vocal et chatbot IA 24/7, il répond aux clients quand vous ne pouvez pas, qualifie leurs demandes et vous alerte en temps réel sur WhatsApp."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Combien coûte Allissia pour une PME en Guadeloupe ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le déploiement d'Allissia se situe entre 2 500 et 6 000 euros pour la mise en place, plus un coût mensuel récurrent de 150 à 400 euros. Le ROI moyen est atteint en 4 à 8 mois grâce aux rendez-vous capturés hors horaires d'ouverture."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Allissia remplace-t-elle mes salariés ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. Allissia gère les 30% d'appels répétitifs (horaires, prix, disponibilités) et libère vos collaborateurs pour les conversations à forte valeur. Aucun de nos 14 clients PME aux Antilles n'a réduit ses effectifs après déploiement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Allissia est-elle conforme RGPD ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui. Toutes les données clients sont hébergées en Europe (Supabase Frankfurt, n8n self-hosted en France). Allissia respecte le RGPD européen. Les conversations sont chiffrées, les durées de conservation paramétrables et les droits d'accès/suppression assurés."
+      }
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<style>
+  /* ─── Module cards grid (4 modules Allissia) ─── */
+  .modules-section { padding: 40px 0 140px; }
+  .modules-header { max-width: 1200px; margin: 0 auto; padding: 0 40px 64px; }
+  .modules-grid {
+    max-width: 1200px; margin: 0 auto; padding: 0 40px;
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+  }
+  .module-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 24px; padding: 44px 40px;
+    position: relative; overflow: hidden;
+    transition: transform 0.4s var(--ease), border-color 0.4s, box-shadow 0.4s;
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
+  .module-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 32px 80px rgba(28, 31, 38, 0.08), 0 0 0 1px var(--accent-soft);
+  }
+  .module-card::before {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(circle 400px at var(--mx, 50%) var(--my, 50%), rgba(250, 204, 20, 0.08), transparent);
+    opacity: 0; transition: opacity 0.4s;
+  }
+  .module-card:hover::before { opacity: 1; }
+  .module-card-head {
+    display: flex; align-items: center; gap: 16px; margin-bottom: 24px;
+  }
+  .module-icon {
+    width: 56px; height: 56px; border-radius: 16px;
+    background: linear-gradient(135deg, #FACC14 0%, #E6B800 100%);
+    display: inline-flex; align-items: center; justify-content: center;
+    color: var(--ink); flex-shrink: 0;
+    box-shadow: 0 10px 28px rgba(250, 204, 20, 0.35);
+  }
+  .module-num {
+    font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600;
+    color: var(--muted); letter-spacing: 0.15em;
+  }
+  .module-card h3 {
+    font-family: 'Outfit', sans-serif; font-size: 32px; font-weight: 700;
+    letter-spacing: -0.025em; line-height: 1.1; margin-bottom: 12px;
+  }
+  .module-card h3 em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; }
+  .module-card p {
+    font-size: 16px; color: var(--text-soft); line-height: 1.6; margin-bottom: 20px;
+  }
+  .module-feats { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .module-feats li {
+    display: flex; align-items: flex-start; gap: 12px;
+    font-size: 14px; color: var(--text);
+  }
+  .module-feats .tick {
+    width: 18px; height: 18px; border-radius: 50%; background: var(--accent-soft);
+    color: var(--accent-dk); display: inline-flex; align-items: center; justify-content: center;
+    flex-shrink: 0; margin-top: 2px;
+  }
+  @media (max-width: 880px) {
+    .modules-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ─── Process (3 étapes) ─── */
+  .process-section {
+    background: var(--ink); color: #fff; padding: 140px 0;
+    position: relative; overflow: hidden;
+  }
+  .process-section::before {
+    content: ''; position: absolute; top: 50%; left: 50%;
+    width: 1000px; height: 1000px; transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(250, 204, 20, 0.08), transparent 60%);
+    pointer-events: none;
+  }
+  .process-wrap { max-width: 1200px; margin: 0 auto; padding: 0 40px; position: relative; }
+  .process-header { max-width: 760px; margin-bottom: 72px; }
+  .process-header h2 {
+    font-family: 'Outfit', sans-serif; font-weight: 700;
+    font-size: clamp(36px, 5vw, 60px); line-height: 1.05; letter-spacing: -0.03em;
+    color: #fff; margin-bottom: 20px;
+  }
+  .process-header h2 em {
+    font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400;
+    color: var(--accent);
+  }
+  .process-header p {
+    font-size: 18px; color: rgba(255,255,255,0.65); line-height: 1.55;
+  }
+  .process-flow {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px;
+    position: relative;
+  }
+  .process-flow::before {
+    content: ''; position: absolute; top: 36px; left: 10%; right: 10%;
+    height: 1px; background: linear-gradient(90deg, transparent, rgba(250, 204, 20, 0.4), transparent);
+  }
+  .process-step {
+    position: relative; padding-top: 0;
+  }
+  .process-num {
+    width: 72px; height: 72px; border-radius: 50%;
+    background: var(--ink); border: 1px solid rgba(255,255,255,0.2);
+    color: var(--accent); display: flex; align-items: center; justify-content: center;
+    font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 28px;
+    margin-bottom: 28px; position: relative; z-index: 2;
+    letter-spacing: -0.02em;
+  }
+  .process-step.active .process-num {
+    background: var(--accent); color: var(--ink); border-color: var(--accent);
+    box-shadow: 0 0 0 6px rgba(250, 204, 20, 0.2);
+  }
+  .process-step h3 {
+    font-size: 22px; font-weight: 600; letter-spacing: -0.015em;
+    color: #fff; margin-bottom: 10px;
+  }
+  .process-step h3 em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; color: var(--accent); }
+  .process-step p {
+    font-size: 15px; color: rgba(255,255,255,0.65); line-height: 1.55;
+  }
+  @media (max-width: 880px) {
+    .process-flow { grid-template-columns: 1fr; gap: 48px; }
+    .process-flow::before { display: none; }
+  }
+
+  /* ─── Comparaison block ─── */
+  .compare-section { padding: 140px 0 100px; }
+  .compare-wrap { max-width: 1000px; margin: 0 auto; padding: 0 40px; }
+  .compare-table {
+    margin-top: 64px; background: var(--card); border-radius: 24px; overflow: hidden;
+    border: 1px solid var(--border); box-shadow: var(--shadow-md);
+  }
+  .compare-row {
+    display: grid; grid-template-columns: 2fr 1fr 1fr;
+    border-bottom: 1px solid var(--border);
+  }
+  .compare-row:last-child { border-bottom: none; }
+  .compare-row.header {
+    background: #F7F5F0; font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .compare-cell { padding: 22px 28px; display: flex; align-items: center; }
+  .compare-cell.title { font-weight: 500; color: var(--text); font-size: 16px; }
+  .compare-cell.center { justify-content: center; }
+  .compare-yes {
+    color: #28C941; display: inline-flex; align-items: center; gap: 8px;
+    font-weight: 600; font-size: 14px;
+  }
+  .compare-no {
+    color: var(--muted); display: inline-flex; align-items: center; gap: 8px;
+    font-weight: 500; font-size: 14px;
+  }
+  .compare-highlight {
+    background: var(--accent-soft); border-left: 3px solid var(--accent);
+  }
+  @media (max-width: 760px) {
+    .compare-row { grid-template-columns: 1.6fr 1fr 1fr; }
+    .compare-cell { padding: 16px 14px; font-size: 14px; }
+    .compare-cell.title { font-size: 14px; }
+  }
+
+  /* ─── Le Constat — pain cards ─── */
+  .constat-grid {
+    display: grid; gap: 24px;
+    margin-top: 56px;
+  }
+  @media (max-width: 960px) {
+    .constat-grid { grid-template-columns: 1fr 1fr !important; }
+  }
+  @media (max-width: 640px) {
+    .constat-grid { grid-template-columns: 1fr !important; }
+  }
+  .pain-card {
+    --pc-accent: #FACC14;
+    position: relative;
+    background: #fff;
+    border: 1px solid #E8E6E0;
+    border-radius: 22px;
+    padding: 36px 32px 32px;
+    overflow: hidden;
+    transition: transform 0.45s cubic-bezier(.16,1,.3,1),
+                box-shadow 0.45s cubic-bezier(.16,1,.3,1),
+                border-color 0.3s ease;
+    opacity: 0;
+    transform: translateY(24px);
+    animation: painFadeIn 0.7s cubic-bezier(.16,1,.3,1) forwards;
+  }
+  .pain-card:nth-child(1) { animation-delay: 0.05s; }
+  .pain-card:nth-child(2) { animation-delay: 0.20s; }
+  .pain-card:nth-child(3) { animation-delay: 0.35s; }
+
+  @keyframes painFadeIn {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Glow décoratif top-right */
+  .pain-card::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(250, 204, 20, 0.18), transparent 70%);
+    pointer-events: none;
+    opacity: 0.6;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  /* Numéro en gros chiffre fantôme en arrière-plan */
+  .pain-card::after {
+    content: attr(data-num);
+    position: absolute;
+    bottom: -28px; right: -8px;
+    font-family: 'Instrument Serif', serif;
+    font-size: 180px; font-weight: 400;
+    line-height: 1;
+    color: #1C1F26;
+    opacity: 0.04;
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.6s cubic-bezier(.16,1,.3,1);
+  }
+
+  .pain-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 28px 60px rgba(28, 31, 38, 0.10);
+    border-color: rgba(250, 204, 20, 0.4);
+  }
+  .pain-card:hover::before { opacity: 1; transform: scale(1.15); }
+  .pain-card:hover::after { opacity: 0.09; transform: translateY(-4px); }
+  .pain-card:hover .pain-icon { transform: rotate(-6deg) scale(1.08); }
+  .pain-card:hover .pain-num { color: #B88A00; }
+  .pain-card:hover .pain-num::before { width: 32px; }
+
+  /* Étiquette "Symptôme 0X" */
+  .pain-num {
+    display: inline-flex;
+    align-items: center; gap: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: #676F7E;
+    margin-bottom: 28px;
+    transition: color 0.3s ease;
+  }
+  .pain-num::before {
+    content: '';
+    width: 18px; height: 2px;
+    background: var(--pc-accent);
+    border-radius: 2px;
+    transition: width 0.4s cubic-bezier(.16,1,.3,1);
+  }
+
+  /* Icône dans cercle accent */
+  .pain-icon {
+    width: 56px; height: 56px;
+    border-radius: 16px;
+    display: inline-flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, rgba(250, 204, 20, 0.18), rgba(250, 204, 20, 0.06));
+    color: #B88A00;
+    margin-bottom: 24px;
+    position: relative;
+    transition: transform 0.5s cubic-bezier(.16,1,.3,1);
+  }
+  .pain-icon::after {
+    content: '';
+    position: absolute; inset: 0;
+    border-radius: 16px;
+    border: 1px solid rgba(250, 204, 20, 0.35);
+    pointer-events: none;
+  }
+  .pain-icon svg {
+    position: relative;
+    animation: painIconPulse 4s ease-in-out infinite;
+  }
+  .pain-card:nth-child(2) .pain-icon svg { animation-delay: 1.3s; }
+  .pain-card:nth-child(3) .pain-icon svg { animation-delay: 2.6s; }
+
+  @keyframes painIconPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+  }
+
+  .pain-card h3 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700; font-size: 21px;
+    line-height: 1.25; letter-spacing: -0.015em;
+    color: #1C1F26;
+    margin-bottom: 14px;
+    position: relative;
+  }
+  .pain-card p {
+    font-size: 15px; line-height: 1.65;
+    color: #3A3F4A;
+    margin: 0;
+    position: relative;
+  }
+</style>
+</head>
+<body class="page-light">
+
+<div class="cursor-glow" id="glow"></div>
+
+<nav class="nav" id="nav">
+  <a href="index.html" aria-label="Digitallis">
+    <img src="assets/LOGO-DIGITALIS-2026-V2-GRIS.png" alt="Digitallis" class="nav-logo nav-logo-dark"><img src="assets/LOGO-DIGITALIS-2026-V2-BLANC.png" alt="" aria-hidden="true" class="nav-logo nav-logo-light">
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Accueil</a>
+    <div class="nav-dd">
+      <a href="expertises.html">Expertises</a>
+      <div class="nav-dd-menu">
+        <a href="expertise-sites.html"><span>Création de sites</span><span class="dd-sub">Vitrine · One page · Landing</span></a>
+        <a href="expertise-seo.html"><span>Référencement SEO</span><span class="dd-sub">Visibilité Google durable</span></a>
+        <a href="expertise-google-ads.html"><span>Google Ads</span><span class="dd-sub">Search · PMax · Display</span></a>
+        <a href="expertise-reseaux-sociaux.html"><span>Réseaux sociaux</span><span class="dd-sub">Facebook · Instagram · TikTok</span></a>
+        <a href="expertise-ia.html"><span>Intelligence artificielle</span><span class="dd-sub">Allissia · Automatisations</span></a>
+        <a href="expertise-geo.html"><span>Visibilité IA (GEO)</span><span class="dd-sub">ChatGPT · Perplexity</span></a>
+      </div>
+    </div>
+    <a href="allisia.html" class="active">Allissia</a>
+    <a href="a-propos.html">À propos</a>
+    <a href="contact.html">Contact</a>
+    <a href="audit.html" class="nav-cta">Audit gratuit</a>
+  </div>
+</nav>
+
+<!-- ───── PAGE HEADER ───── -->
+<header class="page-header">
+  <div class="page-header-inner">
+    <div class="fade-up">
+      <div class="allisia-label"><span class="pulse"></span> Allissia · Système d'acquisition IA</div>
+      <h1>Vos concurrents trouvent des clients <em>pendant que vous travaillez</em>.</h1>
+      <p class="lead">
+        Allissia fait pareil pour vous — 24h/24, 7j/7. Un système IA qui analyse, répond, crée et optimise votre acquisition en continu.
+      </p>
+      <div class="ctas">
+        <a href="#modules" class="btn btn-primary magnetic">
+          Découvrir les 4 modules
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="audit.html" class="btn btn-ghost magnetic">Audit gratuit 48h</a>
+      </div>
+    </div>
+    <div class="allisia-visual fade-up">
+      <div class="allisia-orb"></div>
+      <div class="allisia-module-badge radar"><div class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4"/></svg></div>Radar</div>
+      <div class="allisia-module-badge voice"><div class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg></div>Voice</div>
+      <div class="allisia-module-badge optimus"><div class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>Optimus</div>
+      <div class="allisia-module-badge cortex"><div class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg></div>Cortex</div>
+    </div>
+  </div>
+</header>
+
+<!-- ───── LE CONSTAT ───── -->
+<section class="theme-cream">
+  <div class="section-wrap">
+    <div class="fade-up" style="max-width:760px;">
+      <div class="eyebrow">Le constat</div>
+      <h2 class="section-title">Vous investissez en <em>visibilité</em>. Pas en clients.</h2>
+      <p class="section-lead">
+        Votre site existe mais ne génère pas de demandes. Vous faites de la pub sans savoir ce qui fonctionne. Vous ratez des appels chaque semaine. Vos prestataires sont dispersés. Et pendant ce temps, vos concurrents sont plus visibles.
+      </p>
+    </div>
+
+    <div class="constat-grid fade-up" style="grid-template-columns:repeat(3,1fr);">
+      <div class="pain-card" data-num="01">
+        <div class="pain-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <span class="pain-num">Symptôme 01</span>
+        <h3>Des appels ratés chaque semaine</h3>
+        <p>18h après la pause déjeuner. Samedi. Jours fériés. Pendant que vous conduisez. Tous ces appels perdus sont autant de clients qui partent chez le concurrent d'à côté.</p>
+      </div>
+      <div class="pain-card" data-num="02">
+        <div class="pain-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <span class="pain-num">Symptôme 02</span>
+        <h3>Une publicité qui tourne à l'aveugle</h3>
+        <p>Vous dépensez chaque mois sur Meta, Google, ou en flyers — sans mesurer. Vous ne savez pas quel euro rapporte, quel euro brûle. Et donc vous ne pouvez pas optimiser.</p>
+      </div>
+      <div class="pain-card" data-num="03">
+        <div class="pain-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <span class="pain-num">Symptôme 03</span>
+        <h3>Des prestataires qui ne parlent pas entre eux</h3>
+        <p>Le dev SEO d'un côté. L'agence Meta de l'autre. Le webmaster qui répond une fois par semaine. Personne ne pilote le système global — et donc aucun levier ne s'additionne.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── CE QUE CHANGE ALLISIA (sticky narrative light) ───── -->
+<section class="theme-cream" style="padding:120px 0;">
+  <div class="section-wrap" style="padding:0 40px; max-width:1100px;">
+    <div class="fade-up" style="max-width:760px; margin-bottom:64px;">
+      <div class="eyebrow">Ce que change Allissia</div>
+      <h2 class="section-title">De l'invisible à <em>incontournable</em>.</h2>
+      <p class="section-lead">
+        Trois transformations concrètes — avant/après — qui se déclenchent dès les premières semaines.
+      </p>
+    </div>
+
+    <div class="spot-grid fade-up" data-spotlight style="grid-template-columns:repeat(3,1fr);">
+      <div class="spot-card">
+        <span class="spot-num">01 · Vous êtes trouvé</span>
+        <div class="icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <h3>Présent là où ils <em>cherchent</em>.</h3>
+        <p>Google, Maps, Instagram, TikTok, ChatGPT, Perplexity. Partout où vos prospects tapent leurs questions — Allissia fait en sorte qu'ils vous trouvent.</p>
+      </div>
+      <div class="spot-card">
+        <span class="spot-num">02 · Vous êtes choisi</span>
+        <div class="icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <h3>Contenus, avis, pubs <em>convaincants</em>.</h3>
+        <p>Le système produit des posts, des pubs et des landing pages taillés pour convertir. Tout passe par votre validation — rien ne sort sans votre accord.</p>
+      </div>
+      <div class="spot-card">
+        <span class="spot-num">03 · Plus aucun contact perdu</span>
+        <div class="icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <h3>Réponse <em>instantanée</em>. Alerte WhatsApp.</h3>
+        <p>Allissia Voice répond aux appels 24/7, qualifie, prend rdv. Vous recevez un résumé WhatsApp — vous ne touchez à rien, tout est tracé.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── LES 4 MODULES (cartes détaillées) ───── -->
+<section class="modules-section" id="modules">
+  <div class="modules-header fade-up">
+    <div class="eyebrow">Les 4 modules</div>
+    <h2 class="section-title">Un système. <em>Quatre cerveaux.</em></h2>
+    <p class="section-lead">
+      Chaque module d'Allissia a un rôle précis. Ils partagent leurs données, apprennent en continu, et s'améliorent semaine après semaine.
+    </p>
+  </div>
+
+  <div class="modules-grid">
+    <!-- RADAR -->
+    <div class="module-card tilt-card fade-up">
+      <div class="module-card-head">
+        <div class="module-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/><line x1="12" y1="2" x2="12" y2="4"/></svg>
+        </div>
+        <div>
+          <div class="module-num">Module 01</div>
+          <h3>Allissia <em>Radar</em></h3>
+        </div>
+      </div>
+      <p>Analyse votre position sur le marché et celle de vos concurrents. Identifie les failles, les opportunités, les requêtes à conquérir. Livre un plan d'action priorisé.</p>
+      <ul class="module-feats">
+        <li><span class="tick"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Analyse concurrentielle hebdomadaire</li>
+        <li><span class="tick"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Cartographie des opportunités SEO</li>
+        <li><span class="tick"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Alerte quand un concurrent bouge</li>
+        <li><span class="tick"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Plan d'action priorisé par ROI</li>
+      </ul>
+    </div>
+
+    <!-- VOICE -->
+    <div class="module-card tilt-card fade-up">
+      <div class="module-card-head">
+        <div class="module-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg>
+        </div>
+        <div>
+          <div class="module-num">Module 02</div>
+          <h3>Allissia <em>Voice</em></h3>
+        </div>
+      </div>
+      <p>Répond aux appels entrants 24/7 avec une voix naturelle. Qualifie le besoin, prend rendez-vous, envoie un résumé WhatsApp à votre équipe en temps réel.</p>
+      <ul class="module-feats">
+        <li><span class="tick"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Agent vocal IA français naturel</li>
+        <li><span class="tick"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Qualification du lead en direct</li>
+        <li><span class="tick"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Prise de rdv connectée à votre agenda</li>
+        <li><span class="tick"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Résumé WhatsApp instantané</li>
+      </ul>
+    </div>
+
+    <!-- OPTIMUS -->
+    <div class="module-card tilt-card fade-up">
+      <div class="module-card-head">
+        <div class="module-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div>
+          <div class="module-num">Module 03</div>
+          <h3>Allissia <em>Optimus</em></h3>
+        </div>
+      </div>
+      <p>Crée des contenus, publicités et stratégies sur mesure — tous validés par vous avant publication. Posts réseaux, articles SEO, pubs Meta, emails, landing pages.</p>
+      <ul class="module-feats">
+        <li><span class="tick"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Posts réseaux sociaux hebdomadaires</li>
+        <li><span class="tick"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Articles SEO longue traîne</li>
+        <li><span class="tick"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Créations publicitaires Meta & Google</li>
+        <li><span class="tick"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Validation simple via WhatsApp</li>
+      </ul>
+    </div>
+
+    <!-- CORTEX -->
+    <div class="module-card tilt-card fade-up">
+      <div class="module-card-head">
+        <div class="module-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
+        </div>
+        <div>
+          <div class="module-num">Module 04</div>
+          <h3>Allissia <em>Cortex</em></h3>
+        </div>
+      </div>
+      <p>Le cerveau qui apprend. Observe ce qui convertit, ce qui rate, quand, pour qui. Ajuste seul les enchères, les cibles, les messages. Améliore les performances semaine après semaine.</p>
+      <ul class="module-feats">
+        <li><span class="tick"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Optimisation automatique des campagnes</li>
+        <li><span class="tick"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>A/B testing continu</li>
+        <li><span class="tick"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Dashboard ROI temps réel</li>
+        <li><span class="tick"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Rapport mensuel clair et lisible</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ───── PROCESS ───── -->
+<section class="process-section">
+  <div class="process-wrap">
+    <div class="process-header fade-up">
+      <div class="eyebrow" style="color:rgba(255,255,255,0.5);">Comment ça marche</div>
+      <h2>De la première connexion au <em>premier client</em> généré.</h2>
+      <p>Un déroulé simple, trois étapes, deux à trois semaines.</p>
+    </div>
+    <div class="process-flow">
+      <div class="process-step fade-up active">
+        <div class="process-num">01</div>
+        <h3>Audit <em>gratuit</em> & diagnostic</h3>
+        <p>48h après votre demande, on vous envoie une analyse complète de votre visibilité, de vos concurrents et des 3 leviers prioritaires.</p>
+      </div>
+      <div class="process-step fade-up active">
+        <div class="process-num">02</div>
+        <h3>Configuration & <em>branchement</em></h3>
+        <p>On connecte Allissia à vos outils (Google, Meta, WhatsApp, téléphone). On paramètre chaque module selon votre métier et vos objectifs.</p>
+      </div>
+      <div class="process-step fade-up active">
+        <div class="process-num">03</div>
+        <h3>Lancement & <em>apprentissage</em></h3>
+        <p>Les 4 modules s'activent. Les premiers résultats arrivent dès les 2 premières semaines. Cortex commence à optimiser en continu.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── COMPARAISON ───── -->
+<section class="compare-section">
+  <div class="compare-wrap">
+    <div class="fade-up" style="max-width:760px;">
+      <div class="eyebrow">Comparaison</div>
+      <h2 class="section-title">Allissia vs. les <em>autres solutions</em>.</h2>
+      <p class="section-lead">
+        Un outil isolé ne suffit plus. Voyez ce que fait Allissia — et ce que les autres ne font pas.
+      </p>
+    </div>
+
+    <div class="compare-table fade-up">
+      <div class="compare-row header">
+        <div class="compare-cell">Capacité</div>
+        <div class="compare-cell center">Outils classiques</div>
+        <div class="compare-cell center compare-highlight">Allissia</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell title">Répond aux appels 24/7</div>
+        <div class="compare-cell center"><span class="compare-no"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Non</span></div>
+        <div class="compare-cell center compare-highlight"><span class="compare-yes"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Voice 24/7</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell title">Analyse concurrentielle auto</div>
+        <div class="compare-cell center"><span class="compare-no"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Non</span></div>
+        <div class="compare-cell center compare-highlight"><span class="compare-yes"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Radar hebdo</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell title">Production de contenu IA validée</div>
+        <div class="compare-cell center"><span class="compare-no"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Manuel</span></div>
+        <div class="compare-cell center compare-highlight"><span class="compare-yes"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Optimus</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell title">Optimisation continue automatique</div>
+        <div class="compare-cell center"><span class="compare-no"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Non</span></div>
+        <div class="compare-cell center compare-highlight"><span class="compare-yes"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Cortex</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell title">Validation simple (WhatsApp)</div>
+        <div class="compare-cell center"><span class="compare-no"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Dashboards</span></div>
+        <div class="compare-cell center compare-highlight"><span class="compare-yes"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 2 clics</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell title">Hébergement EU & RGPD</div>
+        <div class="compare-cell center"><span class="compare-no"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Variable</span></div>
+        <div class="compare-cell center compare-highlight"><span class="compare-yes"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Par défaut</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── TESTIMONIALS ───── -->
+<section class="results" style="padding:120px 0 100px;">
+  <div class="results-header fade-up">
+    <div class="eyebrow">Témoignages</div>
+    <h2 class="section-title">Ce qu'ils en <em>disent</em>.</h2>
+  </div>
+  <div class="testimonial-grid" data-spotlight>
+    <div class="testimonial">
+      <span class="quote-mark">"</span>
+      <blockquote>CA <em>multiplié par 2</em> en 18 mois.</blockquote>
+      <div class="author"><div class="avatar">S</div><div class="author-info"><span class="author-name">SAMAP</span><span class="author-tag">Équipement professionnel</span></div></div>
+    </div>
+    <div class="testimonial">
+      <span class="quote-mark">"</span>
+      <blockquote>Visibilité et <em>réservations</em> en hausse.</blockquote>
+      <div class="author"><div class="avatar">C</div><div class="author-info"><span class="author-name">Coco Kafé</span><span class="author-tag">Restaurant · Guadeloupe</span></div></div>
+    </div>
+    <div class="testimonial">
+      <span class="quote-mark">"</span>
+      <blockquote>Croissance continue à <em>deux chiffres</em>.</blockquote>
+      <div class="author"><div class="avatar">A</div><div class="author-info"><span class="author-name">Akaaz</span><span class="author-tag">Plomberie · Services</span></div></div>
+    </div>
+    <div class="testimonial">
+      <span class="quote-mark">"</span>
+      <blockquote>E-commerce qui <em>booste</em> les ventes.</blockquote>
+      <div class="author"><div class="avatar">G</div><div class="author-info"><span class="author-name">Glace An Nou</span><span class="author-tag">Glacier artisanal</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── FAQ ───── -->
+<section class="faq theme-light" id="faq">
+  <div class="faq-header fade-up">
+    <div class="eyebrow">Questions fréquentes</div>
+    <h2 class="section-title">Tout ce qu'il faut <em>comprendre</em>.</h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q"><span>Concrètement, c'est quoi Allissia ?</span><div class="faq-toggle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+      <div class="faq-a"><div class="faq-a-inner">Allissia est un système automatisé d'acquisition : elle combine SEO, publicité, création de contenu, agent vocal IA et apprentissage continu pour vous trouver des clients 24h/24. Ce n'est pas un chatbot de plus. C'est une couche IA complète, connectée à vos outils existants.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>Pour quel type d'entreprise ?</span><div class="faq-toggle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+      <div class="faq-a"><div class="faq-a-inner">PME, TPE, artisans, services, cabinets, e-commerce. Particulièrement efficace pour les entreprises qui reçoivent beaucoup d'appels, qui veulent scaler sans doubler leurs frais fixes, ou qui manquent de visibilité locale.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>Comment on valide les contenus qu'elle crée ?</span><div class="faq-toggle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+      <div class="faq-a"><div class="faq-a-inner">Tout passe par WhatsApp. Allissia vous envoie une proposition de post, de pub ou de mail. Vous répondez "OK" pour publier, "non" pour refuser, ou vous demandez une variante. Rien ne sort de manière autonome sans votre feu vert.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>Allissia remplace-t-elle mon téléphone ?</span><div class="faq-toggle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+      <div class="faq-a"><div class="faq-a-inner">Non. Elle s'intercale. Allissia Voice répond quand vous ne pouvez pas (hors horaires, réunion, pause). Elle qualifie et vous transfère l'info. Vous restez maître des échanges importants — sans rater les appels secondaires qui devenaient des clients perdus.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>Quand voit-on les premiers résultats ?</span><div class="faq-toggle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+      <div class="faq-a"><div class="faq-a-inner">Les premières semaines — dès que Voice et les campagnes sont activés. L'impact fort arrive entre 2 et 3 mois, quand Cortex a assez de données pour optimiser et que le SEO commence à ranker. Après 6 mois, le système est rodé.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>Et la protection des données ?</span><div class="faq-toggle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+      <div class="faq-a"><div class="faq-a-inner">Hébergement européen, conformité RGPD, chiffrement de bout en bout. Vos données ne sont jamais utilisées pour entraîner un modèle public. Accès révocable à tout moment, exportable, supprimable.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── FINAL CTA ───── -->
+<section class="final-cta theme-cream">
+  <div class="fade-up">
+    <h2>Allumer Allissia. <em>Voir ce qu'elle trouve.</em></h2>
+    <p>Un audit gratuit. Un diagnostic clair. Une démo d'Allissia sur votre métier. On s'en occupe — vous validez.</p>
+    <div class="ctas">
+      <a href="audit.html" class="btn btn-primary magnetic">
+        Lancer mon audit gratuit
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="tel:+590602182020" class="btn btn-ghost magnetic">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        06 02 18 20 20
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ───── FOOTER ───── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="assets/LOGO-DIGITALIS-2026-V2-GRIS.png" alt="Digitallis" class="logo-f">
+      <p>Systèmes d'acquisition digitale & IA pour PME. Antilles, France, Europe.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Expertises</h4>
+      <ul>
+        <li><a href="expertise-sites.html">Création de sites</a></li>
+        <li><a href="expertise-seo.html">Référencement SEO</a></li>
+        <li><a href="expertise-google-ads.html">Google Ads</a></li>
+        <li><a href="expertise-reseaux-sociaux.html">Réseaux sociaux</a></li>
+        <li><a href="expertise-ia.html">Intelligence artificielle</a></li>
+        <li><a href="expertise-geo.html">Visibilité IA (GEO)</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+590602182020">06 02 18 20 20</a></li>
+        <li><a href="mailto:info@digitallis.fr">info@digitallis.fr</a></li>
+        <li style="color:rgba(255,255,255,0.6);font-size:14px;">195 rue François Fresneau<br>97122 Baie-Mahault<br>Guadeloupe</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Ressources</h4>
+      <ul>
+        <li><a href="audit.html">Audit gratuit</a></li>
+        <li><a href="blog.html">Le Blog</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="mailto:info@digitallis.fr">Devis personnalisé</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Digitallis · Tous droits réservés</span>
+    <span>Baie-Mahault · Guadeloupe · FR</span>
+  </div>
+</footer>
+
+<script src="shared.js"></script>
+
+</body>
+</html>

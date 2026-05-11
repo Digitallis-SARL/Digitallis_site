@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Réseaux sociaux &amp; community management en Guadeloupe — Digitallis</title>
+<meta name="description" content="Facebook, Instagram, TikTok : des réseaux sociaux qui servent votre acquisition. Community management, contenu, sponsorisation ciblée et vidéo courte.">
+<meta name="keywords" content="community management Guadeloupe, réseaux sociaux Antilles, Facebook Ads Guadeloupe, Instagram TikTok PME, Reels Shorts">
+<link rel="canonical" href="https://www.digitallis.fr/expertise-reseaux-sociaux">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Réseaux sociaux & community management en Guadeloupe — Digitallis">
+<meta property="og:description" content="Facebook, Instagram, TikTok : des réseaux sociaux qui servent votre acquisition. Community management, contenu vidéo, sponsorisation ciblée.">
+<meta property="og:url" content="https://www.digitallis.fr/expertise-reseaux-sociaux">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Réseaux sociaux et community management — Guadeloupe",
+  "serviceType": "Social Media Marketing",
+  "description": "Gestion Facebook, Instagram, TikTok pour PME des Antilles. Community management, contenu vidéo, Reels et Shorts, sponsorisation ciblée Meta Ads.",
+  "provider": { "@type": "Organization", "name": "Digitallis", "url": "https://www.digitallis.fr/" },
+  "areaServed": [
+    { "@type": "Place", "name": "Guadeloupe" },
+    { "@type": "Place", "name": "Martinique" },
+    { "@type": "Country", "name": "France" }
+  ],
+  "url": "https://www.digitallis.fr/expertise-reseaux-sociaux"
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<style>
+  /* Hero : phone mock with stories */
+  .social-visual { position: relative; aspect-ratio: 1/1; max-width: 480px; margin: 0 auto; }
+  .phone {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 190px; height: 380px; border-radius: 32px;
+    background: #1a1a1a; padding: 10px;
+    box-shadow: 0 40px 100px rgba(28, 31, 38, 0.25);
+    animation: orbFloat 7s ease-in-out infinite;
+  }
+  .phone-screen {
+    width: 100%; height: 100%; border-radius: 24px;
+    background: #fff; overflow: hidden;
+    display: flex; flex-direction: column;
+  }
+  .phone-header {
+    padding: 12px 14px; border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 700;
+  }
+  .phone-stories {
+    display: flex; gap: 8px; padding: 12px; overflow: hidden;
+  }
+  .phone-story {
+    width: 44px; height: 44px; border-radius: 50%;
+    border: 2px solid var(--accent);
+    background: linear-gradient(135deg, #FACC14, #E6B800);
+    flex-shrink: 0;
+  }
+  .phone-post {
+    margin: 8px 12px; flex: 1;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #F4F2EC, var(--accent-soft));
+    display: flex; align-items: center; justify-content: center;
+    color: var(--accent-dk);
+  }
+  .phone-cta-row {
+    display: flex; gap: 16px; padding: 10px 14px;
+    border-top: 1px solid var(--border);
+  }
+  .phone-cta-row .ico {
+    width: 20px; height: 20px; color: var(--text-soft);
+  }
+  .social-chip {
+    position: absolute; background: var(--card);
+    border: 1px solid var(--border); border-radius: 16px;
+    padding: 10px 14px; box-shadow: var(--shadow-md);
+    display: flex; align-items: center; gap: 8px;
+    font-size: 12px; font-weight: 600; color: var(--text);
+    white-space: nowrap;
+    animation: badgeFloat 5s ease-in-out infinite;
+  }
+  .social-chip .net {
+    width: 24px; height: 24px; border-radius: 7px;
+    display: inline-flex; align-items: center; justify-content: center;
+    color: #fff; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 12px;
+  }
+  .social-chip.fb .net { background: #1877F2; }
+  .social-chip.ig .net { background: linear-gradient(135deg, #F58529, #DD2A7B, #8134AF); }
+  .social-chip.tk .net { background: #000; }
+  .social-chip.sc1 { top: 4%; left: -8%; animation-delay: 0s; }
+  .social-chip.sc2 { top: 20%; right: -4%; animation-delay: 1.5s; }
+  .social-chip.sc3 { bottom: 8%; left: -4%; animation-delay: 3s; }
+</style>
+</head>
+<body class="page-light">
+
+<div class="cursor-glow" id="glow"></div>
+
+<nav class="nav" id="nav">
+  <a href="index.html" aria-label="Digitallis">
+    <img src="assets/LOGO-DIGITALIS-2026-V2-GRIS.png" alt="Digitallis" class="nav-logo nav-logo-dark"><img src="assets/LOGO-DIGITALIS-2026-V2-BLANC.png" alt="" aria-hidden="true" class="nav-logo nav-logo-light">
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Accueil</a>
+    <div class="nav-dd">
+      <a href="expertises.html">Expertises</a>
+      <div class="nav-dd-menu">
+        <a href="expertise-sites.html"><span>Création de sites</span><span class="dd-sub">Vitrine · One page · Landing</span></a>
+        <a href="expertise-seo.html"><span>Référencement SEO</span><span class="dd-sub">Visibilité Google durable</span></a>
+        <a href="expertise-google-ads.html"><span>Google Ads</span><span class="dd-sub">Search · PMax · Display</span></a>
+        <a href="expertise-reseaux-sociaux.html" class="active"><span>Réseaux sociaux</span><span class="dd-sub">Facebook · Instagram · TikTok</span></a>
+        <a href="expertise-ia.html"><span>Intelligence artificielle</span><span class="dd-sub">Allissia · Automatisations</span></a>
+        <a href="expertise-geo.html"><span>Visibilité IA (GEO)</span><span class="dd-sub">ChatGPT · Perplexity</span></a>
+      </div>
+    </div>
+    <a href="allisia.html">Allissia</a>
+    <a href="a-propos.html">À propos</a>
+    <a href="contact.html">Contact</a>
+    <a href="audit.html" class="nav-cta">Audit gratuit</a>
+  </div>
+</nav>
+
+<!-- ───── PAGE HEADER ───── -->
+<header class="page-header">
+  <div class="page-header-inner">
+    <div class="fade-up">
+      <div class="allisia-label"><span class="pulse"></span> Community management · Digitallis</div>
+      <h1>Facebook, Instagram, TikTok. Des réseaux sociaux <em>qui servent votre acquisition</em>.</h1>
+      <p class="lead">
+        Vos réseaux sociaux ne doivent pas juste être actifs. Ils doivent rendre votre entreprise visible, crédible et mémorable — tout en soutenant vos campagnes et vos ventes.
+      </p>
+      <div class="ctas">
+        <a href="audit.html" class="btn btn-primary magnetic">
+          Demander un audit
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="#forfaits" class="btn btn-ghost magnetic">Voir les forfaits</a>
+      </div>
+    </div>
+    <div class="social-visual fade-up">
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="phone-header">
+            <span>Votre marque</span>
+            <span style="font-size:12px;color:var(--muted);">●●●</span>
+          </div>
+          <div class="phone-stories">
+            <div class="phone-story"></div>
+            <div class="phone-story" style="opacity:0.6;"></div>
+            <div class="phone-story" style="opacity:0.3;"></div>
+          </div>
+          <div class="phone-post">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+          </div>
+          <div class="phone-cta-row">
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="social-chip fb sc1"><div class="net">f</div> Facebook</div>
+      <div class="social-chip ig sc2"><div class="net">◉</div> Instagram</div>
+      <div class="social-chip tk sc3"><div class="net">♪</div> TikTok</div>
+    </div>
+  </div>
+</header>
+
+<!-- ───── LE VRAI ROLE ───── -->
+<section class="theme-cream">
+  <div class="section-wrap-narrow">
+    <div class="fade-up">
+      <div class="eyebrow">Le vrai rôle</div>
+      <h2 class="section-title">Les réseaux sociaux ne servent pas <em>juste à publier</em>.</h2>
+    </div>
+    <div class="pain-list fade-up">
+      <div class="pain-item">Montrer que votre entreprise existe vraiment</div>
+      <div class="pain-item">Donner confiance</div>
+      <div class="pain-item">Créer du désir</div>
+      <div class="pain-item">Rester présent dans l'esprit du prospect</div>
+      <div class="pain-item">Soutenir vos promotions et vos offres</div>
+      <div class="pain-item">Nourrir vos campagnes sponsorisées</div>
+      <div class="pain-item">Éviter qu'un prospect tombe sur <em>une page morte</em></div>
+    </div>
+    <div class="hl-block fade-up">
+      Une entreprise absente ou mal présente sur les réseaux peut rapidement sembler inactive, peu crédible ou en retard. <strong>Et cela suffit à faire choisir un concurrent.</strong>
+    </div>
+  </div>
+</section>
+
+<!-- ───── CE QUI NE MARCHE PAS ───── -->
+<section class="theme-cream">
+  <div class="section-wrap-narrow">
+    <div class="fade-up">
+      <div class="eyebrow">Ce qui ne marche pas</div>
+      <h2 class="section-title">Vos réseaux sociaux <em>vous desservent</em> si :</h2>
+    </div>
+    <div class="not-list fade-up">
+      <div class="not-item">Vous publiez rarement</div>
+      <div class="not-item">Vos comptes semblent abandonnés</div>
+      <div class="not-item">Vos contenus n'ont aucune cohérence</div>
+      <div class="not-item">Vous ne montrez jamais votre réalité terrain</div>
+      <div class="not-item">Vous publiez sans stratégie</div>
+      <div class="not-item">Vous ne sponsorisez jamais les bons contenus</div>
+      <div class="not-item">Vous êtes visible… mais sans impact réel</div>
+    </div>
+    <div class="hl-block fade-up">
+      Avoir un compte n'est pas une stratégie. <strong>Un bon community management consiste à faire en sorte que chaque contenu serve une logique de visibilité, de crédibilité ou d'acquisition.</strong>
+    </div>
+  </div>
+</section>
+
+<!-- ───── ORGANIQUE & SPONSORISE (dark) ───── -->
+<section class="sec-dark">
+  <div class="section-wrap sec-inner">
+    <div class="fade-up" style="max-width:760px;">
+      <div class="eyebrow">Organique &amp; sponsorisé</div>
+      <h2 class="section-title">Les deux sont <em>nécessaires</em>.</h2>
+      <p class="section-lead">
+        Sans contenu organique, votre entreprise paraît vide. Sans sponsorisation, votre portée reste limitée.
+      </p>
+    </div>
+    <div class="dg-grid cols-2 dg-dark fade-up" data-spotlight>
+      <div class="dg-card">
+        <div class="dg-tag">Contenu organique</div>
+        <h3>Montrer <em>&amp; rassurer</em></h3>
+        <p style="margin-bottom:16px;">Il sert à montrer que votre entreprise est active, à créer de la répétition, à installer votre image et à renforcer votre crédibilité.</p>
+        <div class="cmp-item">Preuve sociale</div>
+        <div class="cmp-item">Image de marque</div>
+        <div class="cmp-item">Présence régulière</div>
+        <div class="cmp-item">Confiance</div>
+      </div>
+      <div class="dg-card">
+        <div class="dg-tag">Sponsorisation</div>
+        <h3>Amplifier <em>&amp; accélérer</em></h3>
+        <p style="margin-bottom:16px;">Elle sert à toucher plus de monde localement, pousser les meilleurs contenus, soutenir une offre et accélérer la prise de contact.</p>
+        <div class="cmp-item">Portée ciblée</div>
+        <div class="cmp-item">Amplification locale</div>
+        <div class="cmp-item">Accélération des résultats</div>
+        <div class="cmp-item">Soutien des campagnes</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── NOS FORFAITS ───── -->
+<section id="forfaits">
+  <div class="section-wrap-narrow">
+    <div class="fade-up">
+      <div class="eyebrow">Nos forfaits</div>
+      <h2 class="section-title">Des forfaits simples, <em>pensés pour le rythme réel</em> des entreprises.</h2>
+      <p class="section-lead">
+        Chaque publication est pensée pour Facebook puis adaptée à Instagram. Les contenus les plus pertinents sont sponsorisés localement pour augmenter leur portée.
+      </p>
+    </div>
+    <div class="forfait-row fade-up">
+      <div class="forfait-tag"><strong>1</strong>post / semaine</div>
+      <div class="forfait-tag"><strong>2</strong>posts / semaine</div>
+      <div class="forfait-tag"><strong>3</strong>posts / semaine</div>
+      <div class="forfait-tag"><strong>5</strong>posts / semaine</div>
+    </div>
+    <p class="section-lead fade-up" style="margin-top:32px;max-width:64ch;">
+      Le bon rythme dépend de votre activité, de vos objectifs et de votre capacité à alimenter la communication.
+    </p>
+  </div>
+</section>
+
+<!-- ───── LA VIDEO ───── -->
+<section class="theme-cream">
+  <div class="section-wrap-narrow">
+    <div class="fade-up">
+      <div class="eyebrow">La vidéo courte</div>
+      <h2 class="section-title">Un levier <em>devenu incontournable</em>.</h2>
+      <p class="section-lead">
+        Reels, Shorts et TikTok permettent de capter plus vite l'attention, de montrer la réalité terrain, d'humaniser l'entreprise et de créer plus de mémorisation.
+      </p>
+      <p class="section-lead" style="margin-top:16px;">
+        Selon le projet, nous pouvons produire du contenu tourné sur site, du contenu monté à partir de vos éléments, du contenu assisté ou généré par IA, et des formats courts adaptés à chaque plateforme.
+      </p>
+      <div class="hl-block fade-up">
+        Le bon format n'est pas celui qui « fait moderne ». <strong>C'est celui que votre audience regarde, comprend et retient.</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── COMMENT NOUS TRAVAILLONS ───── -->
+<section>
+  <div class="section-wrap">
+    <div class="fade-up" style="max-width:760px;">
+      <div class="eyebrow">Comment nous travaillons</div>
+      <h2 class="section-title">Une présence qui donne envie <em>de vous choisir</em>.</h2>
+    </div>
+    <div class="dg-grid cols-4 fade-up">
+      <div class="dg-card">
+        <div class="dg-num">01</div>
+        <h3>Stratégie <em>éditoriale</em></h3>
+        <p>Plateformes prioritaires, ton, types de contenus, angles, rythme de publication, formats adaptés à votre activité.</p>
+      </div>
+      <div class="dg-card">
+        <div class="dg-num">02</div>
+        <h3>Création <em>de contenu</em></h3>
+        <p>Textes, visuels, idées de contenus, hashtags. Vidéos courtes si pertinent — tournage réel ou assistées par IA.</p>
+      </div>
+      <div class="dg-card">
+        <div class="dg-num">03</div>
+        <h3>Publication <em>&amp; gestion</em></h3>
+        <p>Planification, publication, gestion des commentaires et messages. Maintenir une présence propre et cohérente.</p>
+      </div>
+      <div class="dg-card">
+        <div class="dg-num">04</div>
+        <h3>Sponsorisation <em>&amp; suivi</em></h3>
+        <p>Amplification des contenus stratégiques, ciblage local, suivi des résultats et ajustements.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── POURQUOI DIGITALLIS (dark) ───── -->
+<section class="sec-dark">
+  <div class="section-wrap-narrow sec-inner">
+    <div class="fade-up">
+      <div class="eyebrow">Pourquoi Digitallis</div>
+      <h2 class="section-title">Nous ne gérons pas les réseaux <em>pour remplir un planning</em>.</h2>
+      <p class="section-lead">
+        Nous les utilisons comme un levier de visibilité, de crédibilité et d'acquisition. Une lecture business du contenu. Une connaissance fine du marché antillais. Une capacité à lier organique et sponsorisé. Un vrai usage de la vidéo courte. Et une approche cohérente avec le reste de l'acquisition. 15 ans d'expérience en communication digitale.
+      </p>
+      <div class="hl-block dark fade-up" style="margin-top:32px;">
+        Nous ne faisons pas des réseaux sociaux « pour être présent ». <strong>Nous construisons une présence qui donne envie de vous choisir.</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── POUR QUI ───── -->
+<section>
+  <div class="section-wrap-narrow">
+    <div class="fade-up">
+      <div class="eyebrow">Pour qui</div>
+      <h2 class="section-title">Dès que vos prospects regardent vos réseaux <em>avant de vous contacter</em>.</h2>
+    </div>
+    <div class="for-grid fade-up">
+      <div class="for-item">Commerce</div>
+      <div class="for-item">Restaurant</div>
+      <div class="for-item">Artisan</div>
+      <div class="for-item">Profession libérale</div>
+      <div class="for-item">Marque locale</div>
+      <div class="for-item">PME B2B ou B2C</div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── FAQ ───── -->
+<section class="faq theme-light" id="faq">
+  <div class="faq-header fade-up">
+    <div class="eyebrow">Questions fréquentes</div>
+    <h2 class="section-title">Tout savoir sur <em>les réseaux sociaux</em>.</h2>
+  </div>
+  <div class="faq-native fade-up">
+    <details>
+      <summary>Quels réseaux faut-il privilégier ?</summary>
+      <p>Ça dépend de votre activité et de votre audience. En Guadeloupe, Facebook reste très important. Instagram et TikTok sont très performants pour les commerces, la restauration et les activités visuelles.</p>
+    </details>
+    <details>
+      <summary>Combien de publications faut-il faire ?</summary>
+      <p>Le bon rythme dépend de votre activité et de vos objectifs. L'important n'est pas de publier beaucoup, mais de publier régulièrement et intelligemment.</p>
+    </details>
+    <details>
+      <summary>Dois-je fournir les contenus ?</summary>
+      <p>Idéalement oui pour les éléments terrain — l'authenticité compte beaucoup. Mais nous pouvons produire, structurer, adapter et enrichir les contenus.</p>
+    </details>
+    <details>
+      <summary>La vidéo est-elle indispensable ?</summary>
+      <p>Elle devient de plus en plus importante. Sans être obligatoire dans tous les cas, elle améliore très souvent la portée, l'attention et la mémorisation.</p>
+    </details>
+    <details>
+      <summary>La sponsorisation locale est-elle efficace en Guadeloupe ?</summary>
+      <p>Oui, surtout quand elle est bien ciblée. Elle permet d'amplifier les bons contenus et de toucher précisément votre zone de chalandise.</p>
+    </details>
+    <details>
+      <summary>Les réseaux sociaux peuvent-ils vraiment apporter des clients ?</summary>
+      <p>Oui, à condition qu'ils soient pensés comme un levier d'image, de confiance et d'acquisition — pas juste comme une suite de publications décoratives.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ───── FINAL CTA ───── -->
+<section class="final-cta theme-cream">
+  <div class="fade-up">
+    <h2>Vos réseaux sociaux donnent-ils <em>vraiment envie</em> de vous choisir ?</h2>
+    <p>Si ce n'est pas clair, ils ne travaillent pas assez pour vous. On vous montre ce qui manque et comment transformer votre présence sociale en vrai levier d'acquisition.</p>
+    <div class="ctas">
+      <a href="audit.html" class="btn btn-primary magnetic">
+        Voir où je perds des clients
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="expertise-ia.html" class="btn btn-ghost magnetic">Voir l'IA</a>
+    </div>
+  </div>
+</section>
+
+<!-- ───── FOOTER ───── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="assets/LOGO-DIGITALIS-2026-V2-GRIS.png" alt="Digitallis" class="logo-f">
+      <p>Systèmes d'acquisition digitale &amp; IA pour PME. Antilles, France, Europe.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Expertises</h4>
+      <ul>
+        <li><a href="expertise-sites.html">Création de sites</a></li>
+        <li><a href="expertise-seo.html">Référencement SEO</a></li>
+        <li><a href="expertise-google-ads.html">Google Ads</a></li>
+        <li><a href="expertise-reseaux-sociaux.html">Réseaux sociaux</a></li>
+        <li><a href="expertise-ia.html">Intelligence artificielle</a></li>
+        <li><a href="expertise-geo.html">Visibilité IA (GEO)</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+590602182020">06 02 18 20 20</a></li>
+        <li><a href="mailto:info@digitallis.fr">info@digitallis.fr</a></li>
+        <li style="color:rgba(255,255,255,0.6);font-size:14px;">195 rue François Fresneau<br>97122 Baie-Mahault<br>Guadeloupe</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Agence</h4>
+      <ul>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="allisia.html">Allissia</a></li>
+        <li><a href="blog.html">Le Blog</a></li>
+        <li><a href="audit.html">Audit gratuit</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Digitallis · Tous droits réservés</span>
+    <span>Baie-Mahault · Guadeloupe · FR</span>
+  </div>
+</footer>
+
+<script src="shared.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+# Vercel
+.vercel
+
+# macOS
+.DS_Store
+
+# Env / Secrets
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+
+# Node / dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# OS
+Thumbs.db

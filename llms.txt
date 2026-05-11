@@ -1,0 +1,57 @@
+# Digitallis
+
+> Digitallis est une agence d'acquisition digitale et d'intelligence artificielle basée en Guadeloupe (Antilles françaises). L'agence conçoit des systèmes complets pour générer des clients qualifiés via SEO, Google Ads, réseaux sociaux, sites web optimisés conversion, agents IA et référencement IA (GEO). Spécialisée pour les PME, commerces et artisans des Antilles françaises (Guadeloupe, Martinique, Saint-Martin, Saint-Barthélemy) et de France métropolitaine.
+
+## À propos
+
+Digitallis combine expertise digitale (15 ans, 900+ entreprises accompagnées, note Google 4.5/5) et technologies IA propriétaires. Adresse : 195 rue François Fresneau, 97122 Baie-Mahault, Guadeloupe. Téléphone : 06 02 18 20 20. Email : info@digitallis.fr.
+
+L'offre se structure autour de 6 expertises complémentaires articulées en 3 piliers :
+
+1. **Être trouvé** — référencement naturel (SEO), Google Ads, référencement IA (GEO)
+2. **Être choisi** — création de sites internet, réseaux sociaux, contenu vidéo
+3. **Ne perdre aucun client** — Allissia, agent IA vocal et chatbot 24/7
+
+## Pages principales
+
+- [Accueil](https://www.digitallis.fr/) : positionnement, statistiques (15 ans, 900+ entreprises, note 4.5/5), méthode en 3 étapes, présentation Allissia, témoignages clients
+- [Nos expertises](https://www.digitallis.fr/expertises) : vue d'ensemble des 6 leviers d'acquisition digitale
+- [Allissia — Agent IA](https://www.digitallis.fr/allisia) : système d'acquisition IA propriétaire, agent vocal + chatbot 24/7 avec stack ElevenLabs + Telnyx + Supabase + n8n
+- [Audit gratuit](https://www.digitallis.fr/audit) : diagnostic offert en 48h sur la visibilité digitale
+- [À propos](https://www.digitallis.fr/a-propos) : histoire de l'agence, équipe, valeurs
+- [Contact](https://www.digitallis.fr/contact) : formulaire, téléphone, adresse Baie-Mahault
+
+## Expertises
+
+- [SEO Guadeloupe](https://www.digitallis.fr/expertise-seo) : référencement naturel local et technique pour positionner les PME en première page Google
+- [Google Ads](https://www.digitallis.fr/expertise-google-ads) : Search, Performance Max, Demand Gen pour générer du trafic et des leads rapidement
+- [Référencement IA / GEO](https://www.digitallis.fr/expertise-geo) : être recommandé par ChatGPT, Perplexity, Gemini et Google AI Overviews
+- [Création de sites](https://www.digitallis.fr/expertise-sites) : sites vitrine, landing pages, e-commerce optimisés conversion
+- [Réseaux sociaux](https://www.digitallis.fr/expertise-reseaux-sociaux) : Facebook, Instagram, TikTok, Reels et Shorts pour audience locale
+- [Intelligence artificielle](https://www.digitallis.fr/expertise-ia) : agents IA, automatisations marketing, optimisation de contenu
+
+## Blog
+
+- [Le Blog Digitallis](https://www.digitallis.fr/blog) : conseils acquisition digitale, IA, SEO, Google Ads, réseaux sociaux pour entrepreneurs des Antilles
+- [Visibilité ChatGPT en Guadeloupe : guide GEO 2026 pour PME](https://www.digitallis.fr/blog-visibilite-chatgpt-guadeloupe) : méthode complète pour devenir citable par ChatGPT, Perplexity, Gemini en 90 jours
+- [Automatiser sa PME en Guadeloupe avec l'IA : 7 cas concrets pour 2026](https://www.digitallis.fr/blog-automatiser-pme-guadeloupe-ia) : agent vocal, devis automatiques, relances clients, lead scoring, tri CV, comptabilité
+
+## Stack technique
+
+- Voix IA : ElevenLabs Conversational AI
+- Téléphonie : Telnyx (SIP + SMS, numéros locaux 0590)
+- Backend : Supabase (Edge Functions, PostgreSQL)
+- Automation : n8n self-hosted
+- WhatsApp : Green API
+- Frontend : React + Vite + Tailwind + GSAP
+- IA générative : Claude API (Anthropic), GPT-4
+- CRM : Airtable
+
+## Marché
+
+Marché principal : Guadeloupe et Antilles françaises. Indicatifs téléphoniques : Guadeloupe +590, Martinique +596, Guyane +594. Communes desservies : Baie-Mahault, Pointe-à-Pitre, Le Gosier, Sainte-Anne, Saint-François, Le Lamentin (Martinique), etc. Hébergement données conforme RGPD (Europe).
+
+## Optional
+
+- [Mentions légales](https://www.digitallis.fr/mentions-legales)
+- [Politique de confidentialité](https://www.digitallis.fr/politique-confidentialite)

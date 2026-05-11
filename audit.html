@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Audit de visibilité digitale — Diagnostic en 48h | Digitallis Guadeloupe</title>
+<meta name="description" content="Découvrez pourquoi vos concurrents attirent plus de clients que vous. Recevez en 48h un diagnostic complet de votre visibilité avec des recommandations concrètes. Gratuit et sans engagement.">
+<meta name="keywords" content="audit digital gratuit Guadeloupe, diagnostic visibilité Antilles, audit SEO PME, audit acquisition gratuit">
+<link rel="canonical" href="https://www.digitallis.fr/audit">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Audit de visibilité digitale — Diagnostic en 48h | Digitallis">
+<meta property="og:description" content="Diagnostic complet de votre visibilité en 48h. Gratuit et sans engagement. Comprenez pourquoi vos concurrents attirent plus de clients.">
+<meta property="og:url" content="https://www.digitallis.fr/audit">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Service","name":"Audit de visibilité digitale Digitallis","description":"Diagnostic complet de votre visibilité en ligne, comparaison concurrentielle et plan d'action prioritaire. Livré en 48 heures, gratuit et sans engagement.","provider":{"@type":"LocalBusiness","name":"Digitallis","url":"https://www.digitallis.fr","telephone":"+590602182020","address":{"@type":"PostalAddress","streetAddress":"195 rue François Fresneau","addressLocality":"Baie-Mahault","postalCode":"97122","addressRegion":"Guadeloupe","addressCountry":"FR"}},"areaServed":[{"@type":"Place","name":"Guadeloupe"},{"@type":"Place","name":"Martinique"},{"@type":"Place","name":"France"}],"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR","description":"Audit gratuit"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"L'audit est-il vraiment gratuit ?","acceptedAnswer":{"@type":"Answer","text":"Oui, 100 % gratuit et sans engagement. C'est notre manière de démontrer notre expertise et d'évaluer si nous pouvons réellement vous aider avant toute proposition commerciale."}},
+{"@type":"Question","name":"Que dois-je fournir pour l'audit ?","acceptedAnswer":{"@type":"Answer","text":"Votre nom, votre entreprise, votre site web s'il existe, et vos coordonnées. Nous nous chargeons de tout le reste : analyse technique, SEO, concurrence, réseaux sociaux, recommandations."}},
+{"@type":"Question","name":"En combien de temps reçois-je le rapport ?","acceptedAnswer":{"@type":"Answer","text":"Vous recevez votre rapport personnalisé sous 48 heures ouvrées par email, avec un document PDF détaillé et une proposition d'échange téléphonique pour en discuter."}},
+{"@type":"Question","name":"Suis-je obligé de travailler avec vous ensuite ?","acceptedAnswer":{"@type":"Answer","text":"Absolument pas. L'audit est sans engagement. Vous pouvez l'utiliser librement ou le confier à un autre prestataire. Nous pensons simplement que nos recommandations parleront d'elles-mêmes."}},
+{"@type":"Question","name":"Je n'ai pas de site web, puis-je quand même faire l'audit ?","acceptedAnswer":{"@type":"Answer","text":"Bien sûr. Si vous n'avez pas encore de site, nous analysons votre présence globale (Google Business, réseaux sociaux, avis clients) et vos concurrents pour identifier vos premières opportunités."}}
+]}
+</script>
+
+<style>
+  /* Hero layout : 2 cols with form card on right */
+  .audit-hero {
+    --bg: #FAFAF7; --bg-deep: #F4F2EA; --card: #FFFFFF;
+    --text: #1C1F26; --text-soft: #3A3F4A; --muted: #676F7E;
+    --accent-soft: rgba(250, 204, 20, 0.10); --border: #E8E6E0;
+    --shadow-sm: 0 2px 8px rgba(28, 31, 38, 0.04);
+    --shadow-md: 0 12px 40px rgba(28, 31, 38, 0.06);
+    --shadow-lg: 0 28px 80px rgba(28, 31, 38, 0.10);
+    color: var(--text);
+    padding: 140px 40px 80px; background: linear-gradient(180deg, #FDF8EC 0%, #FAFAF7 100%);
+    position: relative; overflow: hidden;
+  }
+  .audit-hero::before {
+    content: ''; position: absolute; top: -200px; right: -200px;
+    width: 600px; height: 600px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(250, 204, 20, 0.18), transparent 70%);
+    pointer-events: none;
+  }
+  .audit-hero::after {
+    content: ''; position: absolute; bottom: -300px; left: -150px;
+    width: 500px; height: 500px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(135, 200, 255, 0.12), transparent 70%);
+    pointer-events: none;
+  }
+  .audit-hero-inner {
+    max-width: 1200px; margin: 0 auto; position: relative;
+    display: grid; grid-template-columns: 1.05fr 1fr; gap: 72px; align-items: start;
+  }
+  .audit-hero h1 {
+    font-family: 'Outfit', sans-serif; font-weight: 700;
+    font-size: clamp(40px, 5.5vw, 68px); line-height: 1.03; letter-spacing: -0.035em;
+    margin-bottom: 28px;
+  }
+  .audit-hero h1 em {
+    font-family: 'Instrument Serif', serif; font-weight: 400; font-style: italic;
+    color: var(--accent-dk);
+  }
+  .audit-hero .lead {
+    font-size: clamp(17px, 1.4vw, 20px); color: var(--text-soft);
+    line-height: 1.55; max-width: 52ch; margin-bottom: 18px;
+  }
+  .audit-hero .lead strong { color: var(--text); font-weight: 600; }
+  .audit-hero .sub-lead {
+    font-size: 15px; color: var(--muted); line-height: 1.6;
+    font-style: italic; margin-bottom: 32px; max-width: 48ch;
+  }
+  .audit-trust {
+    display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+    margin-top: 32px; padding-top: 28px; border-top: 1px solid var(--border);
+    font-family: 'JetBrains Mono', monospace; font-size: 12px;
+    color: var(--text-soft); font-weight: 500;
+  }
+  .audit-trust .trust-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--muted); }
+  .audit-trust .rating { display: inline-flex; align-items: center; gap: 6px; color: var(--text); font-weight: 600; }
+  .audit-trust .stars { color: var(--accent); letter-spacing: 1px; }
+
+  @media (max-width: 960px) {
+    .audit-hero { padding: 120px 24px 60px; }
+    .audit-hero-inner { grid-template-columns: 1fr; gap: 48px; }
+  }
+
+  /* Form card */
+  .audit-form {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 24px; padding: 36px 32px;
+    box-shadow: var(--shadow-lg); position: relative;
+    position: sticky; top: 100px;
+  }
+  .audit-form::before {
+    content: ''; position: absolute; top: -2px; left: 24%; right: 24%;
+    height: 3px; background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    border-radius: 2px;
+  }
+  @media (max-width: 960px) {
+    .audit-form { position: static; }
+  }
+  .audit-form h2 {
+    font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 22px;
+    letter-spacing: -0.02em; color: var(--text); margin-bottom: 6px;
+  }
+  .audit-form h2 em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; }
+  .audit-form .f-sub {
+    font-size: 13px; color: var(--text-soft); line-height: 1.5; margin-bottom: 22px;
+  }
+
+  /* Steps progress */
+  .f-dots {
+    display: flex; gap: 6px; margin-bottom: 22px;
+  }
+  .f-dot {
+    flex: 1; height: 3px; border-radius: 2px;
+    background: var(--border); transition: background 0.3s var(--ease);
+  }
+  .f-dot.on { background: var(--accent); }
+
+  /* Audit-specific form overrides */
+  .audit-form .f-group { margin-bottom: 14px; }
+  .audit-form .f-group label {
+    display: block;
+    font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-soft);
+    margin-bottom: 6px;
+  }
+  .audit-form .f-group input,
+  .audit-form .f-group select,
+  .audit-form .f-group textarea {
+    width: 100%; padding: 12px 14px;
+    border: 1px solid var(--border); border-radius: 10px;
+    font-size: 14px; font-family: 'Outfit', sans-serif;
+    background: #FAFAF7; color: var(--text);
+    transition: all 0.2s;
+  }
+  .audit-form .f-group input:focus,
+  .audit-form .f-group select:focus,
+  .audit-form .f-group textarea:focus {
+    outline: none; border-color: var(--accent);
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(250, 204, 20, 0.12);
+  }
+  .audit-form .f-group textarea { min-height: 60px; resize: vertical; }
+  .audit-form .f-row {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+  }
+  @media (max-width: 560px) { .audit-form .f-row { grid-template-columns: 1fr; } }
+
+  .f-step { display: none; animation: fadeStepIn 0.4s var(--ease); }
+  .f-step.on { display: block; }
+  @keyframes fadeStepIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .f-btn {
+    width: 100%; padding: 14px;
+    background: var(--ink); color: #fff;
+    border: none; border-radius: 100px;
+    font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 500;
+    letter-spacing: -0.005em; cursor: pointer;
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    transition: background 0.25s, transform 0.25s var(--ease), box-shadow 0.25s;
+    margin-top: 6px;
+    box-shadow: 0 10px 24px rgba(28, 31, 38, 0.15);
+  }
+  .f-btn:hover {
+    background: var(--accent); color: var(--ink);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 34px rgba(250, 204, 20, 0.35);
+  }
+  .f-btn svg { transition: transform 0.3s var(--ease); }
+  .f-btn:hover svg { transform: translateX(4px); }
+  .f-btn-ghost {
+    background: transparent; color: var(--text-soft);
+    border: 1px solid var(--border); box-shadow: none;
+  }
+  .f-btn-ghost:hover {
+    background: transparent; color: var(--text);
+    border-color: var(--text); transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+  }
+  .f-btn-ghost:hover svg { transform: translateX(-4px); }
+  .f-btns { display: flex; gap: 10px; margin-top: 6px; }
+  .f-btns > * { flex: 1; }
+  .f-trust {
+    text-align: center; margin-top: 16px;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--muted); letter-spacing: 0.08em;
+  }
+
+  /* Compare table */
+  .cmp-wrap {
+    margin-top: 56px; border-radius: 20px; overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.12);
+  }
+  .cmp-table {
+    width: 100%; border-collapse: collapse;
+    background: rgba(255,255,255,0.02);
+  }
+  .cmp-table thead th {
+    padding: 20px 24px; text-align: left;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .cmp-table thead th:first-child {
+    color: rgba(255,255,255,0.5);
+  }
+  .cmp-table thead th:last-child {
+    color: var(--accent);
+    background: rgba(250, 204, 20, 0.06);
+  }
+  .cmp-table td {
+    padding: 18px 24px;
+    font-size: 15px; line-height: 1.5;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .cmp-table tr:last-child td { border-bottom: none; }
+  .cmp-table td:first-child {
+    color: rgba(255,255,255,0.5);
+    text-decoration: line-through; text-decoration-color: rgba(231, 76, 60, 0.5);
+    text-decoration-thickness: 1px;
+  }
+  .cmp-table td:last-child {
+    color: #fff; font-weight: 500;
+    background: rgba(250, 204, 20, 0.04);
+  }
+  .cmp-table td:last-child::before {
+    content: '→'; color: var(--accent); font-weight: 700; margin-right: 10px;
+  }
+  @media (max-width: 720px) {
+    .cmp-table thead th { padding: 14px 16px; font-size: 10px; }
+    .cmp-table td { padding: 14px 16px; font-size: 13px; }
+  }
+
+  /* Sticky mobile CTA */
+  .sticky-cta {
+    display: none;
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 90;
+    background: rgba(250, 250, 247, 0.95);
+    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid var(--border);
+    padding: 12px 16px;
+    box-shadow: 0 -8px 24px rgba(0,0,0,0.06);
+  }
+  .sticky-cta a {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    width: 100%; padding: 14px;
+    background: var(--ink); color: #fff;
+    border-radius: 100px;
+    font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 500;
+    text-decoration: none;
+  }
+  @media (max-width: 700px) {
+    .sticky-cta { display: block; }
+    footer { padding-bottom: 100px; }
+  }
+
+  /* Nav phone display */
+  .nav-phone {
+    display: inline-flex; align-items: center; gap: 6px;
+    color: var(--text-soft); font-size: 14px; font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-phone:hover { color: var(--accent-dk); }
+  @media (max-width: 860px) {
+    .nav-phone { display: none; }
+  }
+
+  /* ───── ANIMATIONS PREMIUM ───── */
+
+  /* Split-text reveal sur le H1 (mots en cascade) */
+  .h1-reveal .word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(40px) rotateX(-30deg);
+    transform-origin: bottom center;
+    transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+  .h1-reveal.visible .word {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+  }
+  .h1-reveal .word-space { display: inline-block; width: 0.28em; }
+
+  /* Shimmer doré animé sur l'em */
+  .shimmer-em {
+    background: linear-gradient(
+      90deg,
+      var(--accent-dk) 0%,
+      var(--accent-dk) 35%,
+      #FFE57A 50%,
+      var(--accent-dk) 65%,
+      var(--accent-dk) 100%
+    );
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent !important;
+    animation: shimmerSlide 3.5s ease-in-out infinite;
+  }
+  @keyframes shimmerSlide {
+    0%, 100% { background-position: 100% 50%; }
+    50% { background-position: 0% 50%; }
+  }
+
+  /* Underline animée sous l'em au hover du H1 */
+  .h1-reveal em {
+    position: relative;
+    display: inline-block;
+  }
+  .h1-reveal em::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; bottom: -4px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) 1.4s;
+  }
+  .h1-reveal.visible em::after {
+    transform: scaleX(1);
+  }
+
+  /* Effet pulse renforcé sur le badge "Audit gratuit · 48h" */
+  .audit-hero .allisia-label {
+    animation: badgeFloat 4s ease-in-out infinite;
+  }
+  @keyframes badgeFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+  }
+
+  /* Trust bar : counter shimmer */
+  .audit-trust .rating .stars {
+    animation: starsShine 3s ease-in-out infinite;
+  }
+  @keyframes starsShine {
+    0%, 100% { filter: drop-shadow(0 0 0 rgba(250, 204, 20, 0)); }
+    50% { filter: drop-shadow(0 0 8px rgba(250, 204, 20, 0.7)); }
+  }
+
+  /* Lead text : reveal char-by-char au scroll */
+  .lead-typed {
+    display: inline-block;
+  }
+  .lead-typed .lt-char {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  .lead-typed.visible .lt-char {
+    opacity: 1;
+  }
+
+  /* Sub-lead : underline cursor effect */
+  .audit-hero .sub-lead {
+    position: relative;
+    overflow: hidden;
+  }
+  .audit-hero .sub-lead::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%; height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--accent) 30%, var(--accent) 70%, transparent 100%);
+    transform: translateX(-100%);
+    animation: leadSweep 5s ease-in-out infinite 1s;
+  }
+  @keyframes leadSweep {
+    0% { transform: translateX(-100%); opacity: 0; }
+    20%, 80% { opacity: 0.6; }
+    100% { transform: translateX(100%); opacity: 0; }
+  }
+
+  /* Cards : glow trail au hover */
+  .dg-card {
+    position: relative;
+    overflow: hidden;
+  }
+  .dg-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle 250px at var(--mx, 50%) var(--my, 50%),
+      rgba(250, 204, 20, 0.10),
+      transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    border-radius: inherit;
+  }
+  .dg-card:hover::before { opacity: 1; }
+
+  /* Compare table : row reveal en cascade */
+  .cmp-table tbody tr {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .cmp-wrap.visible .cmp-table tbody tr {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .cmp-wrap.visible .cmp-table tbody tr:nth-child(1) { transition-delay: 0.05s; }
+  .cmp-wrap.visible .cmp-table tbody tr:nth-child(2) { transition-delay: 0.12s; }
+  .cmp-wrap.visible .cmp-table tbody tr:nth-child(3) { transition-delay: 0.19s; }
+  .cmp-wrap.visible .cmp-table tbody tr:nth-child(4) { transition-delay: 0.26s; }
+  .cmp-wrap.visible .cmp-table tbody tr:nth-child(5) { transition-delay: 0.33s; }
+  .cmp-wrap.visible .cmp-table tbody tr:nth-child(6) { transition-delay: 0.40s; }
+  .cmp-wrap.visible .cmp-table tbody tr:nth-child(7) { transition-delay: 0.47s; }
+
+  /* FAQ : open/close smooth + chevron rotation */
+  .faq-native details summary {
+    transition: color 0.2s ease;
+  }
+  .faq-native details summary::after {
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .faq-native details[open] summary::after {
+    transform: rotate(180deg);
+  }
+  .faq-native details p {
+    animation: faqSlide 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  @keyframes faqSlide {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* CTA finale : pulse animé sur le bouton primaire */
+  .final-cta .btn-primary {
+    position: relative;
+    overflow: hidden;
+  }
+  .final-cta .btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 0; height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    transform: translate(-50%, -50%);
+    animation: ctaPulse 2.5s ease-out infinite;
+    pointer-events: none;
+  }
+  @keyframes ctaPulse {
+    0% { width: 0; height: 0; opacity: 0.6; }
+    100% { width: 360px; height: 360px; opacity: 0; }
+  }
+
+  /* Form steps : progress dots glow */
+  .f-dot.on {
+    box-shadow: 0 0 12px rgba(250, 204, 20, 0.5);
+    animation: dotPulse 2s ease-in-out infinite;
+  }
+  @keyframes dotPulse {
+    0%, 100% { box-shadow: 0 0 12px rgba(250, 204, 20, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(250, 204, 20, 0.8); }
+  }
+
+  /* Parallax léger sur les blobs du hero */
+  .audit-hero::before,
+  .audit-hero::after {
+    animation: blobDrift 18s ease-in-out infinite;
+  }
+  .audit-hero::after {
+    animation-direction: reverse;
+    animation-duration: 22s;
+  }
+  @keyframes blobDrift {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(30px, -20px) scale(1.05); }
+  }
+
+  /* Respect des préférences utilisateur */
+  @media (prefers-reduced-motion: reduce) {
+    .h1-reveal .word,
+    .shimmer-em,
+    .audit-hero .allisia-label,
+    .audit-trust .rating .stars,
+    .audit-hero .sub-lead::after,
+    .final-cta .btn-primary::after,
+    .f-dot.on,
+    .audit-hero::before,
+    .audit-hero::after {
+      animation: none !important;
+    }
+    .h1-reveal .word {
+      opacity: 1;
+      transform: none;
+    }
+  }
+</style>
+</head>
+<body class="page-light">
+
+<div class="cursor-glow" id="glow"></div>
+
+<nav class="nav" id="nav">
+  <a href="index.html" aria-label="Digitallis">
+    <img src="assets/LOGO-DIGITALIS-2026-V2-GRIS.png" alt="Digitallis" class="nav-logo nav-logo-dark"><img src="assets/LOGO-DIGITALIS-2026-V2-BLANC.png" alt="" aria-hidden="true" class="nav-logo nav-logo-light">
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Accueil</a>
+    <div class="nav-dd">
+      <a href="expertises.html">Expertises</a>
+      <div class="nav-dd-menu">
+        <a href="expertise-sites.html"><span>Création de sites</span><span class="dd-sub">Vitrine · One page · Landing</span></a>
+        <a href="expertise-seo.html"><span>Référencement SEO</span><span class="dd-sub">Visibilité Google durable</span></a>
+        <a href="expertise-google-ads.html"><span>Google Ads</span><span class="dd-sub">Search · PMax · Display</span></a>
+        <a href="expertise-reseaux-sociaux.html"><span>Réseaux sociaux</span><span class="dd-sub">Facebook · Instagram · TikTok</span></a>
+        <a href="expertise-ia.html"><span>Intelligence artificielle</span><span class="dd-sub">Allissia · Automatisations</span></a>
+        <a href="expertise-geo.html"><span>Visibilité IA (GEO)</span><span class="dd-sub">ChatGPT · Perplexity</span></a>
+      </div>
+    </div>
+    <a href="allisia.html">Allissia</a>
+    <a href="a-propos.html">À propos</a>
+    <a href="contact.html">Contact</a>
+    <a href="tel:+590602182020" class="nav-phone">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      06 02 18 20 20
+    </a>
+    <a href="#form" class="nav-cta">Audit gratuit</a>
+  </div>
+</nav>
+
+<!-- ───── HERO + FORM ───── -->
+<header class="audit-hero" id="top">
+  <div class="audit-hero-inner">
+    <div class="fade-up">
+      <div class="allisia-label"><span class="pulse"></span> Audit gratuit · Livré en 48h</div>
+      <h1 class="h1-reveal" data-split="words">Découvrez pourquoi vos concurrents attirent <em class="shimmer-em">plus de clients</em> que vous.</h1>
+      <p class="lead">
+        Recevez en 48 heures <strong>un diagnostic complet</strong> de votre visibilité en ligne avec des recommandations concrètes et prioritaires.
+      </p>
+      <p class="sub-lead">
+        On n'analyse pas seulement votre site. On analyse tout votre système d'acquisition.
+      </p>
+      <div class="audit-trust">
+        <span class="rating"><span class="stars">★★★★★</span> 4.5/5 Google</span>
+        <span class="trust-dot"></span>
+        <span>900+ entreprises accompagnées</span>
+        <span class="trust-dot"></span>
+        <span>Google Partner</span>
+        <span class="trust-dot"></span>
+        <span>15 ans d'expérience</span>
+      </div>
+    </div>
+
+    <!-- FORMULAIRE 3 ÉTAPES -->
+    <div class="audit-form fade-up" id="form">
+      <h2>Réalisez votre <em>audit concurrentiel</em></h2>
+      <p class="f-sub">Votre demande sera analysée sous 48h · Toutes les demandes ne sont pas acceptées.</p>
+      <div class="f-dots">
+        <div class="f-dot on" id="ld1"></div>
+        <div class="f-dot" id="ld2"></div>
+        <div class="f-dot" id="ld3"></div>
+      </div>
+
+      <form onsubmit="return false;">
+        <!-- Étape 1 : Informations essentielles -->
+        <div class="f-step on" id="ls1">
+          <div class="f-group">
+            <label for="f-company">Nom de l'entreprise *</label>
+            <input id="f-company" type="text" placeholder="Ex : Coco Kafé" required>
+          </div>
+          <div class="f-group">
+            <label for="f-web">Site web</label>
+            <input id="f-web" type="url" placeholder="https://…">
+          </div>
+          <div class="f-row">
+            <div class="f-group">
+              <label for="f-zone">Zone de chalandise *</label>
+              <input id="f-zone" type="text" placeholder="Ville ou région">
+            </div>
+            <div class="f-group">
+              <label for="f-sector">Secteur d'activité *</label>
+              <input id="f-sector" type="text" placeholder="Ex : Restauration">
+            </div>
+          </div>
+          <div class="f-row">
+            <div class="f-group">
+              <label for="f-size">Taille de l'entreprise</label>
+              <select id="f-size">
+                <option value="">Sélectionnez</option>
+                <option>Indépendant / TPE</option>
+                <option>2 – 10 salariés</option>
+                <option>11 – 50 salariés</option>
+                <option>50+</option>
+              </select>
+            </div>
+            <div class="f-group">
+              <label for="f-clt">Type de clientèle</label>
+              <select id="f-clt">
+                <option value="">Sélectionnez</option>
+                <option>B2C</option>
+                <option>B2B</option>
+                <option>Mix B2B / B2C</option>
+              </select>
+            </div>
+          </div>
+          <button type="button" class="f-btn magnetic" onclick="lS(2)">
+            Suivant
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </div>
+
+        <!-- Étape 2 : Besoins -->
+        <div class="f-step" id="ls2">
+          <div class="f-group">
+            <label for="f-pain">Quel est votre principal frein à l'acquisition ? *</label>
+            <select id="f-pain">
+              <option value="">Sélectionnez</option>
+              <option>Manque de visibilité</option>
+              <option>Leads insuffisants ou de mauvaise qualité</option>
+              <option>Difficulté à se différencier</option>
+              <option>Dépendance au bouche-à-oreille</option>
+              <option>Autre</option>
+            </select>
+          </div>
+          <div class="f-group">
+            <label for="f-expect">Qu'attendez-vous concrètement de cet audit ?</label>
+            <textarea id="f-expect" placeholder="Vos attentes principales…"></textarea>
+          </div>
+          <div class="f-row">
+            <div class="f-group">
+              <label for="f-agency">Avez-vous déjà travaillé avec une agence ?</label>
+              <select id="f-agency">
+                <option value="">Sélectionnez</option>
+                <option>Oui, avec résultats</option>
+                <option>Oui, sans résultats</option>
+                <option>Non, jamais</option>
+              </select>
+            </div>
+            <div class="f-group">
+              <label for="f-budget">Budget marketing mensuel</label>
+              <select id="f-budget">
+                <option value="">Sélectionnez</option>
+                <option>0 €</option>
+                <option>&lt; 500 €</option>
+                <option>500 – 1 500 €</option>
+                <option>1 500 €+</option>
+              </select>
+            </div>
+          </div>
+          <div class="f-btns">
+            <button type="button" class="f-btn f-btn-ghost magnetic" onclick="lS(1)">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+              Retour
+            </button>
+            <button type="button" class="f-btn magnetic" onclick="lS(3)">
+              Suivant
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Étape 3 : Contact -->
+        <div class="f-step" id="ls3">
+          <div class="f-group">
+            <label for="f-dec">Êtes-vous décisionnaire sur les sujets marketing / acquisition ?</label>
+            <select id="f-dec">
+              <option value="">Sélectionnez</option>
+              <option>Oui</option>
+              <option>Non</option>
+            </select>
+          </div>
+          <div class="f-group">
+            <label for="f-email">Email professionnel *</label>
+            <input id="f-email" type="email" placeholder="votre@email.com" required>
+          </div>
+          <div class="f-group">
+            <label for="f-phone">Téléphone *</label>
+            <input id="f-phone" type="tel" placeholder="06 XX XX XX XX" required>
+          </div>
+          <div class="f-btns">
+            <button type="button" class="f-btn f-btn-ghost magnetic" onclick="lS(2)">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+              Retour
+            </button>
+            <button type="submit" class="f-btn magnetic">
+              Envoyer ma demande
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+          </div>
+          <p class="f-trust">Données confidentielles · Analyse sous 48h · Sans engagement</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</header>
+
+<script>
+function lS(n){
+  for(let i=1;i<=3;i++){
+    document.getElementById('ls'+i).className = 'f-step' + (i===n ? ' on' : '');
+    document.getElementById('ld'+i).className = 'f-dot' + (i<=n ? ' on' : '');
+  }
+  // Smooth scroll to top of form on mobile
+  if (window.innerWidth < 960) {
+    document.getElementById('form').scrollIntoView({behavior:'smooth', block:'start'});
+  }
+}
+</script>
+
+<!-- ───── NOTRE DEMARCHE ───── -->
+<section class="theme-cream">
+  <div class="section-wrap">
+    <div class="fade-up" style="max-width:760px;">
+      <div class="eyebrow">Notre démarche</div>
+      <h2 class="section-title">Comprendre comment prendre <em>l'avantage digital</em> sur votre marché.</h2>
+      <p class="section-lead">
+        Certaines entreprises occupent tout l'espace digital. D'autres, pourtant solides sur leur marché, restent peu visibles. L'audit identifie pourquoi — et comment passer devant.
+      </p>
+    </div>
+
+    <div class="dg-grid cols-3 fade-up" data-spotlight>
+      <div class="dg-card">
+        <div class="dg-tag">L'objectif</div>
+        <h3>Votre place <em>sur votre marché</em></h3>
+        <p>On analyse votre visibilité sur internet face à vos concurrents et on identifie comment passer devant. Sur Google, les réseaux sociaux, les IA et tous les canaux où vos clients vous cherchent.</p>
+        <div class="hl-block" style="margin:20px 0 0;padding:16px 20px;font-size:14px;">
+          L'audit reflète la réalité perçue par les internautes — <strong>celle qui conditionne l'acquisition</strong>.
+        </div>
+      </div>
+      <div class="dg-card">
+        <div class="dg-tag">Notre approche</div>
+        <h3>Basée sur <em>des données réelles</em></h3>
+        <p>L'audit repose sur l'analyse de données accessibles publiquement : visibilité, contenus, positionnement concurrentiel, avis clients, présence sur les réseaux sociaux et les moteurs IA.</p>
+        <div class="hl-block" style="margin:20px 0 0;padding:16px 20px;font-size:14px;">
+          <strong>Une analyse fondée sur des faits</strong>, pas sur des suppositions.
+        </div>
+      </div>
+      <div class="dg-card">
+        <div class="dg-tag">Notre sélection</div>
+        <h3>Pour les entreprises <em>à fort potentiel</em></h3>
+        <p>On sélectionne les entreprises présentant un fort potentiel de rattrapage digital — celles dont le décalage entre notoriété réelle et visibilité digitale est le plus important.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:20px;">
+          <span class="query-tag" style="font-family:'Outfit',sans-serif;text-transform:none;letter-spacing:0;font-size:13px;">Interprété par <strong>nos experts</strong></span>
+          <span class="query-tag" style="font-family:'Outfit',sans-serif;text-transform:none;letter-spacing:0;font-size:13px;"><strong>10</strong> audits / semaine</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── CE QUE VOUS RECEVEZ ───── -->
+<section>
+  <div class="section-wrap">
+    <div class="fade-up" style="max-width:760px;">
+      <div class="eyebrow">Ce que vous recevez</div>
+      <h2 class="section-title">Un diagnostic complet, <em>pas un simple score</em>.</h2>
+      <p class="section-lead">
+        Un rapport PDF clair, argumenté et actionnable. Pas un export d'outil automatique — une analyse interprétée par un humain.
+      </p>
+    </div>
+
+    <div class="audit-preview fade-up" style="margin: 56px 0 8px; border-radius: 24px; overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow-lg); aspect-ratio: 21/9; position: relative;">
+      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=75&auto=format&fit=crop" alt="Aperçu d'un audit Digitallis — analyse de visibilité et tableau de bord" loading="lazy" width="1600" height="686" style="width:100%; height:100%; object-fit: cover;">
+      <div style="position:absolute; inset:0; background: linear-gradient(180deg, rgba(28,31,38,0.05) 0%, rgba(28,31,38,0.5) 100%);"></div>
+      <div style="position:absolute; bottom:24px; left:24px; right:24px; display:flex; gap:10px; flex-wrap:wrap;">
+        <span class="query-tag" style="background: rgba(255,255,255,0.95); color: var(--ink); border-color: transparent;">Rapport PDF · 30+ pages</span>
+        <span class="query-tag" style="background: rgba(250,204,20,0.95); color: var(--ink); border-color: transparent;">Visibilité · Concurrence · Actions</span>
+      </div>
+    </div>
+
+    <div class="dg-grid cols-2 fade-up" data-spotlight>
+      <div class="dg-card">
+        <div class="dg-tag">01 · Visibilité</div>
+        <h3>Votre visibilité <em>réelle</em></h3>
+        <p>Où vous apparaissez sur Google, les réseaux sociaux et les IA — et surtout, où vous n'apparaissez pas. Analyse complète de votre positionnement actuel.</p>
+      </div>
+      <div class="dg-card">
+        <div class="dg-tag">02 · Concurrence</div>
+        <h3>Vos concurrents <em>décryptés</em></h3>
+        <p>Analyse des 3 concurrents les mieux positionnés dans votre zone. Leurs forces, leurs failles et ce que vous pouvez exploiter pour les dépasser.</p>
+      </div>
+      <div class="dg-card">
+        <div class="dg-tag">03 · Opportunités</div>
+        <h3>Vos leviers <em>inexploités</em></h3>
+        <p>Les canaux de visibilité où votre entreprise est en retrait par rapport à vos concurrents — et les leads que vous perdez à cause de ces angles morts.</p>
+      </div>
+      <div class="dg-card">
+        <div class="dg-tag">04 · Actions</div>
+        <h3>3 actions <em>prioritaires</em></h3>
+        <p>Pas de jargon ni de théorie. Trois actions concrètes classées par impact pour commencer à progresser immédiatement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── COMPARAISON (dark) ───── -->
+<section class="sec-dark">
+  <div class="section-wrap sec-inner">
+    <div class="fade-up" style="max-width:760px;">
+      <div class="eyebrow">Comparaison</div>
+      <h2 class="section-title">Avec ou sans <em>système d'acquisition</em>.</h2>
+      <p class="section-lead">
+        La différence ne se mesure pas sur une métrique isolée. Elle se voit dans la cohérence d'ensemble du dispositif digital.
+      </p>
+    </div>
+
+    <div class="cmp-wrap fade-up">
+      <table class="cmp-table">
+        <thead>
+          <tr>
+            <th>Sans système</th>
+            <th>Avec Digitallis</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Invisible sur Google et les réseaux sociaux</td>
+            <td>Première page sur vos requêtes clés</td>
+          </tr>
+          <tr>
+            <td>Site web dépassé et lent</td>
+            <td>Site rapide, optimisé, qui convertit</td>
+          </tr>
+          <tr>
+            <td>Appels manqués et clients perdus</td>
+            <td>Allissia répond 24h/24 et prend les RDV</td>
+          </tr>
+          <tr>
+            <td>Pas de suivi ni de mesure</td>
+            <td>Tableau de bord avec métriques en temps réel</td>
+          </tr>
+          <tr>
+            <td>Actions isolées sans cohérence</td>
+            <td>Système intégré visibilité + conversion + IA</td>
+          </tr>
+          <tr>
+            <td>Budget dépensé sans résultat clair</td>
+            <td>Chaque euro investi est tracé et optimisé</td>
+          </tr>
+          <tr>
+            <td>Absent des résultats IA (ChatGPT, Perplexity)</td>
+            <td>Référencé par les moteurs IA et classiques</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ───── FAQ ───── -->
+<section class="faq theme-light" id="faq">
+  <div class="faq-header fade-up">
+    <div class="eyebrow">Questions sur l'audit</div>
+    <h2 class="section-title">Tout savoir <em>avant de vous lancer</em>.</h2>
+  </div>
+  <div class="faq-native fade-up">
+    <details>
+      <summary>L'audit est-il vraiment gratuit ?</summary>
+      <p>Oui, 100 % gratuit et sans engagement. C'est notre manière de démontrer notre expertise et d'évaluer si nous pouvons réellement vous aider avant toute proposition commerciale.</p>
+    </details>
+    <details>
+      <summary>Que dois-je fournir pour l'audit ?</summary>
+      <p>Simplement votre nom, votre entreprise, votre site web (s'il existe) et vos coordonnées. Nous nous chargeons de tout le reste : analyse technique, SEO, concurrence, réseaux sociaux, recommandations.</p>
+    </details>
+    <details>
+      <summary>En combien de temps reçois-je le rapport ?</summary>
+      <p>Vous recevez votre rapport personnalisé sous 48 heures ouvrées par email, avec un document PDF détaillé et une proposition d'échange téléphonique pour en discuter.</p>
+    </details>
+    <details>
+      <summary>Suis-je obligé de travailler avec vous ensuite ?</summary>
+      <p>Absolument pas. L'audit est sans engagement. Vous pouvez l'utiliser librement, le confier à un autre prestataire ou le mettre en œuvre vous-même. Nous pensons simplement que nos recommandations parleront d'elles-mêmes.</p>
+    </details>
+    <details>
+      <summary>Je n'ai pas de site web, puis-je quand même faire l'audit ?</summary>
+      <p>Bien sûr. Si vous n'avez pas encore de site, nous analysons votre présence globale (Google Business, réseaux sociaux, avis clients) et vos concurrents pour identifier vos premières opportunités.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ───── FINAL CTA ───── -->
+<section class="final-cta theme-cream">
+  <div class="fade-up">
+    <h2>Prêt à découvrir <em>votre potentiel de croissance</em> ?</h2>
+    <p>Demandez votre audit gratuit maintenant. Livré en 48h, sans engagement.</p>
+    <div class="ctas">
+      <a href="#form" class="btn btn-primary magnetic">
+        Demander mon audit
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="tel:+590602182020" class="btn btn-ghost magnetic">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Préférer un appel
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ───── FOOTER ───── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="assets/LOGO-DIGITALIS-2026-V2-GRIS.png" alt="Digitallis" class="logo-f">
+      <p>Systèmes d'acquisition digitale &amp; IA pour PME. Antilles, France, Europe.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Expertises</h4>
+      <ul>
+        <li><a href="expertise-sites.html">Création de sites</a></li>
+        <li><a href="expertise-seo.html">Référencement SEO</a></li>
+        <li><a href="expertise-google-ads.html">Google Ads</a></li>
+        <li><a href="expertise-reseaux-sociaux.html">Réseaux sociaux</a></li>
+        <li><a href="expertise-ia.html">Intelligence artificielle</a></li>
+        <li><a href="expertise-geo.html">Visibilité IA (GEO)</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+590602182020">06 02 18 20 20</a></li>
+        <li><a href="mailto:info@digitallis.fr">info@digitallis.fr</a></li>
+        <li style="color:rgba(255,255,255,0.6);font-size:14px;">195 rue François Fresneau<br>97122 Baie-Mahault<br>Guadeloupe</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Agence</h4>
+      <ul>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="allisia.html">Allissia</a></li>
+        <li><a href="blog.html">Le Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="audit.html">Audit gratuit</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Digitallis · Tous droits réservés</span>
+    <span>Baie-Mahault · Guadeloupe · FR</span>
+  </div>
+</footer>
+
+<!-- Sticky mobile CTA -->
+<div class="sticky-cta">
+  <a href="#form">
+    Demander mon audit gratuit
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+  </a>
+</div>
+
+<script>
+(function(){
+  // ─── Split-text reveal sur le H1 ───
+  // Wrap chaque mot dans un span pour cascade animation, sans casser l'<em> interne
+  const h1 = document.querySelector('.h1-reveal');
+  if (h1) {
+    // On split uniquement les nœuds texte de premier niveau ;
+    // les éléments comme <em> sont traités comme un seul "mot" pour préserver
+    // le shimmer (background-clip: text ne traverse pas les enfants inline-block).
+    const fragment = document.createDocumentFragment();
+    h1.childNodes.forEach((child) => {
+      if (child.nodeType === Node.TEXT_NODE) {
+        const parts = child.textContent.split(/(\s+)/);
+        parts.forEach((p) => {
+          if (/^\s+$/.test(p)) {
+            const space = document.createElement('span');
+            space.className = 'word-space';
+            space.innerHTML = '&nbsp;';
+            fragment.appendChild(space);
+          } else if (p.length) {
+            const span = document.createElement('span');
+            span.className = 'word';
+            span.textContent = p;
+            fragment.appendChild(span);
+          }
+        });
+      } else if (child.nodeType === Node.ELEMENT_NODE) {
+        const clone = child.cloneNode(true);
+        clone.classList.add('word');
+        fragment.appendChild(clone);
+      }
+    });
+    h1.innerHTML = '';
+    h1.appendChild(fragment);
+
+    // Stagger delay sur chaque mot
+    const words = h1.querySelectorAll('.word');
+    words.forEach((w, i) => {
+      w.style.transitionDelay = (i * 0.07) + 's';
+    });
+
+    // Trigger l'animation au load
+    requestAnimationFrame(() => {
+      setTimeout(() => h1.classList.add('visible'), 200);
+    });
+  }
+
+  // ─── Spotlight effect sur les cards (suivi souris) ───
+  document.querySelectorAll('.dg-card').forEach((card) => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const mx = ((e.clientX - rect.left) / rect.width) * 100;
+      const my = ((e.clientY - rect.top) / rect.height) * 100;
+      card.style.setProperty('--mx', mx + '%');
+      card.style.setProperty('--my', my + '%');
+    });
+  });
+
+  // ─── Cascade reveal sur la table de comparaison ───
+  const cmpWrap = document.querySelector('.cmp-wrap');
+  if (cmpWrap) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    observer.observe(cmpWrap);
+  }
+
+  // ─── Parallax léger du hero au scroll ───
+  const hero = document.querySelector('.audit-hero');
+  if (hero && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const y = window.scrollY;
+          if (y < window.innerHeight) {
+            hero.style.setProperty('--parallax-y', (y * 0.15) + 'px');
+            const heroInner = hero.querySelector('.audit-hero-inner');
+            if (heroInner) {
+              heroInner.style.transform = `translateY(${y * 0.08}px)`;
+              heroInner.style.opacity = Math.max(0, 1 - y / (window.innerHeight * 0.9));
+            }
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  }
+})();
+</script>
+<script src="shared.js"></script>
+</body>
+</html>

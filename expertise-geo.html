@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visibilité IA — Être recommandé par ChatGPT &amp; Perplexity | Digitallis</title>
+<meta name="description" content="Vos clients demandent à ChatGPT et Perplexity. Si vous n'apparaissez pas, vos concurrents prennent la place. Digitallis vous rend visible dans les réponses des IA.">
+<meta name="keywords" content="GEO Guadeloupe, référencement IA Antilles, visibilité ChatGPT, optimisation Perplexity, AEO entreprise, llms.txt">
+<link rel="canonical" href="https://www.digitallis.fr/expertise-geo">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Visibilité IA — Être recommandé par ChatGPT & Perplexity | Digitallis">
+<meta property="og:description" content="Vos clients demandent à ChatGPT et Perplexity. Si vous n'apparaissez pas, vos concurrents prennent la place. Digitallis vous rend visible dans les réponses des IA.">
+<meta property="og:url" content="https://www.digitallis.fr/expertise-geo">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Référencement IA (GEO) — Guadeloupe",
+  "serviceType": "Generative Engine Optimization",
+  "description": "Optimisation pour être cité par ChatGPT, Perplexity, Gemini et Google AI Overviews. Audit GEO, llms.txt, schémas structurés, contenus citables, mentions tierces.",
+  "provider": { "@type": "Organization", "name": "Digitallis", "url": "https://www.digitallis.fr/" },
+  "areaServed": [
+    { "@type": "Place", "name": "Guadeloupe" },
+    { "@type": "Place", "name": "Martinique" },
+    { "@type": "Country", "name": "France" }
+  ],
+  "url": "https://www.digitallis.fr/expertise-geo"
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<style>
+  /* Hero : prompt examples stack */
+  .geo-visual {
+    position: relative; max-width: 480px; margin: 0 auto;
+    display: flex; flex-direction: column; gap: 12px;
+    padding: 20px 0;
+  }
+  .geo-prompt {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 16px; padding: 16px 20px;
+    box-shadow: var(--shadow-md);
+    display: flex; align-items: center; gap: 12px;
+    animation: orbFloat 6s ease-in-out infinite;
+  }
+  .geo-prompt:nth-child(1) { animation-delay: 0s; }
+  .geo-prompt:nth-child(2) { animation-delay: 1s; transform: translateX(20px); }
+  .geo-prompt:nth-child(3) { animation-delay: 2s; }
+  .geo-prompt .ico {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: var(--accent-soft); color: var(--accent-dk);
+    display: inline-flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .geo-prompt .txt {
+    font-family: 'Outfit', sans-serif; font-size: 14px;
+    color: var(--text); line-height: 1.4; font-weight: 500;
+  }
+  .geo-prompt .txt em {
+    font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400;
+  }
+  .geo-answer {
+    margin-top: 12px; padding: 18px 22px;
+    background: linear-gradient(135deg, rgba(250, 204, 20, 0.12), rgba(250, 204, 20, 0.04));
+    border: 1px solid rgba(250, 204, 20, 0.3);
+    border-radius: 16px; box-shadow: var(--shadow-md);
+  }
+  .geo-answer-label {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    color: var(--accent-dk); letter-spacing: 0.15em;
+    text-transform: uppercase; font-weight: 600; margin-bottom: 8px;
+  }
+  .geo-answer-txt {
+    font-size: 14px; color: var(--text); line-height: 1.5;
+  }
+  .geo-answer-txt strong { color: var(--accent-dk); }
+</style>
+</head>
+<body>
+
+<div class="cursor-glow" id="glow"></div>
+
+<nav class="nav" id="nav">
+  <a href="index.html" aria-label="Digitallis">
+    <img src="assets/LOGO-DIGITALIS-2026-V2-GRIS.png" alt="Digitallis" class="nav-logo nav-logo-dark"><img src="assets/LOGO-DIGITALIS-2026-V2-BLANC.png" alt="" aria-hidden="true" class="nav-logo nav-logo-light">
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Accueil</a>
+    <div class="nav-dd">
+      <a href="expertises.html">Expertises</a>
+      <div class="nav-dd-menu">
+        <a href="expertise-sites.html"><span>Création de sites</span><span class="dd-sub">Vitrine · One page · Landing</span></a>
+        <a href="expertise-seo.html"><span>Référencement SEO</span><span class="dd-sub">Visibilité Google durable</span></a>
+        <a href="expertise-google-ads.html"><span>Google Ads</span><span class="dd-sub">Search · PMax · Display</span></a>
+        <a href="expertise-reseaux-sociaux.html"><span>Réseaux sociaux</span><span class="dd-sub">Facebook · Instagram · TikTok</span></a>
+        <a href="expertise-ia.html"><span>Intelligence artificielle</span><span class="dd-sub">Allissia · Automatisations</span></a>
+        <a href="expertise-geo.html" class="active"><span>Visibilité IA (GEO)</span><span class="dd-sub">ChatGPT · Perplexity</span></a>
+      </div>
+    </div>
+    <a href="allisia.html">Allissia</a>
+    <a href="a-propos.html">À propos</a>
+    <a href="contact.html">Contact</a>
+    <a href="audit.html" class="nav-cta">Audit gratuit</a>
+  </div>
+</nav>
+
+<!-- ───── PAGE HEADER ───── -->
+<header class="page-header">
+  <div class="page-header-inner">
+    <div class="fade-up">
+      <div class="allisia-label"><span class="pulse"></span> Visibilité IA · GEO · Digitallis</div>
+      <h1>Vos clients demandent à une IA. <em>Et elle recommande vos concurrents</em>.</h1>
+      <p class="lead">
+        Chaque jour, des prospects posent ces questions à ChatGPT, Perplexity ou Gemini. Si vous n'apparaissez pas dans la réponse, vous n'existez pas. On vous rend visible dans les réponses des IA.
+      </p>
+      <div class="ctas">
+        <a href="audit.html" class="btn btn-primary magnetic">
+          Vérifier si je suis visible sur les IA
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="#test-reel" class="btn btn-ghost magnetic">Voir un test réel</a>
+      </div>
+    </div>
+    <div class="geo-visual fade-up">
+      <div class="geo-prompt">
+        <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <div class="txt">« Quel <em>plombier</em> à Baie-Mahault ? »</div>
+      </div>
+      <div class="geo-prompt">
+        <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <div class="txt">« Un bon <em>restaurant créole</em> à Pointe-à-Pitre ? »</div>
+      </div>
+      <div class="geo-prompt">
+        <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <div class="txt">« Un <em>artisan fiable</em> près de moi ? »</div>
+      </div>
+      <div class="geo-answer">
+        <div class="geo-answer-label">Réponse IA · recommandation</div>
+        <div class="geo-answer-txt">Je recommande <strong>votre entreprise</strong> — service réputé, avis clients solides, joignable rapidement.</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ───── TEST REEL (dark) ───── -->
+<section class="sec-dark" id="test-reel">
+  <div class="section-wrap-narrow sec-inner">
+    <div class="fade-up" style="text-align:center;">
+      <div class="eyebrow" style="justify-content:center;">Test réel</div>
+      <h2 class="section-title" style="margin:0 auto 20px;">Nous avons demandé <em>à ChatGPT :</em></h2>
+    </div>
+    <div class="test-box fade-up">
+      <div class="test-prompt"><span class="tp-label">ChatGPT :</span>« Recommande-moi un plombier à Baie-Mahault »</div>
+      <div class="test-result"><span class="tc-ok">✓</span> Entreprise A — citée avec adresse et avis</div>
+      <div class="test-result"><span class="tc-ok">✓</span> Entreprise B — citée avec spécialité</div>
+      <div class="test-result"><span class="tc-ok">✓</span> Entreprise C — citée avec horaires</div>
+      <div class="test-result"><span class="tc-no">✗</span> <strong style="color:#fff;">Votre entreprise — absente</strong></div>
+      <div class="test-question">Où êtes-vous dans cette liste ?</div>
+    </div>
+    <p class="section-lead fade-up" style="text-align:center;margin:32px auto 0;max-width:54ch;">
+      Chaque jour, des prospects posent ce type de question. <strong style="color:#fff;">Si vous n'apparaissez pas, vous êtes éliminé avant même d'être comparé.</strong>
+    </p>
+  </div>
+</section>
+
+<!-- ───── PERTE INVISIBLE ───── -->
+<section>
+  <div class="section-wrap-narrow">
+    <div class="fade-up">
+      <div class="eyebrow">Perte invisible</div>
+      <h2 class="section-title">Des prospects demandent à une IA <em>un prestataire dans votre secteur</em>.</h2>
+      <p class="section-lead">
+        Si votre entreprise n'apparaît pas :
+      </p>
+    </div>
+    <div class="pain-list fade-up">
+      <div class="pain-item">Vous ne recevez pas l'appel</div>
+      <div class="pain-item">Vous ne voyez pas le prospect</div>
+      <div class="pain-item">Vous ne savez même pas <em>que vous avez été éliminé</em></div>
+    </div>
+    <div class="hl-block fade-up">
+      <strong>C'est une perte silencieuse. Et elle est déjà en train de se produire.</strong>
+    </div>
+  </div>
+</section>
+
+<!-- ───── LE CHANGEMENT (dark) ───── -->
+<section class="sec-dark">
+  <div class="section-wrap-narrow sec-inner">
+    <div class="fade-up">
+      <div class="eyebrow">Le changement</div>
+      <h2 class="section-title">Vos clients ne cherchent plus seulement <em>sur Google</em>.</h2>
+    </div>
+    <div class="shift-grid fade-up">
+      <div class="shift-card">
+        <div class="shift-label">Avant</div>
+        <p>Le client cherchait<br>→ comparait<br>→ choisissait</p>
+      </div>
+      <div class="shift-card active">
+        <div class="shift-label">Aujourd'hui</div>
+        <p><strong>L'IA choisit pour lui</strong><br>→ recommande 2 ou 3 entreprises<br>→ le choix est déjà fait</p>
+      </div>
+    </div>
+    <div class="hl-block dark fade-up" style="margin-top:40px;">
+      Le SEO devient une recommandation. <strong>Si vous n'êtes pas dans la réponse, vous êtes hors jeu.</strong>
+    </div>
+  </div>
+</section>
+
+<!-- ───── LE PROBLEME ───── -->
+<section class="theme-cream">
+  <div class="section-wrap-narrow">
+    <div class="fade-up">
+      <div class="eyebrow">Le problème</div>
+      <h2 class="section-title">Bon service, clients satisfaits, présence Google correcte. <em>Mais les IA ne vous citent pas</em>.</h2>
+      <p class="section-lead">
+        <strong>Résultat :</strong> vos concurrents prennent la place. Vous perdez des clients. Sans jamais le savoir.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ───── L'OBJECTIF ───── -->
+<section>
+  <div class="section-wrap-narrow">
+    <div class="fade-up">
+      <div class="eyebrow">L'objectif</div>
+      <h2 class="section-title">Quand un prospect interroge une IA, votre entreprise <em>doit être</em> :</h2>
+    </div>
+    <div class="how-list fade-up">
+      <div class="how-item">Citée automatiquement</div>
+      <div class="how-item">Présentée comme fiable</div>
+      <div class="how-item">Mise en avant avec vos points forts</div>
+      <div class="how-item">Choisie <em>sans même être comparée</em></div>
+    </div>
+    <div class="hl-block fade-up">
+      <strong>C'est le nouveau bouche-à-oreille numérique.</strong>
+    </div>
+  </div>
+</section>
+
+<!-- ───── COMMENT CA MARCHE ───── -->
+<section class="theme-cream">
+  <div class="section-wrap">
+    <div class="fade-up" style="max-width:760px;">
+      <div class="eyebrow">Comment ça marche</div>
+      <h2 class="section-title">Nous travaillons <em>l'ensemble de votre présence digitale</em>.</h2>
+      <p class="section-lead">
+        Votre site, vos fiches, vos contenus, la cohérence de vos informations en ligne, les signaux de crédibilité (avis, mentions, citations), la structuration de vos contenus pour les IA.
+      </p>
+    </div>
+    <div class="dg-grid cols-3 fade-up">
+      <div class="dg-card">
+        <div class="dg-num">01</div>
+        <h3><em>Audit</em></h3>
+        <p>Ce que les IA disent de vous. Ce qu'elles disent de vos concurrents. Où vous êtes absent.</p>
+      </div>
+      <div class="dg-card">
+        <div class="dg-num">02</div>
+        <h3><em>Optimisation</em></h3>
+        <p>On structure votre présence, on renforce votre crédibilité, on vous rend recommandable.</p>
+      </div>
+      <div class="dg-card">
+        <div class="dg-num">03</div>
+        <h3><em>Suivi</em></h3>
+        <p>On teste régulièrement, on mesure les réponses, on améliore en continu.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── IMPORTANT ───── -->
+<section>
+  <div class="section-wrap-narrow">
+    <div class="fade-up">
+      <div class="eyebrow">Important</div>
+      <h2 class="section-title">La visibilité IA <em>ne remplace pas</em> votre SEO, vos réseaux ou votre site.</h2>
+      <p class="section-lead">
+        <strong>Elle s'appuie dessus.</strong>
+      </p>
+      <p class="section-lead" style="margin-top:16px;">
+        C'est l'ensemble de votre présence digitale qui permet aux IA de vous recommander.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ───── POURQUOI DIGITALLIS (dark) ───── -->
+<section class="sec-dark">
+  <div class="section-wrap-narrow sec-inner">
+    <div class="fade-up">
+      <div class="eyebrow">Pourquoi Digitallis</div>
+      <h2 class="section-title">15 ans d'expertise en référencement. <em>Appliquée aux nouveaux moteurs de recommandation</em>.</h2>
+      <p class="section-lead">
+        Très peu d'entreprises travaillent ce sujet. <strong style="color:var(--accent);">C'est maintenant que l'avantage se prend.</strong>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ───── FAQ ───── -->
+<section class="faq theme-light" id="faq">
+  <div class="faq-header fade-up">
+    <div class="eyebrow">Questions fréquentes</div>
+    <h2 class="section-title">Réponses <em>directes</em>.</h2>
+  </div>
+  <div class="faq-native fade-up">
+    <details>
+      <summary>C'est quoi être visible sur les IA ?</summary>
+      <p>Être cité directement dans les réponses de ChatGPT, Perplexity, Gemini, Claude avec vos informations (nom, adresse, spécialité, points forts).</p>
+    </details>
+    <details>
+      <summary>Est-ce vraiment utilisé ?</summary>
+      <p>Oui, de plus en plus chaque mois. Les prospects adoptent ces outils pour gagner du temps sur la comparaison — et font confiance aux recommandations.</p>
+    </details>
+    <details>
+      <summary>Ça remplace Google ?</summary>
+      <p>Non. Ça s'ajoute. Et ça prend de plus en plus de place dans le parcours de décision.</p>
+    </details>
+    <details>
+      <summary>Combien de temps avant des résultats ?</summary>
+      <p>Quelques semaines à quelques mois, selon votre présence actuelle et le niveau de concurrence dans votre secteur.</p>
+    </details>
+    <details>
+      <summary>Est-ce adapté aux PME ?</summary>
+      <p>Oui, et c'est même un avantage aujourd'hui. Très peu d'acteurs travaillent ce sujet — la fenêtre d'avance se prend maintenant.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ───── FINAL CTA ───── -->
+<section class="final-cta theme-cream">
+  <div class="fade-up">
+    <h2>Aujourd'hui, vous ne savez même pas <em>si les IA parlent de vous</em>.</h2>
+    <p>Vos concurrents commencent déjà à apparaître. Dans quelques mois, ce sera la norme. La question n'est pas de savoir si ça va arriver — <strong>c'est de savoir si vous serez dedans</strong>.</p>
+    <div class="ctas">
+      <a href="audit.html" class="btn btn-primary magnetic">
+        Voir où je suis invisible
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="expertise-seo.html" class="btn btn-ghost magnetic">Voir le SEO classique</a>
+    </div>
+  </div>
+</section>
+
+<!-- ───── FOOTER ───── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="assets/LOGO-DIGITALIS-2026-V2-GRIS.png" alt="Digitallis" class="logo-f">
+      <p>Systèmes d'acquisition digitale &amp; IA pour PME. Antilles, France, Europe.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Expertises</h4>
+      <ul>
+        <li><a href="expertise-sites.html">Création de sites</a></li>
+        <li><a href="expertise-seo.html">Référencement SEO</a></li>
+        <li><a href="expertise-google-ads.html">Google Ads</a></li>
+        <li><a href="expertise-reseaux-sociaux.html">Réseaux sociaux</a></li>
+        <li><a href="expertise-ia.html">Intelligence artificielle</a></li>
+        <li><a href="expertise-geo.html">Visibilité IA (GEO)</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+590602182020">06 02 18 20 20</a></li>
+        <li><a href="mailto:info@digitallis.fr">info@digitallis.fr</a></li>
+        <li style="color:rgba(255,255,255,0.6);font-size:14px;">195 rue François Fresneau<br>97122 Baie-Mahault<br>Guadeloupe</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Agence</h4>
+      <ul>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="allisia.html">Allissia</a></li>
+        <li><a href="blog.html">Le Blog</a></li>
+        <li><a href="audit.html">Audit gratuit</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Digitallis · Tous droits réservés</span>
+    <span>Baie-Mahault · Guadeloupe · FR</span>
+  </div>
+</footer>
+
+<script src="shared.js"></script>
+</body>
+</html>

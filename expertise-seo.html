@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Référencement naturel (SEO) en Guadeloupe — Digitallis</title>
+<meta name="description" content="Vos concurrents prennent les clients qui devraient vous trouver sur Google. Digitallis met en place un SEO orienté résultats pour les entreprises en Guadeloupe.">
+<meta name="keywords" content="SEO Guadeloupe, référencement naturel Antilles, agence SEO Pointe-à-Pitre, SEO local Baie-Mahault, audit SEO Guadeloupe">
+<link rel="canonical" href="https://www.digitallis.fr/expertise-seo">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Référencement naturel (SEO) en Guadeloupe — Digitallis">
+<meta property="og:description" content="Apparaissez en première page de Google sur les recherches de vos clients aux Antilles. Méthode SEO orientée résultats par Digitallis.">
+<meta property="og:url" content="https://www.digitallis.fr/expertise-seo">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Référencement naturel (SEO) — Guadeloupe",
+  "serviceType": "Search Engine Optimization",
+  "description": "Référencement naturel local et technique pour PME en Guadeloupe et aux Antilles. Audit SEO, optimisations techniques, contenu, netlinking et suivi mensuel.",
+  "provider": { "@type": "Organization", "name": "Digitallis", "url": "https://www.digitallis.fr/" },
+  "areaServed": [
+    { "@type": "Place", "name": "Guadeloupe" },
+    { "@type": "Place", "name": "Martinique" },
+    { "@type": "Country", "name": "France" }
+  ],
+  "url": "https://www.digitallis.fr/expertise-seo"
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<style>
+  /* Hero : SERP mock */
+  .seo-visual { position: relative; aspect-ratio: 1/1; max-width: 480px; margin: 0 auto; }
+  .serp {
+    position: absolute; inset: 6%; border-radius: 20px;
+    background: #fff; border: 1px solid var(--border);
+    box-shadow: var(--shadow-lg);
+    padding: 22px; overflow: hidden;
+    animation: orbFloat 7s ease-in-out infinite;
+  }
+  .serp-search {
+    display: flex; align-items: center; gap: 10px;
+    background: #F4F2EC; border-radius: 100px;
+    padding: 10px 16px; margin-bottom: 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--text);
+  }
+  .serp-search svg { flex-shrink: 0; color: var(--muted); }
+  .serp-result {
+    padding: 10px 0; border-bottom: 1px solid var(--border);
+  }
+  .serp-result:last-child { border-bottom: none; }
+  .serp-result .r-url {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    color: var(--muted); margin-bottom: 4px;
+  }
+  .serp-result .r-title {
+    font-size: 13px; color: #1A0DAB; font-weight: 500; margin-bottom: 3px;
+  }
+  .serp-result .r-desc {
+    font-size: 10px; color: var(--text-soft); line-height: 1.4;
+  }
+  .serp-result.highlight {
+    background: var(--accent-soft); border-radius: 8px;
+    padding: 10px 12px; border-bottom: none; position: relative;
+  }
+  .serp-result.highlight::before {
+    content: '★ Vous'; position: absolute; top: 8px; right: 10px;
+    font-family: 'JetBrains Mono', monospace; font-size: 9px;
+    color: var(--accent-dk); font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .seo-badge {
+    position: absolute; background: var(--card);
+    border: 1px solid var(--border); border-radius: 100px;
+    padding: 10px 16px; box-shadow: var(--shadow-md);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; font-weight: 600; color: var(--text);
+    white-space: nowrap; letter-spacing: 0.05em;
+    animation: badgeFloat 5s ease-in-out infinite;
+  }
+  .seo-badge.b1 { top: 2%; left: -4%; animation-delay: 0s; color: var(--accent-dk); }
+  .seo-badge.b2 { bottom: 10%; right: -6%; animation-delay: 1.5s; }
+</style>
+</head>
+<body class="page-light">
+
+<div class="cursor-glow" id="glow"></div>
+
+<nav class="nav" id="nav">
+  <a href="index.html" aria-label="Digitallis">
+    <img src="assets/LOGO-DIGITALIS-2026-V2-GRIS.png" alt="Digitallis" class="nav-logo nav-logo-dark"><img src="assets/LOGO-DIGITALIS-2026-V2-BLANC.png" alt="" aria-hidden="true" class="nav-logo nav-logo-light">
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Accueil</a>
+    <div class="nav-dd">
+      <a href="expertises.html">Expertises</a>
+      <div class="nav-dd-menu">
+        <a href="expertise-sites.html"><span>Création de sites</span><span class="dd-sub">Vitrine · One page · Landing</span></a>
+        <a href="expertise-seo.html" class="active"><span>Référencement SEO</span><span class="dd-sub">Visibilité Google durable</span></a>
+        <a href="expertise-google-ads.html"><span>Google Ads</span><span class="dd-sub">Search · PMax · Display</span></a>
+        <a href="expertise-reseaux-sociaux.html"><span>Réseaux sociaux</span><span class="dd-sub">Facebook · Instagram · TikTok</span></a>
+        <a href="expertise-ia.html"><span>Intelligence artificielle</span><span class="dd-sub">Allissia · Automatisations</span></a>
+        <a href="expertise-geo.html"><span>Visibilité IA (GEO)</span><span class="dd-sub">ChatGPT · Perplexity</span></a>
+      </div>
+    </div>
+    <a href="allisia.html">Allissia</a>
+    <a href="a-propos.html">À propos</a>
+    <a href="contact.html">Contact</a>
+    <a href="audit.html" class="nav-cta">Audit gratuit</a>
+  </div>
+</nav>
+
+<!-- ───── PAGE HEADER ───── -->
+<header class="page-header">
+  <div class="page-header-inner">
+    <div class="fade-up">
+      <div class="allisia-label"><span class="pulse"></span> Référencement naturel · Digitallis</div>
+      <h1>Vos concurrents prennent les clients <em>qui devraient vous trouver</em> sur Google.</h1>
+      <p class="lead">
+        Si votre entreprise n'apparaît pas quand vos prospects cherchent vos services, ce sont vos concurrents qui récupèrent les clics, les appels et les demandes. On met en place un SEO orienté résultats.
+      </p>
+      <div class="ctas">
+        <a href="audit.html" class="btn btn-primary magnetic">
+          Demander un audit
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="#approche" class="btn btn-ghost magnetic">Notre approche</a>
+      </div>
+    </div>
+    <div class="seo-visual fade-up">
+      <div class="serp">
+        <div class="serp-search">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          plombier Baie-Mahault
+        </div>
+        <div class="serp-result highlight">
+          <div class="r-url">votre-entreprise.fr</div>
+          <div class="r-title">Votre entreprise — Plombier à Baie-Mahault</div>
+          <div class="r-desc">Intervention 24/7, devis gratuit, artisan certifié en Guadeloupe…</div>
+        </div>
+        <div class="serp-result">
+          <div class="r-url">concurrent-a.fr</div>
+          <div class="r-title">Concurrent A — Plomberie 971</div>
+          <div class="r-desc">Service de plomberie toutes interventions…</div>
+        </div>
+        <div class="serp-result">
+          <div class="r-url">concurrent-b.fr</div>
+          <div class="r-title">Concurrent B — Dépannage plombier</div>
+          <div class="r-desc">Artisan local, disponible rapidement…</div>
+        </div>
+      </div>
+      <div class="seo-badge b1">#1 Position</div>
+      <div class="seo-badge b2">+312% trafic SEO</div>
+    </div>
+  </div>
+</header>
+
+<!-- ───── LE VRAI SUJET ───── -->
+<section class="theme-cream">
+  <div class="section-wrap-narrow">
+    <div class="fade-up">
+      <div class="eyebrow">Le vrai sujet</div>
+      <h2 class="section-title">Être visible sur Google ne sert à rien si cela <em>ne vous apporte pas de clients</em>.</h2>
+      <p class="section-lead">
+        Le référencement naturel ne doit pas être une course aux mots-clés inutiles. Il doit servir un objectif simple : être trouvé au bon moment, par les bonnes personnes, sur les bonnes recherches, avec un site capable de convertir.
+      </p>
+    </div>
+    <div class="hl-block fade-up">
+      Chez Digitallis, nous ne faisons pas du SEO pour produire des rapports. <strong>Nous travaillons votre visibilité pour qu'elle génère de vraies opportunités commerciales.</strong>
+    </div>
+  </div>
+</section>
+
+<!-- ───── CE QUE VOUS PERDEZ ───── -->
+<section class="theme-cream">
+  <div class="section-wrap-narrow">
+    <div class="fade-up">
+      <div class="eyebrow">Ce que vous perdez aujourd'hui</div>
+      <h2 class="section-title">Quand votre entreprise <em>n'apparaît pas</em> sur Google.</h2>
+    </div>
+    <div class="pain-list fade-up">
+      <div class="pain-item">Vos concurrents captent les clics</div>
+      <div class="pain-item">Vos prospects ne vous voient même pas</div>
+      <div class="pain-item">Votre site existe, mais ne travaille pas pour vous</div>
+      <div class="pain-item">Vous dépendez trop du bouche-à-oreille ou de la publicité</div>
+      <div class="pain-item">Vous laissez passer un trafic <em>qualifié</em> qui cherchait déjà votre service</div>
+    </div>
+    <div class="hl-block fade-up">
+      Le référencement naturel n'est pas un bonus. <strong>C'est souvent ce qui fait la différence entre une entreprise visible et une entreprise ignorée.</strong>
+    </div>
+  </div>
+</section>
+
+<!-- ───── NOTRE APPROCHE (dark) ───── -->
+<section class="sec-dark" id="approche">
+  <div class="section-wrap sec-inner">
+    <div class="fade-up" style="max-width:760px;">
+      <div class="eyebrow">Notre approche</div>
+      <h2 class="section-title">Le SEO <em>selon Digitallis</em>.</h2>
+      <p class="section-lead">
+        Le référencement naturel repose sur plusieurs leviers. Nous les travaillons ensemble, dans le bon ordre, avec une logique business.
+      </p>
+    </div>
+    <div class="dg-grid cols-2 dg-dark fade-up" data-spotlight>
+      <div class="dg-card">
+        <div class="dg-tag">01 · Local</div>
+        <h3>SEO <em>local</em></h3>
+        <p>Google Business Profile, citations locales, cohérence des informations, avis clients, positionnement géographique. Indispensable pour être trouvé dans votre zone.</p>
+      </div>
+      <div class="dg-card">
+        <div class="dg-tag">02 · Technique</div>
+        <h3>SEO <em>technique</em></h3>
+        <p>Vitesse, structure, mobile, indexation, hiérarchie des pages, balisage. Les fondations sans lesquelles rien ne tient.</p>
+      </div>
+      <div class="dg-card">
+        <div class="dg-tag">03 · Contenu</div>
+        <h3>SEO <em>de contenu</em></h3>
+        <p>Pages services, pages piliers, articles de blog, longue traîne, contenus adaptés à vos zones géographiques. Ce qui vous rend visible sur les recherches de vos futurs clients.</p>
+      </div>
+      <div class="dg-card">
+        <div class="dg-tag">04 · GEO</div>
+        <h3>Référencement <em>IA / GEO</em></h3>
+        <p>Le SEO évolue. Nous intégrons aussi les logiques de visibilité pour les moteurs IA, les assistants conversationnels et les nouveaux usages de recherche.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── COMMENT NOUS TRAVAILLONS ───── -->
+<section>
+  <div class="section-wrap">
+    <div class="fade-up" style="max-width:760px;">
+      <div class="eyebrow">Comment nous travaillons</div>
+      <h2 class="section-title">Dans le bon ordre. <em>Avec une logique business</em>.</h2>
+    </div>
+    <div class="dg-grid cols-4 fade-up">
+      <div class="dg-card">
+        <div class="dg-num">01</div>
+        <h3><em>Audit</em></h3>
+        <p>Analyse de votre site, votre position actuelle, vos contenus, votre structure et les freins techniques.</p>
+      </div>
+      <div class="dg-card">
+        <div class="dg-num">02</div>
+        <h3><em>Stratégie</em></h3>
+        <p>Identification des requêtes qui comptent : ce que vos clients cherchent, ce que vos concurrents captent.</p>
+      </div>
+      <div class="dg-card">
+        <div class="dg-num">03</div>
+        <h3><em>Optimisation</em></h3>
+        <p>Corrections techniques, contenus optimisés, structure améliorée, maillage interne, balisage, cohérence locale.</p>
+      </div>
+      <div class="dg-card">
+        <div class="dg-num">04</div>
+        <h3><em>Suivi</em></h3>
+        <p>Positions, progrès, nouvelles opportunités. Le référencement n'est pas une action figée — c'est un levier qui s'entretient.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── POUR QUI ───── -->
+<section class="theme-cream">
+  <div class="section-wrap-narrow">
+    <div class="fade-up">
+      <div class="eyebrow">Pour qui</div>
+      <h2 class="section-title">Le SEO est pertinent dès lors que vos clients <em>utilisent Google</em>.</h2>
+    </div>
+    <div class="for-grid fade-up">
+      <div class="for-item">Artisan</div>
+      <div class="for-item">Commerce</div>
+      <div class="for-item">Restaurant</div>
+      <div class="for-item">Profession libérale</div>
+      <div class="for-item">PME B2B ou B2C</div>
+      <div class="for-item">Entreprise locale</div>
+    </div>
+    <p class="section-lead fade-up" style="margin-top:32px;max-width:64ch;">
+      Si vos clients recherchent des expressions comme :
+    </p>
+    <div class="query-tags fade-up">
+      <span class="query-tag">plombier Baie-Mahault</span>
+      <span class="query-tag">restaurant créole Pointe-à-Pitre</span>
+      <span class="query-tag">boutique sanitaire Guadeloupe</span>
+      <span class="query-tag">artisan fiable près de moi</span>
+      <span class="query-tag">entreprise [métier] Guadeloupe</span>
+    </div>
+    <p class="section-lead fade-up" style="margin-top:24px;max-width:64ch;">
+      <strong>… alors le SEO a du sens pour vous.</strong>
+    </p>
+  </div>
+</section>
+
+<!-- ───── CE QUE LE SEO NE DOIT PAS ETRE ───── -->
+<section>
+  <div class="section-wrap-narrow">
+    <div class="fade-up">
+      <div class="eyebrow">Important</div>
+      <h2 class="section-title">Ce que le SEO <em>ne doit pas être</em>.</h2>
+    </div>
+    <div class="not-list fade-up">
+      <div class="not-item">Une liste de mots-clés sans logique</div>
+      <div class="not-item">Du contenu publié pour remplir un blog</div>
+      <div class="not-item">Des rapports impossibles à lire</div>
+      <div class="not-item">Du trafic qui ne convertit jamais</div>
+      <div class="not-item">Une prestation déconnectée du business</div>
+    </div>
+    <div class="hl-block fade-up">
+      <strong>Le SEO doit être un levier d'acquisition durable.</strong>
+    </div>
+  </div>
+</section>
+
+<!-- ───── POURQUOI DIGITALLIS (dark) ───── -->
+<section class="sec-dark">
+  <div class="section-wrap-narrow sec-inner">
+    <div class="fade-up">
+      <div class="eyebrow">Pourquoi Digitallis</div>
+      <h2 class="section-title">Nous ne vendons pas des mots-clés. <em>Nous construisons une visibilité utile</em>.</h2>
+      <p class="section-lead">
+        Plus de 15 ans d'expérience. Une connaissance fine du marché guadeloupéen et antillais. Une lecture business du référencement. Une approche croisée SEO + conversion + IA + acquisition. Et une capacité à relier la visibilité aux vrais résultats.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ───── FAQ ───── -->
+<section class="faq theme-light" id="faq">
+  <div class="faq-header fade-up">
+    <div class="eyebrow">Questions fréquentes</div>
+    <h2 class="section-title">Tout savoir sur <em>le référencement naturel</em>.</h2>
+  </div>
+  <div class="faq-native fade-up">
+    <details>
+      <summary>Combien de temps pour voir des résultats ?</summary>
+      <p>Les premiers effets significatifs apparaissent entre 3 et 6 mois, selon votre secteur, votre concurrence et votre point de départ.</p>
+    </details>
+    <details>
+      <summary>Quelle différence entre SEO et Google Ads ?</summary>
+      <p>Le SEO vous positionne dans les résultats naturels — plus lent mais plus durable. Google Ads dans les résultats sponsorisés — plus immédiat mais dépendant du budget. Les deux sont complémentaires.</p>
+    </details>
+    <details>
+      <summary>Le SEO fonctionne-t-il pour mon activité ?</summary>
+      <p>Oui, si vos clients utilisent Google pour rechercher vos services.</p>
+    </details>
+    <details>
+      <summary>Que se passe-t-il si j'arrête le SEO ?</summary>
+      <p>Les positions acquises ne disparaissent pas immédiatement, mais sans entretien, vos concurrents peuvent finir par vous dépasser.</p>
+    </details>
+    <details>
+      <summary>Combien coûte le SEO en Guadeloupe ?</summary>
+      <p>Ça dépend de votre niveau de concurrence et du travail à faire. Un audit permet de définir les priorités et le budget utile.</p>
+    </details>
+    <details>
+      <summary>Est-ce que le SEO sert aussi pour les IA ?</summary>
+      <p>Oui. Une présence web bien structurée et crédible renforce aussi votre capacité à être reprise par les moteurs IA comme ChatGPT et Perplexity.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ───── FINAL CTA ───── -->
+<section class="final-cta theme-cream">
+  <div class="fade-up">
+    <h2>Pourquoi vos concurrents apparaissent <em>avant vous</em> sur Google ?</h2>
+    <p>On vous montre ce qui bloque votre visibilité et ce qu'il faut corriger en priorité.</p>
+    <div class="ctas">
+      <a href="audit.html" class="btn btn-primary magnetic">
+        Voir où je perds des clients
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="expertise-google-ads.html" class="btn btn-ghost magnetic">Voir Google Ads</a>
+    </div>
+  </div>
+</section>
+
+<!-- ───── FOOTER ───── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="assets/LOGO-DIGITALIS-2026-V2-GRIS.png" alt="Digitallis" class="logo-f">
+      <p>Systèmes d'acquisition digitale &amp; IA pour PME. Antilles, France, Europe.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Expertises</h4>
+      <ul>
+        <li><a href="expertise-sites.html">Création de sites</a></li>
+        <li><a href="expertise-seo.html">Référencement SEO</a></li>
+        <li><a href="expertise-google-ads.html">Google Ads</a></li>
+        <li><a href="expertise-reseaux-sociaux.html">Réseaux sociaux</a></li>
+        <li><a href="expertise-ia.html">Intelligence artificielle</a></li>
+        <li><a href="expertise-geo.html">Visibilité IA (GEO)</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+590602182020">06 02 18 20 20</a></li>
+        <li><a href="mailto:info@digitallis.fr">info@digitallis.fr</a></li>
+        <li style="color:rgba(255,255,255,0.6);font-size:14px;">195 rue François Fresneau<br>97122 Baie-Mahault<br>Guadeloupe</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Agence</h4>
+      <ul>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="allisia.html">Allissia</a></li>
+        <li><a href="blog.html">Le Blog</a></li>
+        <li><a href="audit.html">Audit gratuit</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Digitallis · Tous droits réservés</span>
+    <span>Baie-Mahault · Guadeloupe · FR</span>
+  </div>
+</footer>
+
+<script src="shared.js"></script>
+</body>
+</html>

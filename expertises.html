@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nos expertises — 6 leviers d'acquisition digitale | Digitallis Guadeloupe</title>
+<meta name="description" content="6 expertises complémentaires pour être trouvé, être choisi et convertir — sur Google, les réseaux sociaux et les IA. Digitallis, agence d'acquisition digitale en Guadeloupe.">
+<meta name="keywords" content="expertises digitales Guadeloupe, agence acquisition Antilles, SEO Guadeloupe, Google Ads, GEO IA, création site, community management, agent IA Allissia">
+<link rel="canonical" href="https://www.digitallis.fr/expertises">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Nos expertises — 6 leviers d'acquisition digitale | Digitallis">
+<meta property="og:description" content="Tout ce qu'il faut pour générer des clients en ligne : SEO, Google Ads, GEO, sites web, réseaux sociaux et agent IA.">
+<meta property="og:url" content="https://www.digitallis.fr/expertises">
+<meta property="og:locale" content="fr_FR">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Nos expertises — Digitallis",
+  "description": "6 expertises complémentaires pour générer des clients en ligne en Guadeloupe.",
+  "url": "https://www.digitallis.fr/expertises",
+  "inLanguage": "fr-FR",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Digitallis",
+    "url": "https://www.digitallis.fr"
+  },
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": [
+      { "@type": "Service", "position": 1, "name": "Référencement naturel (SEO)", "url": "https://www.digitallis.fr/expertise-seo" },
+      { "@type": "Service", "position": 2, "name": "Google Ads", "url": "https://www.digitallis.fr/expertise-google-ads" },
+      { "@type": "Service", "position": 3, "name": "Référencement IA (GEO)", "url": "https://www.digitallis.fr/expertise-geo" },
+      { "@type": "Service", "position": 4, "name": "Création de sites internet", "url": "https://www.digitallis.fr/expertise-sites" },
+      { "@type": "Service", "position": 5, "name": "Réseaux sociaux", "url": "https://www.digitallis.fr/expertise-reseaux-sociaux" },
+      { "@type": "Service", "position": 6, "name": "Allissia — Agent IA", "url": "https://www.digitallis.fr/allisia" }
+    ]
+  }
+}
+</script>
+
+<style>
+  /* ─── Hero ─── */
+  .expertises-hero {
+    padding: 180px 40px 80px;
+    background: linear-gradient(180deg, #FDF8EC 0%, #FAFAF7 100%);
+    position: relative; overflow: hidden;
+    text-align: center;
+  }
+  .expertises-hero::before {
+    content: ''; position: absolute; top: -200px; right: -200px;
+    width: 600px; height: 600px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(250, 204, 20, 0.18), transparent 70%);
+    pointer-events: none;
+    animation: blobDrift 18s ease-in-out infinite;
+  }
+  .expertises-hero::after {
+    content: ''; position: absolute; bottom: -300px; left: -150px;
+    width: 500px; height: 500px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(135, 200, 255, 0.10), transparent 70%);
+    pointer-events: none;
+    animation: blobDrift 22s ease-in-out infinite reverse;
+  }
+  @keyframes blobDrift {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(30px, -20px) scale(1.05); }
+  }
+  .expertises-hero-inner {
+    max-width: 820px; margin: 0 auto; position: relative; z-index: 2;
+  }
+  .expertises-hero h1 {
+    font-family: 'Outfit', sans-serif; font-weight: 700;
+    font-size: clamp(40px, 6vw, 72px); line-height: 1.05;
+    letter-spacing: -0.035em; color: #1C1F26;
+    margin-bottom: 24px;
+  }
+  .expertises-hero h1 em {
+    font-family: 'Instrument Serif', serif; font-weight: 400; font-style: italic;
+    color: #B88A00;
+  }
+  .expertises-hero .lead {
+    font-size: clamp(17px, 1.4vw, 20px); color: #3A3F4A;
+    line-height: 1.55; max-width: 60ch; margin: 0 auto;
+  }
+
+  /* ─── Pillars + grid ─── */
+  .pillars-section { padding: 80px 40px 40px; background: var(--bg); }
+  .pillars-inner { max-width: 1200px; margin: 0 auto; }
+  .pillar-block { margin-bottom: 64px; }
+  .pillar-label {
+    display: inline-flex; align-items: center; gap: 14px;
+    font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase; color: #B88A00;
+    margin-bottom: 32px;
+  }
+  .pillar-label::before {
+    content: ''; width: 28px; height: 2px;
+    background: var(--accent); border-radius: 2px;
+  }
+
+  .exp-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;
+  }
+  @media (max-width: 960px) { .exp-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 640px) { .exp-grid { grid-template-columns: 1fr; } }
+
+  .exp-card {
+    position: relative; overflow: hidden;
+    background: #fff; border: 1px solid #E8E6E0; border-radius: 22px;
+    padding: 36px 32px 32px;
+    text-decoration: none; color: inherit;
+    display: flex; flex-direction: column;
+    transition:
+      transform 0.5s cubic-bezier(.16,1,.3,1),
+      box-shadow 0.5s cubic-bezier(.16,1,.3,1),
+      border-color 0.3s ease;
+    opacity: 0; transform: translateY(24px);
+  }
+  .exp-card.is-visible {
+    animation: expReveal 0.7s cubic-bezier(.16,1,.3,1) forwards;
+  }
+  .exp-card.is-visible:nth-child(1) { animation-delay: 0.05s; }
+  .exp-card.is-visible:nth-child(2) { animation-delay: 0.18s; }
+  .exp-card.is-visible:nth-child(3) { animation-delay: 0.31s; }
+  @keyframes expReveal {
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .exp-card::before {
+    content: '';
+    position: absolute; top: -80px; right: -80px;
+    width: 200px; height: 200px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(250, 204, 20, 0.18), transparent 70%);
+    opacity: 0.5; pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.5s ease;
+  }
+  .exp-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 28px 60px rgba(28, 31, 38, 0.10);
+    border-color: rgba(250, 204, 20, 0.45);
+  }
+  .exp-card:hover::before { opacity: 1; transform: scale(1.15); }
+  .exp-card:hover .exp-icon { transform: rotate(-6deg) scale(1.08); }
+  .exp-card:hover .exp-link { color: #1C1F26; gap: 10px; }
+  .exp-card:hover .exp-link svg { transform: translateX(4px); }
+
+  .exp-icon {
+    width: 56px; height: 56px; border-radius: 16px;
+    background: linear-gradient(135deg, rgba(250, 204, 20, 0.20), rgba(250, 204, 20, 0.06));
+    color: #B88A00;
+    display: inline-flex; align-items: center; justify-content: center;
+    margin-bottom: 22px;
+    position: relative;
+    transition: transform 0.5s cubic-bezier(.16,1,.3,1);
+  }
+  .exp-icon::after {
+    content: '';
+    position: absolute; inset: 0;
+    border-radius: 16px;
+    border: 1px solid rgba(250, 204, 20, 0.35);
+    pointer-events: none;
+  }
+  .exp-card h3 {
+    font-family: 'Outfit', sans-serif; font-weight: 700;
+    font-size: 20px; line-height: 1.25; letter-spacing: -0.015em;
+    color: #1C1F26; margin-bottom: 12px;
+    position: relative;
+  }
+  .exp-card p {
+    font-size: 14.5px; line-height: 1.6; color: #3A3F4A;
+    margin: 0 0 22px; flex: 1;
+    position: relative;
+  }
+  .exp-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 14px;
+    color: #B88A00;
+    transition: color 0.3s ease, gap 0.3s ease;
+    position: relative;
+  }
+  .exp-link svg { transition: transform 0.3s ease; }
+
+  /* ─── Système (dark section) ─── */
+  .systeme-section {
+    padding: 120px 40px;
+    background: #1C1F26;
+    color: #fff;
+    position: relative; overflow: hidden;
+  }
+  .systeme-section::before {
+    content: ''; position: absolute; top: -200px; right: -200px;
+    width: 600px; height: 600px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(250, 204, 20, 0.10), transparent 70%);
+    pointer-events: none;
+  }
+  .systeme-inner {
+    max-width: 1100px; margin: 0 auto; position: relative; z-index: 2;
+  }
+  .systeme-section .eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.55); margin-bottom: 20px;
+  }
+  .systeme-section .eyebrow::before {
+    content: ''; width: 28px; height: 1px; background: var(--accent);
+  }
+  .systeme-section h2 {
+    font-family: 'Outfit', sans-serif; font-weight: 700;
+    font-size: clamp(30px, 4vw, 48px); line-height: 1.1;
+    letter-spacing: -0.025em; color: #fff;
+    margin-bottom: 20px; max-width: 22ch;
+  }
+  .systeme-section h2 em {
+    font-family: 'Instrument Serif', serif; font-weight: 400; font-style: italic;
+    color: var(--accent);
+  }
+  .systeme-section .systeme-lead {
+    font-size: clamp(16px, 1.3vw, 18px);
+    color: rgba(255, 255, 255, 0.72); line-height: 1.6;
+    max-width: 60ch; margin-bottom: 56px;
+  }
+
+  .systeme-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;
+  }
+  @media (max-width: 760px) { .systeme-grid { grid-template-columns: 1fr; } }
+
+  .systeme-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 30px 28px;
+    position: relative; overflow: hidden;
+    transition: border-color 0.3s ease, background 0.3s ease, transform 0.4s cubic-bezier(.16,1,.3,1);
+  }
+  .systeme-card:hover {
+    border-color: rgba(250, 204, 20, 0.4);
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-4px);
+  }
+  .systeme-card .step-num {
+    font-family: 'Instrument Serif', serif; font-weight: 400;
+    font-size: 28px; color: var(--accent);
+    margin-bottom: 14px; line-height: 1;
+  }
+  .systeme-card h3 {
+    font-family: 'Outfit', sans-serif; font-weight: 600;
+    font-size: 18px; color: #fff; margin-bottom: 10px;
+    letter-spacing: -0.01em;
+  }
+  .systeme-card p {
+    font-size: 14.5px; line-height: 1.6;
+    color: rgba(255, 255, 255, 0.70);
+    margin: 0;
+  }
+
+  .systeme-result {
+    margin-top: 40px; padding: 28px 32px;
+    background: rgba(250, 204, 20, 0.08);
+    border: 1px solid rgba(250, 204, 20, 0.25);
+    border-left: 4px solid var(--accent);
+    border-radius: 14px;
+    position: relative; overflow: hidden;
+  }
+  .systeme-result p {
+    margin: 0; font-size: 16px; line-height: 1.6;
+    color: rgba(255, 255, 255, 0.92);
+  }
+  .systeme-result strong { color: var(--accent); }
+
+  /* ─── CTA final ─── */
+  .expertises-cta {
+    padding: 120px 40px;
+    background: linear-gradient(180deg, #FAFAF7 0%, #FDF8EC 100%);
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .expertises-cta::before {
+    content: ''; position: absolute; top: -150px; left: 50%;
+    width: 400px; height: 400px; border-radius: 50%;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, rgba(250, 204, 20, 0.18), transparent 70%);
+    pointer-events: none;
+  }
+  .expertises-cta-inner {
+    max-width: 720px; margin: 0 auto; position: relative; z-index: 2;
+  }
+  .expertises-cta h2 {
+    font-family: 'Outfit', sans-serif; font-weight: 700;
+    font-size: clamp(28px, 4vw, 44px); line-height: 1.1;
+    letter-spacing: -0.025em; color: #1C1F26;
+    margin-bottom: 16px;
+  }
+  .expertises-cta h2 em {
+    font-family: 'Instrument Serif', serif; font-weight: 400; font-style: italic;
+    color: #B88A00;
+  }
+  .expertises-cta p {
+    font-size: 17px; color: #3A3F4A; line-height: 1.55;
+    margin-bottom: 32px;
+  }
+  .expertises-cta .btn-primary {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 16px 32px; border-radius: 100px;
+    background: var(--accent); color: #1C1F26;
+    font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 15px;
+    text-decoration: none;
+    transition: transform 0.3s var(--ease), background 0.25s, box-shadow 0.3s;
+    box-shadow: 0 12px 30px rgba(250, 204, 20, 0.25);
+  }
+  .expertises-cta .btn-primary:hover {
+    transform: translateY(-3px);
+    background: #FFD93D;
+    box-shadow: 0 18px 40px rgba(250, 204, 20, 0.35);
+  }
+
+  @media (max-width: 768px) {
+    .expertises-hero { padding: 130px 24px 60px; }
+    .pillars-section { padding: 60px 24px 30px; }
+    .systeme-section { padding: 80px 24px; }
+    .expertises-cta { padding: 80px 24px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .exp-card { opacity: 1; transform: none; animation: none !important; }
+  }
+</style>
+</head>
+<body class="page-light">
+
+<div class="cursor-glow" id="glow"></div>
+
+<nav class="nav" id="nav">
+  <a href="index.html" aria-label="Digitallis">
+    <img src="assets/LOGO-DIGITALIS-2026-V2-GRIS.png" alt="Digitallis" class="nav-logo nav-logo-dark"><img src="assets/LOGO-DIGITALIS-2026-V2-BLANC.png" alt="" aria-hidden="true" class="nav-logo nav-logo-light">
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Accueil</a>
+    <div class="nav-dd">
+      <a href="expertises.html" class="active">Expertises</a>
+      <div class="nav-dd-menu">
+        <a href="expertise-sites.html"><span>Création de sites</span><span class="dd-sub">Vitrine · One page · Landing</span></a>
+        <a href="expertise-seo.html"><span>Référencement SEO</span><span class="dd-sub">Visibilité Google durable</span></a>
+        <a href="expertise-google-ads.html"><span>Google Ads</span><span class="dd-sub">Search · PMax · Display</span></a>
+        <a href="expertise-reseaux-sociaux.html"><span>Réseaux sociaux</span><span class="dd-sub">Facebook · Instagram · TikTok</span></a>
+        <a href="expertise-ia.html"><span>Intelligence artificielle</span><span class="dd-sub">Allissia · Automatisations</span></a>
+        <a href="expertise-geo.html"><span>Visibilité IA (GEO)</span><span class="dd-sub">ChatGPT · Perplexity</span></a>
+      </div>
+    </div>
+    <a href="allisia.html">Allissia</a>
+    <a href="a-propos.html">À propos</a>
+    <a href="contact.html">Contact</a>
+    <a href="audit.html" class="nav-cta">Audit gratuit</a>
+  </div>
+</nav>
+
+<!-- ───── HERO ───── -->
+<section class="expertises-hero">
+  <div class="expertises-hero-inner">
+    <div class="eyebrow" style="justify-content:center;">Nos expertises</div>
+    <h1>Tout ce qu'il faut pour <em>générer des clients</em> en ligne.</h1>
+    <p class="lead">
+      6 expertises complémentaires pour être trouvé, être choisi et convertir — sur Google, les réseaux sociaux et les IA.
+    </p>
+  </div>
+</section>
+
+<!-- ───── PILIERS + EXPERTISES ───── -->
+<section class="pillars-section">
+  <div class="pillars-inner">
+
+    <!-- PILIER 1 : Être trouvé -->
+    <div class="pillar-block">
+      <div class="pillar-label">Pilier 01 · Être trouvé</div>
+      <div class="exp-grid">
+
+        <a href="expertise-seo.html" class="exp-card">
+          <div class="exp-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <h3>Référencement naturel (SEO)</h3>
+          <p>Apparaître en première page de Google sur les recherches de vos clients aux Antilles.</p>
+          <span class="exp-link">
+            En savoir plus
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </a>
+
+        <a href="expertise-google-ads.html" class="exp-card">
+          <div class="exp-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 6-6"/></svg>
+          </div>
+          <h3>Google Ads</h3>
+          <p>Search, Performance Max et Demand Gen pour générer du trafic et des leads rapidement.</p>
+          <span class="exp-link">
+            En savoir plus
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </a>
+
+        <a href="expertise-geo.html" class="exp-card">
+          <div class="exp-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="9.5" r="1.5"/><circle cx="15.5" cy="9.5" r="1.5"/><path d="M8 15c1.5 1.5 6.5 1.5 8 0"/></svg>
+          </div>
+          <h3>Référencement IA (GEO)</h3>
+          <p>Être recommandé par ChatGPT, Perplexity et Gemini quand vos prospects demandent un avis.</p>
+          <span class="exp-link">
+            En savoir plus
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- PILIER 2 : Être choisi -->
+    <div class="pillar-block">
+      <div class="pillar-label">Pilier 02 · Être choisi</div>
+      <div class="exp-grid">
+
+        <a href="expertise-sites.html" class="exp-card">
+          <div class="exp-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3>Création de sites internet</h3>
+          <p>Sites rapides, sur mesure et conçus pour convertir vos visiteurs en clients.</p>
+          <span class="exp-link">
+            En savoir plus
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </a>
+
+        <a href="expertise-reseaux-sociaux.html" class="exp-card">
+          <div class="exp-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </div>
+          <h3>Réseaux sociaux</h3>
+          <p>Contenu, Reels, TikTok et sponsorisation pour attirer et engager votre audience locale.</p>
+          <span class="exp-link">
+            En savoir plus
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </a>
+
+        <a href="allisia.html" class="exp-card">
+          <div class="exp-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h3>Allissia — Agent IA</h3>
+          <p>Agent vocal et chatbot qui répond, qualifie et transforme vos contacts en prospects 24/7.</p>
+          <span class="exp-link">
+            En savoir plus
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ───── SYSTÈME ───── -->
+<section class="systeme-section">
+  <div class="systeme-inner">
+    <div class="fade-up" style="max-width:760px;">
+      <div class="eyebrow">Comment nos expertises se combinent</div>
+      <h2>Un système complet pour générer des clients — pas des <em>actions isolées</em>.</h2>
+      <p class="systeme-lead">
+        Une campagne seule ne suffit pas. Un site seul non plus. C'est la combinaison des leviers qui crée un vrai système d'acquisition. Voici la logique en 4 étapes.
+      </p>
+    </div>
+
+    <div class="systeme-grid fade-up">
+      <div class="systeme-card">
+        <div class="step-num">01</div>
+        <h3>Vous rendre visible</h3>
+        <p>SEO, Google Ads (Search, Performance Max, Demand Gen) et référencement IA vous positionnent exactement là où vos prospects cherchent.</p>
+      </div>
+      <div class="systeme-card">
+        <div class="step-num">02</div>
+        <h3>Donner envie de vous choisir</h3>
+        <p>Votre site et vos réseaux sociaux renforcent votre crédibilité et transforment l'intérêt en confiance.</p>
+      </div>
+      <div class="systeme-card">
+        <div class="step-num">03</div>
+        <h3>Capter les demandes</h3>
+        <p>Landing pages, formulaires et parcours optimisés convertissent vos visiteurs en leads qualifiés.</p>
+      </div>
+      <div class="systeme-card">
+        <div class="step-num">04</div>
+        <h3>Ne perdre aucun contact</h3>
+        <p>Avec Allissia, chaque appel et message est traité, qualifié et transformé en opportunité, même hors horaires.</p>
+      </div>
+    </div>
+
+    <div class="systeme-result fade-up">
+      <p><strong>Résultat :</strong> un système d'acquisition complet, mesurable et évolutif. Plus de dépendance à un seul levier — chaque canal renforce les autres.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ───── CTA FINAL ───── -->
+<section class="expertises-cta">
+  <div class="expertises-cta-inner">
+    <h2>Vous voulez un système qui <em>génère vraiment</em> des clients ?</h2>
+    <p>On vous montre exactement quoi mettre en place — audit offert, livré en 48 h.</p>
+    <a href="audit.html" class="btn-primary">
+      Voir où vous perdez des clients
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ───── FOOTER ───── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="assets/LOGO-DIGITALIS-2026-V2-GRIS.png" alt="Digitallis" class="logo-f">
+      <p>Systèmes d'acquisition digitale & IA pour PME. Antilles, France, Europe.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Expertises</h4>
+      <ul>
+        <li><a href="expertise-sites.html">Création de sites</a></li>
+        <li><a href="expertise-seo.html">Référencement SEO</a></li>
+        <li><a href="expertise-google-ads.html">Google Ads</a></li>
+        <li><a href="expertise-reseaux-sociaux.html">Réseaux sociaux</a></li>
+        <li><a href="expertise-ia.html">Intelligence artificielle</a></li>
+        <li><a href="expertise-geo.html">Visibilité IA (GEO)</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+590602182020">06 02 18 20 20</a></li>
+        <li><a href="mailto:info@digitallis.fr">info@digitallis.fr</a></li>
+        <li style="color:rgba(255,255,255,0.6);font-size:14px;">195 rue François Fresneau<br>97122 Baie-Mahault<br>Guadeloupe</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Agence</h4>
+      <ul>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="blog.html">Le Blog</a></li>
+        <li><a href="audit.html">Audit gratuit</a></li>
+        <li><a href="mailto:info@digitallis.fr">Devis personnalisé</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Digitallis · Tous droits réservés</span>
+    <span>Baie-Mahault · Guadeloupe · FR</span>
+  </div>
+</footer>
+
+<script src="shared.js"></script>
+<script>
+  // Reveal séquentiel des cartes au scroll
+  (function() {
+    var cards = document.querySelectorAll('.exp-card');
+    if (!cards.length) return;
+    if (!('IntersectionObserver' in window)) {
+      cards.forEach(function(c) { c.classList.add('is-visible'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+    cards.forEach(function(c) { io.observe(c); });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Google Ads en Guadeloupe — Digitallis</title>
+<meta name="description" content="Avec Google Ads, vous apparaissez en haut des résultats dès demain. Search, Display, Performance Max, Demand Gen — pilotés par Digitallis, Google Partner.">
+<meta name="keywords" content="Google Ads Guadeloupe, agence Google Ads Antilles, Performance Max Guadeloupe, Demand Gen, SEA local PME">
+<link rel="canonical" href="https://www.digitallis.fr/expertise-google-ads">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Google Ads en Guadeloupe — Digitallis">
+<meta property="og:description" content="Apparaissez en haut des résultats Google dès demain. Search, Performance Max, Demand Gen — pilotés par Digitallis, Google Partner.">
+<meta property="og:url" content="https://www.digitallis.fr/expertise-google-ads">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Google Ads — Guadeloupe",
+  "serviceType": "Pay-Per-Click Advertising",
+  "description": "Pilotage Google Ads pour PME des Antilles. Search, Performance Max, Demand Gen, Display, YouTube. Optimisation continue, tracking, reporting mensuel.",
+  "provider": { "@type": "Organization", "name": "Digitallis", "url": "https://www.digitallis.fr/" },
+  "areaServed": [
+    { "@type": "Place", "name": "Guadeloupe" },
+    { "@type": "Place", "name": "Martinique" },
+    { "@type": "Country", "name": "France" }
+  ],
+  "url": "https://www.digitallis.fr/expertise-google-ads"
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<style>
+  /* Hero : Ads channel orbits */
+  .ads-visual { position: relative; aspect-ratio: 1/1; max-width: 480px; margin: 0 auto; }
+  .ads-core {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 180px; height: 180px; border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #fff, #FACC14 35%, #E6B800 75%);
+    box-shadow: 0 40px 120px rgba(250, 204, 20, 0.4);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    animation: orbFloat 7s ease-in-out infinite;
+    z-index: 2;
+  }
+  .ads-core::before {
+    content: ''; position: absolute; top: 18%; left: 22%;
+    width: 30%; height: 22%; border-radius: 50%;
+    background: rgba(255,255,255,0.55); filter: blur(20px);
+  }
+  .ads-core .label {
+    font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 20px;
+    color: var(--ink); letter-spacing: -0.02em; z-index: 2;
+  }
+  .ads-core .sub {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    color: var(--ink); letter-spacing: 0.1em; text-transform: uppercase;
+    margin-top: 4px; z-index: 2;
+  }
+  .ads-chip {
+    position: absolute; background: var(--card);
+    border: 1px solid var(--border); border-radius: 100px;
+    padding: 10px 16px; box-shadow: var(--shadow-md);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; font-weight: 600; color: var(--text);
+    letter-spacing: 0.05em; white-space: nowrap;
+    animation: badgeFloat 5s ease-in-out infinite;
+  }
+  .ads-chip .dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); margin-right: 6px; }
+  .ads-chip.c1 { top: 6%; left: 18%; animation-delay: 0s; }
+  .ads-chip.c2 { top: 16%; right: 4%; animation-delay: 1s; }
+  .ads-chip.c3 { bottom: 20%; right: 8%; animation-delay: 2s; }
+  .ads-chip.c4 { bottom: 8%; left: 12%; animation-delay: 3s; }
+  .ads-chip.c5 { top: 46%; left: -4%; animation-delay: 2.5s; }
+</style>
+</head>
+<body class="page-light">
+
+<div class="cursor-glow" id="glow"></div>
+
+<nav class="nav" id="nav">
+  <a href="index.html" aria-label="Digitallis">
+    <img src="assets/LOGO-DIGITALIS-2026-V2-GRIS.png" alt="Digitallis" class="nav-logo nav-logo-dark"><img src="assets/LOGO-DIGITALIS-2026-V2-BLANC.png" alt="" aria-hidden="true" class="nav-logo nav-logo-light">
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Accueil</a>
+    <div class="nav-dd">
+      <a href="expertises.html">Expertises</a>
+      <div class="nav-dd-menu">
+        <a href="expertise-sites.html"><span>Création de sites</span><span class="dd-sub">Vitrine · One page · Landing</span></a>
+        <a href="expertise-seo.html"><span>Référencement SEO</span><span class="dd-sub">Visibilité Google durable</span></a>
+        <a href="expertise-google-ads.html" class="active"><span>Google Ads</span><span class="dd-sub">Search · PMax · Display</span></a>
+        <a href="expertise-reseaux-sociaux.html"><span>Réseaux sociaux</span><span class="dd-sub">Facebook · Instagram · TikTok</span></a>
+        <a href="expertise-ia.html"><span>Intelligence artificielle</span><span class="dd-sub">Allissia · Automatisations</span></a>
+        <a href="expertise-geo.html"><span>Visibilité IA (GEO)</span><span class="dd-sub">ChatGPT · Perplexity</span></a>
+      </div>
+    </div>
+    <a href="allisia.html">Allissia</a>
+    <a href="a-propos.html">À propos</a>
+    <a href="contact.html">Contact</a>
+    <a href="audit.html" class="nav-cta">Audit gratuit</a>
+  </div>
+</nav>
+
+<!-- ───── PAGE HEADER ───── -->
+<header class="page-header">
+  <div class="page-header-inner">
+    <div class="fade-up">
+      <div class="allisia-label"><span class="pulse"></span> Google Ads · Google Partner</div>
+      <h1>Vos concurrents captent déjà vos futurs clients. <em>Reprenez la place dès demain</em>.</h1>
+      <p class="lead">
+        Quand un prospect cherche votre service sur Google, vous pouvez apparaître immédiatement en haut des résultats. Puis élargir votre visibilité sur tout l'écosystème Google avec Display, Performance Max et Demand Gen.
+      </p>
+      <div class="ctas">
+        <a href="audit.html" class="btn btn-primary magnetic">
+          Demander un audit
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="#campagnes" class="btn btn-ghost magnetic">Voir les campagnes</a>
+      </div>
+    </div>
+    <div class="ads-visual fade-up">
+      <div class="ads-core">
+        <div class="label">Google</div>
+        <div class="sub">Ads</div>
+      </div>
+      <div class="ads-chip c1"><span class="dot"></span>Search</div>
+      <div class="ads-chip c2"><span class="dot"></span>Display</div>
+      <div class="ads-chip c3"><span class="dot"></span>PMax</div>
+      <div class="ads-chip c4"><span class="dot"></span>Demand Gen</div>
+      <div class="ads-chip c5"><span class="dot"></span>Remarketing</div>
+    </div>
+  </div>
+</header>
+
+<!-- ───── LE VRAI ENJEU ───── -->
+<section class="theme-cream">
+  <div class="section-wrap-narrow">
+    <div class="fade-up">
+      <div class="eyebrow">Le vrai enjeu</div>
+      <h2 class="section-title">Google Ads ne sert pas à acheter du trafic. <em>Il capte les bonnes recherches</em>.</h2>
+      <p class="section-lead">
+        Quand vos clients cherchent un produit, un service ou un prestataire, ils prennent souvent une décision en quelques secondes. Si votre entreprise n'apparaît pas à ce moment-là :
+      </p>
+    </div>
+    <div class="pain-list fade-up">
+      <div class="pain-item">Vos concurrents prennent la place</div>
+      <div class="pain-item">Ils récupèrent les clics</div>
+      <div class="pain-item">Ils reçoivent les appels</div>
+      <div class="pain-item">Ils captent la demande <em>à votre place</em></div>
+    </div>
+    <div class="hl-block fade-up">
+      Google Ads vous permet d'être visible immédiatement sur ces recherches utiles. <strong>Mais encore faut-il que les campagnes soient bien construites.</strong>
+    </div>
+  </div>
+</section>
+
+<!-- ───── LES CAMPAGNES (dark) ───── -->
+<section class="sec-dark" id="campagnes">
+  <div class="section-wrap sec-inner">
+    <div class="fade-up" style="max-width:760px;">
+      <div class="eyebrow">Les campagnes que nous activons</div>
+      <h2 class="section-title">Chaque type de campagne <em>a un rôle précis</em>.</h2>
+      <p class="section-lead">
+        Un bon compte Google Ads n'est jamais mono-canal. C'est un portefeuille de campagnes qui jouent des rôles complémentaires sur le parcours d'achat.
+      </p>
+    </div>
+    <div class="dg-grid cols-2 dg-dark fade-up" data-spotlight>
+      <div class="dg-card">
+        <div class="dg-tag">Search</div>
+        <h3>Capter <em>l'intention immédiate</em></h3>
+        <p>Vous apparaissez en haut des résultats Google quand un prospect recherche activement votre service. Le levier le plus direct pour capter la demande chaude, apparaître devant vos concurrents et obtenir des appels ou des demandes rapidement. Souvent le premier niveau à activer.</p>
+      </div>
+      <div class="dg-card">
+        <div class="dg-tag">Display</div>
+        <h3>Rester visible <em>au-delà de la recherche</em></h3>
+        <p>Affiche vos visuels et messages sur des sites partenaires. Renforce la notoriété, reste présent dans l'esprit du prospect, touche des audiences ciblées. Le Display n'a pas le même rôle que Search — il complète la stratégie en élargissant la présence de marque.</p>
+      </div>
+      <div class="dg-card">
+        <div class="dg-tag">Performance Max</div>
+        <h3>Couvrir <em>tout l'écosystème</em></h3>
+        <p>Active une campagne sur plusieurs canaux en parallèle : Search, Display, YouTube, Discover, Gmail, Maps. Puissant mais doit être piloté avec méthode. Nous ne l'utilisons jamais comme un bouton magique — nous l'intégrons dans une stratégie avec un cadre, des exclusions et un vrai suivi.</p>
+      </div>
+      <div class="dg-card">
+        <div class="dg-tag">Demand Gen</div>
+        <h3>Capter <em>avant la recherche</em></h3>
+        <p>Va chercher l'attention du prospect avant qu'il ne formule une recherche active. S'appuie sur YouTube, Discover et Gmail avec des formats visuels et vidéo. Excellent pour créer du désir, préparer la demande et capter des prospects qui convertiront plus tard.</p>
+      </div>
+      <div class="dg-card" style="grid-column:1/-1;">
+        <div class="dg-tag">Remarketing</div>
+        <h3>Ne pas laisser repartir <em>un visiteur sans suite</em></h3>
+        <p>Recible les visiteurs qui ont déjà montré un intérêt pour votre entreprise. Relance ceux qui n'ont pas converti, réactive les prospects tièdes, renforce la répétition du message. Souvent sous-estimé, alors qu'il peut améliorer fortement la conversion.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── CE QUE NOUS CHERCHONS A EVITER ───── -->
+<section class="theme-cream">
+  <div class="section-wrap-narrow">
+    <div class="fade-up">
+      <div class="eyebrow">Important</div>
+      <h2 class="section-title">Google Ads mal géré <em>peut coûter cher</em>.</h2>
+      <p class="section-lead">
+        Une mauvaise campagne peut vite gaspiller votre budget si elle repose sur :
+      </p>
+    </div>
+    <div class="not-list fade-up">
+      <div class="not-item">De mauvais mots-clés</div>
+      <div class="not-item">Un ciblage trop large</div>
+      <div class="not-item">Des annonces peu convaincantes</div>
+      <div class="not-item">Des campagnes mal segmentées</div>
+      <div class="not-item">Des requêtes non qualifiées</div>
+      <div class="not-item">Une absence de suivi</div>
+    </div>
+    <div class="hl-block fade-up">
+      Notre rôle n'est pas simplement de lancer des campagnes. <strong>Notre rôle est d'éviter que vous payiez pour les mauvaises personnes.</strong>
+    </div>
+  </div>
+</section>
+
+<!-- ───── COMMENT NOUS TRAVAILLONS ───── -->
+<section>
+  <div class="section-wrap">
+    <div class="fade-up" style="max-width:760px;">
+      <div class="eyebrow">Comment nous travaillons</div>
+      <h2 class="section-title">Les bons leviers, au bon moment, <em>dans le bon ordre</em>.</h2>
+    </div>
+    <div class="dg-grid cols-4 fade-up">
+      <div class="dg-card">
+        <div class="dg-num">01</div>
+        <h3><em>Audit</em> &amp; cadrage</h3>
+        <p>Analyse de votre marché, concurrence, recherches utiles. Définition des priorités, zones de ciblage et budget cohérent.</p>
+      </div>
+      <div class="dg-card">
+        <div class="dg-num">02</div>
+        <h3>Lancement <em>Search</em></h3>
+        <p>Campagnes sur les requêtes les plus intentionnistes. Être visible immédiatement là où les prospects cherchent déjà vos services.</p>
+      </div>
+      <div class="dg-card">
+        <div class="dg-num">03</div>
+        <h3><em>Extension</em></h3>
+        <p>Activation progressive de Display, Performance Max, Demand Gen et remarketing selon les résultats et les objectifs.</p>
+      </div>
+      <div class="dg-card">
+        <div class="dg-num">04</div>
+        <h3>Optimisation <em>continue</em></h3>
+        <p>Exclusion des termes inutiles, ajustement des enchères, tests d'annonces, réallocation du budget. La différence entre une campagne lancée et une campagne rentable.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── SEO vs ADS ───── -->
+<section class="theme-cream">
+  <div class="section-wrap-narrow">
+    <div class="fade-up">
+      <div class="eyebrow">SEO &amp; Google Ads</div>
+      <h2 class="section-title">Opposés ou <em>complémentaires</em> ?</h2>
+      <p class="section-lead">
+        Les deux sont complémentaires. La bonne stratégie n'est pas de choisir — c'est de les articuler intelligemment.
+      </p>
+    </div>
+    <div class="cmp-grid fade-up" data-spotlight>
+      <div class="dg-card">
+        <div class="dg-tag">Google Ads</div>
+        <h3>La <em>vitesse</em></h3>
+        <div class="cmp-item">Agit immédiatement</div>
+        <div class="cmp-item">Capte la demande chaude</div>
+        <div class="cmp-item">Permet de tester rapidement</div>
+        <div class="cmp-item">Donne de la visibilité dès maintenant</div>
+      </div>
+      <div class="dg-card">
+        <div class="dg-tag">SEO</div>
+        <h3>La <em>durée</em></h3>
+        <div class="cmp-item">Se construit dans le temps</div>
+        <div class="cmp-item">Renforce la visibilité durable</div>
+        <div class="cmp-item">Réduit la dépendance au budget pub</div>
+        <div class="cmp-item">Crée un actif à moyen terme</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── POUR QUI ───── -->
+<section>
+  <div class="section-wrap-narrow">
+    <div class="fade-up">
+      <div class="eyebrow">Pour qui</div>
+      <h2 class="section-title">Google Ads est pertinent pour <em>des résultats rapides et mesurables</em>.</h2>
+    </div>
+    <div class="for-grid fade-up">
+      <div class="for-item">Artisan</div>
+      <div class="for-item">Commerce</div>
+      <div class="for-item">Restaurant</div>
+      <div class="for-item">Profession libérale</div>
+      <div class="for-item">PME B2B ou B2C</div>
+      <div class="for-item">Service local</div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── POURQUOI DIGITALLIS (dark) ───── -->
+<section class="sec-dark">
+  <div class="section-wrap-narrow sec-inner">
+    <div class="fade-up">
+      <div class="eyebrow">Pourquoi Digitallis</div>
+      <h2 class="section-title">Nous ne faisons pas de la publicité <em>pour « faire tourner un compte »</em>.</h2>
+      <p class="section-lead">
+        Une expertise Google Ads structurée. Une lecture business des campagnes. Une logique court terme + moyen terme. Une articulation claire entre Search, Display, PMax et Demand Gen. Une vraie obsession du budget utile. Et une transparence complète : vous savez ce qui fonctionne, ce qui ne fonctionne pas, où va votre budget et pourquoi.
+      </p>
+      <div class="hl-block dark fade-up" style="margin-top:32px;">
+        <strong>Google Partner certifié.</strong> <em>15 ans d'expérience</em>.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── FAQ ───── -->
+<section class="faq theme-light" id="faq">
+  <div class="faq-header fade-up">
+    <div class="eyebrow">Questions fréquentes</div>
+    <h2 class="section-title">Tout savoir sur <em>Google Ads</em>.</h2>
+  </div>
+  <div class="faq-native fade-up">
+    <details>
+      <summary>Quel budget pour démarrer ?</summary>
+      <p>Ça dépend de votre activité et de la concurrence. Dans beaucoup de cas, quelques centaines d'euros par mois permettent déjà de lancer une stratégie utile — à condition que la campagne soit bien construite.</p>
+    </details>
+    <details>
+      <summary>En combien de temps les résultats arrivent ?</summary>
+      <p>Les campagnes Search peuvent produire des résultats dès le lendemain. L'optimisation prend ensuite quelques semaines pour améliorer le rendement.</p>
+    </details>
+    <details>
+      <summary>Quelle différence entre Search, Display, PMax et Demand Gen ?</summary>
+      <p>Search capte l'intention immédiate. Display élargit la visibilité. Performance Max couvre plusieurs canaux en parallèle. Demand Gen capte l'attention plus tôt avec des formats visuels et vidéo.</p>
+    </details>
+    <details>
+      <summary>Est-ce que Performance Max est une bonne idée ?</summary>
+      <p>Oui, si elle est intégrée dans une vraie stratégie. Non, si elle est lancée sans contrôle ni structure.</p>
+    </details>
+    <details>
+      <summary>Est-ce que je peux voir où va mon budget ?</summary>
+      <p>Oui. Transparence totale. Vous comprenez ce qui est dépensé, ce qui convertit et ce qui doit être ajusté.</p>
+    </details>
+    <details>
+      <summary>Google Ads et SEO sont complémentaires ?</summary>
+      <p>Oui. Google Ads vous donne la vitesse. Le SEO vous donne la durée.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ───── FINAL CTA ───── -->
+<section class="final-cta theme-cream">
+  <div class="fade-up">
+    <h2>Combien de recherches utiles vos concurrents captent-ils <em>à votre place</em> ?</h2>
+    <p>On vous montre ce qui vaut la peine d'être lancé, ce qui doit être évité, et comment rendre vos campagnes réellement rentables.</p>
+    <div class="ctas">
+      <a href="audit.html" class="btn btn-primary magnetic">
+        Voir où je perds des clients
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="expertise-seo.html" class="btn btn-ghost magnetic">Voir le SEO</a>
+    </div>
+  </div>
+</section>
+
+<!-- ───── FOOTER ───── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="assets/LOGO-DIGITALIS-2026-V2-GRIS.png" alt="Digitallis" class="logo-f">
+      <p>Systèmes d'acquisition digitale &amp; IA pour PME. Antilles, France, Europe.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Expertises</h4>
+      <ul>
+        <li><a href="expertise-sites.html">Création de sites</a></li>
+        <li><a href="expertise-seo.html">Référencement SEO</a></li>
+        <li><a href="expertise-google-ads.html">Google Ads</a></li>
+        <li><a href="expertise-reseaux-sociaux.html">Réseaux sociaux</a></li>
+        <li><a href="expertise-ia.html">Intelligence artificielle</a></li>
+        <li><a href="expertise-geo.html">Visibilité IA (GEO)</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+590602182020">06 02 18 20 20</a></li>
+        <li><a href="mailto:info@digitallis.fr">info@digitallis.fr</a></li>
+        <li style="color:rgba(255,255,255,0.6);font-size:14px;">195 rue François Fresneau<br>97122 Baie-Mahault<br>Guadeloupe</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Agence</h4>
+      <ul>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="allisia.html">Allissia</a></li>
+        <li><a href="blog.html">Le Blog</a></li>
+        <li><a href="audit.html">Audit gratuit</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Digitallis · Tous droits réservés</span>
+    <span>Baie-Mahault · Guadeloupe · FR</span>
+  </div>
+</footer>
+
+<script src="shared.js"></script>
+</body>
+</html>

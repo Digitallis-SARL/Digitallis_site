@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expertise IA — Intelligence artificielle pour PME | Digitallis</title>
+<meta name="description" content="L'IA comme système d'acquisition, pas comme gadget. Agents IA, automatisations marketing, optimisation de contenu — conforme RGPD, hébergement Europe.">
+<meta name="keywords" content="expertise IA Guadeloupe, agence IA Antilles, agent IA PME, automatisation marketing, Allissia, Claude API, ChatGPT entreprise">
+<link rel="canonical" href="https://www.digitallis.fr/expertise-ia">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Expertise IA — Intelligence artificielle pour PME | Digitallis">
+<meta property="og:description" content="L'IA comme système d'acquisition, pas comme gadget. Agents IA, automatisations marketing, optimisation de contenu — conforme RGPD, hébergement Europe.">
+<meta property="og:url" content="https://www.digitallis.fr/expertise-ia">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Expertise Intelligence Artificielle pour PME",
+  "serviceType": "Conseil et déploiement IA",
+  "description": "Digitallis accompagne les PME des Antilles dans le déploiement d'agents IA, d'automatisations marketing et d'optimisation de contenu. Stack ElevenLabs, Telnyx, Supabase, n8n, Claude API. Conforme RGPD.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Digitallis",
+    "url": "https://www.digitallis.fr/"
+  },
+  "areaServed": [
+    { "@type": "Place", "name": "Guadeloupe" },
+    { "@type": "Place", "name": "Martinique" },
+    { "@type": "Country", "name": "France" }
+  ],
+  "url": "https://www.digitallis.fr/expertise-ia"
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<style>
+  /* ─── Header adaptation (floating IA visual) ─── */
+  .expertise-visual {
+    position: relative; aspect-ratio: 1/1; max-width: 480px; margin: 0 auto;
+  }
+  .expertise-core {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 220px; height: 220px; border-radius: 50%;
+    background:
+      radial-gradient(circle at 30% 30%, #fff, #FACC14 35%, #E6B800 75%);
+    box-shadow: 0 40px 120px rgba(250, 204, 20, 0.4);
+    animation: orbFloat 7s ease-in-out infinite;
+  }
+  .expertise-core::before {
+    content: ''; position: absolute; top: 18%; left: 22%;
+    width: 30%; height: 22%; border-radius: 50%;
+    background: rgba(255,255,255,0.55); filter: blur(20px);
+  }
+  .expertise-ring {
+    position: absolute; inset: 0;
+    border: 1px dashed rgba(250, 204, 20, 0.35);
+    border-radius: 50%;
+    animation: spin 30s linear infinite;
+  }
+  .expertise-ring.r2 {
+    inset: 15%;
+    border-color: rgba(250, 204, 20, 0.25);
+    animation: spin 20s linear infinite reverse;
+  }
+  .expertise-ring.r3 {
+    inset: 30%;
+    border-color: rgba(250, 204, 20, 0.15);
+  }
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  .expertise-orbit-item {
+    position: absolute; background: var(--card);
+    border: 1px solid var(--border); border-radius: 50%;
+    width: 56px; height: 56px;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: var(--shadow-md); color: var(--accent-dk);
+  }
+  .expertise-orbit-item.i1 { top: 4%; left: 46%; }
+  .expertise-orbit-item.i2 { top: 46%; right: 2%; }
+  .expertise-orbit-item.i3 { bottom: 4%; left: 46%; }
+  .expertise-orbit-item.i4 { top: 46%; left: 2%; }
+  .expertise-orbit-item.i5 { top: 18%; right: 14%; }
+  .expertise-orbit-item.i6 { bottom: 18%; left: 14%; }
+
+  /* ─── Modules grid (4 cards Allissia sur expertise) ─── */
+  .modules-grid-alt {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+    max-width: 1100px; margin: 64px auto 0;
+  }
+  .module-mini {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 20px; padding: 32px 28px;
+    display: flex; align-items: flex-start; gap: 20px;
+    transition: all 0.35s var(--ease);
+  }
+  .module-mini:hover {
+    border-color: var(--accent); transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+  .module-mini .ico {
+    width: 48px; height: 48px; border-radius: 12px;
+    background: linear-gradient(135deg, #FACC14, #E6B800);
+    color: var(--ink); flex-shrink: 0;
+    display: inline-flex; align-items: center; justify-content: center;
+  }
+  .module-mini h4 {
+    font-size: 19px; font-weight: 600; letter-spacing: -0.015em;
+    margin-bottom: 6px;
+  }
+  .module-mini h4 em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; }
+  .module-mini p {
+    font-size: 14px; color: var(--text-soft); line-height: 1.55;
+  }
+  @media (max-width: 720px) { .modules-grid-alt { grid-template-columns: 1fr; } }
+
+  /* ─── Why Digitallis (4 column grid) ─── */
+  .why-section { padding: 140px 0 100px; }
+  .why-wrap { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+  .why-grid {
+    margin-top: 64px;
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+    background: var(--border);
+    border-radius: 24px; overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .why-card {
+    background: var(--card); padding: 40px 28px;
+    position: relative; overflow: hidden; transition: background 0.4s;
+  }
+  .why-card::before {
+    content: ''; position: absolute; inset: -1px; pointer-events: none;
+    background: radial-gradient(circle 220px at var(--mx, 50%) var(--my, 50%), rgba(250, 204, 20, 0.12), transparent);
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .why-card:hover::before { opacity: 1; }
+  .why-card .ico {
+    width: 44px; height: 44px; border-radius: 12px;
+    background: var(--accent-soft); color: var(--accent-dk);
+    display: inline-flex; align-items: center; justify-content: center;
+    margin-bottom: 20px;
+  }
+  .why-card h3 {
+    font-size: 18px; font-weight: 600; letter-spacing: -0.015em;
+    margin-bottom: 8px; color: var(--text); line-height: 1.2;
+  }
+  .why-card h3 em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; }
+  .why-card p {
+    font-size: 14px; color: var(--text-soft); line-height: 1.6;
+  }
+  @media (max-width: 960px) { .why-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .why-grid { grid-template-columns: 1fr; } }
+
+  /* ─── Method (4 étapes verticales) ─── */
+  .method-section {
+    background: var(--ink); color: #fff; padding: 140px 0;
+    position: relative; overflow: hidden;
+  }
+  .method-section::before {
+    content: ''; position: absolute; top: -100px; right: -200px;
+    width: 700px; height: 700px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(250, 204, 20, 0.14), transparent 70%);
+    pointer-events: none;
+  }
+  .method-wrap { max-width: 1100px; margin: 0 auto; padding: 0 40px; position: relative; }
+  .method-header { max-width: 760px; margin-bottom: 72px; }
+  .method-header h2 {
+    font-family: 'Outfit', sans-serif; font-weight: 700;
+    font-size: clamp(36px, 5vw, 60px); line-height: 1.05; letter-spacing: -0.03em;
+    color: #fff; margin-bottom: 20px;
+  }
+  .method-header h2 em {
+    font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400;
+    color: var(--accent);
+  }
+  .method-header p {
+    font-size: 18px; color: rgba(255,255,255,0.65); line-height: 1.55;
+  }
+  .method-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px;
+  }
+  .method-step {
+    padding: 32px 28px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    transition: all 0.4s var(--ease);
+  }
+  .method-step:hover {
+    border-color: var(--accent);
+    background: rgba(250, 204, 20, 0.05);
+    transform: translateY(-4px);
+  }
+  .method-num {
+    font-family: 'Outfit', sans-serif; font-weight: 700;
+    font-size: 48px; color: var(--accent); letter-spacing: -0.04em;
+    line-height: 1; margin-bottom: 20px;
+  }
+  .method-step h3 {
+    font-size: 19px; font-weight: 600; letter-spacing: -0.015em;
+    color: #fff; margin-bottom: 10px;
+  }
+  .method-step h3 em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; color: var(--accent); }
+  .method-step p {
+    font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.55;
+  }
+  @media (max-width: 880px) { .method-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 480px) { .method-grid { grid-template-columns: 1fr; } }
+
+</style>
+</head>
+<body class="page-light">
+
+<div class="cursor-glow" id="glow"></div>
+
+<nav class="nav" id="nav">
+  <a href="index.html" aria-label="Digitallis">
+    <img src="assets/LOGO-DIGITALIS-2026-V2-GRIS.png" alt="Digitallis" class="nav-logo nav-logo-dark"><img src="assets/LOGO-DIGITALIS-2026-V2-BLANC.png" alt="" aria-hidden="true" class="nav-logo nav-logo-light">
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Accueil</a>
+    <div class="nav-dd">
+      <a href="expertise-ia.html" class="active">Expertises</a>
+      <div class="nav-dd-menu">
+        <a href="expertise-sites.html"><span>Création de sites</span><span class="dd-sub">Vitrine · One page · Landing</span></a>
+        <a href="expertise-seo.html"><span>Référencement SEO</span><span class="dd-sub">Visibilité Google durable</span></a>
+        <a href="expertise-google-ads.html"><span>Google Ads</span><span class="dd-sub">Search · PMax · Display</span></a>
+        <a href="expertise-reseaux-sociaux.html"><span>Réseaux sociaux</span><span class="dd-sub">Facebook · Instagram · TikTok</span></a>
+        <a href="expertise-ia.html" class="active"><span>Intelligence artificielle</span><span class="dd-sub">Allissia · Automatisations</span></a>
+        <a href="expertise-geo.html"><span>Visibilité IA (GEO)</span><span class="dd-sub">ChatGPT · Perplexity</span></a>
+      </div>
+    </div>
+    <a href="allisia.html">Allissia</a>
+    <a href="a-propos.html">À propos</a>
+    <a href="contact.html">Contact</a>
+    <a href="audit.html" class="nav-cta">Audit gratuit</a>
+  </div>
+</nav>
+
+<!-- ───── PAGE HEADER ───── -->
+<header class="page-header">
+  <div class="page-header-inner">
+    <div class="fade-up">
+      <div class="allisia-label"><span class="pulse"></span> Intelligence Artificielle · Digitallis</div>
+      <h1>L'IA au service de <em>votre acquisition</em> de clients.</h1>
+      <p class="lead">
+        Pas un gadget. Un système. Digitallis intègre l'intelligence artificielle dans les processus des entreprises : assistant IA Allissia, automatisations marketing, optimisation de contenu.
+      </p>
+      <div class="ctas">
+        <a href="#method" class="btn btn-primary magnetic">
+          Voir notre méthode
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="allisia.html" class="btn btn-ghost magnetic">Découvrir Allissia</a>
+      </div>
+    </div>
+    <div class="expertise-visual fade-up">
+      <div class="expertise-ring"></div>
+      <div class="expertise-ring r2"></div>
+      <div class="expertise-ring r3"></div>
+      <div class="expertise-core"></div>
+      <div class="expertise-orbit-item i1"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg></div>
+      <div class="expertise-orbit-item i2"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg></div>
+      <div class="expertise-orbit-item i3"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+      <div class="expertise-orbit-item i4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg></div>
+      <div class="expertise-orbit-item i5"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+      <div class="expertise-orbit-item i6"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><polyline points="16 3 12 7 8 3"/></svg></div>
+    </div>
+  </div>
+</header>
+
+<!-- ───── CE QUE NOUS FAISONS ───── -->
+<section class="theme-cream">
+  <div class="section-wrap">
+    <div class="fade-up" style="max-width:760px;">
+      <div class="eyebrow">Ce que nous faisons</div>
+      <h2 class="section-title">L'IA comme <em>système d'acquisition</em> — pas comme gadget.</h2>
+      <p class="section-lead">
+        Notre promesse tient en quatre mots : <strong>trouver, qualifier, créer, optimiser</strong>. Quatre modules Allissia qui forment un système complet, pas une collection d'outils.
+      </p>
+    </div>
+
+    <div class="modules-grid-alt fade-up">
+      <div class="module-mini">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+        <div>
+          <h4><em>Radar</em> · Analyse concurrentielle</h4>
+          <p>Cartographie votre marché, vos concurrents, les opportunités. Un plan d'action chaque semaine — priorisé par ROI.</p>
+        </div>
+      </div>
+      <div class="module-mini">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg></div>
+        <div>
+          <h4><em>Voice</em> · Agent vocal 24/7</h4>
+          <p>Répond aux appels avec une voix IA naturelle. Qualifie le besoin, prend rdv, envoie un résumé WhatsApp.</p>
+        </div>
+      </div>
+      <div class="module-mini">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <div>
+          <h4><em>Optimus</em> · Création IA</h4>
+          <p>Crée contenus, pubs et stratégies sur mesure. Tout validé par vous via WhatsApp avant publication.</p>
+        </div>
+      </div>
+      <div class="module-mini">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg></div>
+        <div>
+          <h4><em>Cortex</em> · Apprentissage continu</h4>
+          <p>Observe ce qui convertit, ajuste en temps réel. Les performances s'améliorent semaine après semaine.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── POURQUOI DIGITALLIS ───── -->
+<section class="why-section theme-cream">
+  <div class="why-wrap">
+    <div class="fade-up" style="max-width:760px;">
+      <div class="eyebrow">Pourquoi Digitallis</div>
+      <h2 class="section-title">L'IA, oui. Mais avec <em>une méthode</em>.</h2>
+      <p class="section-lead">
+        Intégrer l'IA chez un client demande bien plus que de plugger un modèle. Il faut une architecture, une gouvernance, une conformité. C'est ce qu'on apporte.
+      </p>
+    </div>
+
+    <div class="why-grid fade-up" data-spotlight>
+      <div class="why-card">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+        <h3>Système <em>complet</em></h3>
+        <p>Pas un outil isolé. Une architecture qui connecte acquisition, qualification, conversion et apprentissage.</p>
+      </div>
+      <div class="why-card">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg></div>
+        <h3>Amélioration <em>continue</em></h3>
+        <p>Chaque interaction nourrit Cortex. Plus le système tourne, plus il devient pertinent — et performant.</p>
+      </div>
+      <div class="why-card">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>RGPD & <em>Europe</em></h3>
+        <p>Hébergement européen, chiffrement, zéro entraînement sur vos données. Conformité par défaut, pas en option.</p>
+      </div>
+      <div class="why-card">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></div>
+        <h3>Validation <em>WhatsApp</em></h3>
+        <p>Zéro interface compliquée. Vous validez chaque contenu en 2 clics, depuis votre téléphone. Rien ne sort sans votre OK.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── METHOD (4 étapes) ───── -->
+<section class="method-section" id="method">
+  <div class="method-wrap">
+    <div class="method-header fade-up">
+      <div class="eyebrow" style="color:rgba(255,255,255,0.5);">Notre méthode</div>
+      <h2>Quatre étapes. <em>Un système qui tourne</em>.</h2>
+      <p>Un déroulé éprouvé sur 900+ entreprises. Pas de théorie. Des livrables concrets à chaque étape.</p>
+    </div>
+
+    <div class="method-grid">
+      <div class="method-step fade-up">
+        <div class="method-num">01</div>
+        <h3><em>Diagnostic</em></h3>
+        <p>Identification des opportunités d'acquisition et des automatisations à mettre en place. Audit 48h offert, livrable clair.</p>
+      </div>
+      <div class="method-step fade-up">
+        <div class="method-num">02</div>
+        <h3><em>Configuration</em></h3>
+        <p>Mise en place des outils adaptés à votre activité : Google, Meta, agent vocal, chatbot, CRM. Connexions propres et testées.</p>
+      </div>
+      <div class="method-step fade-up">
+        <div class="method-num">03</div>
+        <h3><em>Lancement</em></h3>
+        <p>Activation du système et formation de votre équipe. Rodage sur 2 semaines — les premiers leads arrivent dès le démarrage.</p>
+      </div>
+      <div class="method-step fade-up">
+        <div class="method-num">04</div>
+        <h3><em>Optimisation</em></h3>
+        <p>Amélioration continue basée sur les données. Rapport mensuel, points de calage, nouveaux canaux quand ça fait sens.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── FAQ ───── -->
+<section class="faq theme-light" id="faq">
+  <div class="faq-header fade-up">
+    <div class="eyebrow">Questions fréquentes</div>
+    <h2 class="section-title">Tout ce qu'il faut <em>savoir</em>.</h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q"><span>L'IA remplace-t-elle un employé ?</span><div class="faq-toggle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+      <div class="faq-a"><div class="faq-a-inner">Non, elle automatise les tâches répétitives : réponses aux demandes fréquentes, qualification de leads, planification, relances. Votre équipe garde son rôle stratégique et relationnel et gagne du temps sur les tâches à faible valeur.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>Les données sont-elles sécurisées ?</span><div class="faq-toggle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+      <div class="faq-a"><div class="faq-a-inner">Oui. RGPD et hébergement européen. Chiffrement de bout en bout. Vos données ne sont jamais utilisées pour entraîner un modèle public. Accès révocable, exportable, supprimable à tout moment.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>Est-ce adapté aux petites entreprises ?</span><div class="faq-toggle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+      <div class="faq-a"><div class="faq-a-inner">Oui, c'est précisément conçu pour les PME et TPE — ce sont elles qui perdent le plus de leads par manque de temps. Allissia démarre à un forfait accessible et évolue avec votre activité, sans gros investissement initial.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>Comment l'IA améliore-t-elle le SEO ?</span><div class="faq-toggle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+      <div class="faq-a"><div class="faq-a-inner">Optimisation du contenu et analyse des tendances. L'IA identifie les requêtes à fort potentiel, optimise le maillage interne, produit du contenu ciblé longue traîne et surveille votre positionnement vs. concurrents — y compris sur les moteurs génératifs (ChatGPT, Perplexity).</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── FINAL CTA ───── -->
+<section class="final-cta theme-cream">
+  <div class="fade-up">
+    <h2>Pensez système. <em>Pas gadget.</em></h2>
+    <p>On construit pour vous l'écosystème IA qui génère des clients 24/7. On s'en occupe — vous validez.</p>
+    <div class="ctas">
+      <a href="audit.html" class="btn btn-primary magnetic">
+        Recevoir mon audit gratuit
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="allisia.html" class="btn btn-ghost magnetic">Voir Allissia en détail</a>
+    </div>
+  </div>
+</section>
+
+<!-- ───── FOOTER ───── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="assets/LOGO-DIGITALIS-2026-V2-GRIS.png" alt="Digitallis" class="logo-f">
+      <p>Systèmes d'acquisition digitale & IA pour PME. Antilles, France, Europe.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Expertises</h4>
+      <ul>
+        <li><a href="expertise-sites.html">Création de sites</a></li>
+        <li><a href="expertise-seo.html">Référencement SEO</a></li>
+        <li><a href="expertise-google-ads.html">Google Ads</a></li>
+        <li><a href="expertise-reseaux-sociaux.html">Réseaux sociaux</a></li>
+        <li><a href="expertise-ia.html">Intelligence artificielle</a></li>
+        <li><a href="expertise-geo.html">Visibilité IA (GEO)</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+590602182020">06 02 18 20 20</a></li>
+        <li><a href="mailto:info@digitallis.fr">info@digitallis.fr</a></li>
+        <li style="color:rgba(255,255,255,0.6);font-size:14px;">195 rue François Fresneau<br>97122 Baie-Mahault<br>Guadeloupe</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Ressources</h4>
+      <ul>
+        <li><a href="audit.html">Audit gratuit</a></li>
+        <li><a href="blog.html">Le Blog</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="mailto:info@digitallis.fr">Devis personnalisé</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Digitallis · Tous droits réservés</span>
+    <span>Baie-Mahault · Guadeloupe · FR</span>
+  </div>
+</footer>
+
+<script src="shared.js"></script>
+
+</body>
+</html>
