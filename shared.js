@@ -151,6 +151,8 @@
     var inputs = form.querySelectorAll('input, select, textarea');
     inputs.forEach(function(input) {
       if (input.type === 'submit' || input.type === 'button') return;
+      if (input.name === 'botcheck') return;
+      if (input.type === 'checkbox' && !input.checked) return;
       var key = input.name || input.id || input.getAttribute('aria-label') || input.placeholder;
       if (!key) return;
       var value = (input.value || '').trim();
@@ -216,9 +218,13 @@
     var btn = form.querySelector('button[type="submit"]') || form.querySelector('button:last-of-type');
     if (!btn) return false;
 
-    // Honeypot check (bots fill hidden field)
+    // Honeypot check (bots fill hidden field). For checkboxes, only treat as filled when actually checked.
     var honeypot = form.querySelector('input[name="botcheck"]');
-    if (honeypot && honeypot.value) return false;
+    if (honeypot) {
+      var isCheckbox = honeypot.type === 'checkbox';
+      var filled = isCheckbox ? honeypot.checked : !!honeypot.value;
+      if (filled) return false;
+    }
 
     var data = collectFormData(form);
     var subject = buildSubject(source, data);
