@@ -140,10 +140,10 @@
     });
   });
 
-  // ─── Web3Forms unified form handler ───
-  // Destination: contact@digitallis.fr (configured in Web3Forms dashboard)
-  var WEB3FORMS_KEY = '0555ec62-8c53-4c06-a957-0c56fbef86ca';
-  var WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
+  // ─── Unified form handler (Vercel Serverless + Resend) ───
+  // Endpoint: same-origin /api/submit (zero CORS issue).
+  // Destination email is configured server-side via RECIPIENT_EMAIL env var.
+  var SUBMIT_ENDPOINT = '/api/submit';
   var FALLBACK_EMAIL = 'info@digitallis.fr';
 
   function collectFormData(form) {
@@ -234,18 +234,15 @@
     btn.disabled = true;
 
     var payload = {
-      access_key: WEB3FORMS_KEY,
-      subject: subject,
-      from_name: 'Digitallis - Site web',
-      replyto: data['f-email'] || data['Email *'] || data['Email professionnel'] || data['votre@email.com'] || '',
       _source: source || 'unknown',
-      _page: window.location.pathname
+      _page: window.location.pathname,
+      _subject_hint: subject
     };
     Object.keys(data).forEach(function(k) {
       if (!payload[k]) payload[k] = data[k];
     });
 
-    fetch(WEB3FORMS_ENDPOINT, {
+    fetch(SUBMIT_ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify(payload)

@@ -1,0 +1,9 @@
+{
+  "name": "digitallis-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Site Digitallis — HTML statique + Vercel Serverless Functions",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
