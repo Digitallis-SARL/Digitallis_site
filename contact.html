@@ -27,7 +27,7 @@
     "name": "Digitallis",
     "url": "https://www.digitallis.fr/",
     "telephone": "+590-602-182-020",
-    "email": "info@digitallis.fr",
+    "email": "contact@digitallis.fr",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "195 rue François Fresneau",
@@ -287,7 +287,7 @@
         </div>
         <div class="contact-row">
           <div class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-          info@digitallis.fr
+          contact@digitallis.fr
         </div>
         <div class="contact-row">
           <div class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
@@ -345,7 +345,7 @@
             <div class="info-content">
               <div class="info-label">Email</div>
               <div class="info-value">
-                <a href="mailto:info@digitallis.fr">info@digitallis.fr</a>
+                <a href="mailto:contact@digitallis.fr">contact@digitallis.fr</a>
               </div>
             </div>
           </li>
@@ -378,28 +378,29 @@
       <div class="contact-form fade-up theme-light" id="formulaire">
         <h3>Envoyez-nous <em>un message</em></h3>
         <p class="form-intro">Expliquez-nous votre situation en 30 secondes. On vous répond rapidement.</p>
-        <form>
+        <form onsubmit="digitallisForm(event, 'contact')">
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
           <div class="f-group">
             <label for="f-name">Nom complet *</label>
-            <input id="f-name" type="text" placeholder="Votre nom" required>
+            <input id="f-name" name="Nom complet" type="text" placeholder="Votre nom" required>
           </div>
           <div class="f-group">
             <label for="f-company">Entreprise</label>
-            <input id="f-company" type="text" placeholder="Nom de votre entreprise">
+            <input id="f-company" name="Entreprise" type="text" placeholder="Nom de votre entreprise">
           </div>
           <div class="f-row">
             <div class="f-group">
               <label for="f-email">Email *</label>
-              <input id="f-email" type="email" placeholder="votre@email.com" required>
+              <input id="f-email" name="Email" type="email" placeholder="votre@email.com" required>
             </div>
             <div class="f-group">
               <label for="f-phone">Téléphone</label>
-              <input id="f-phone" type="tel" placeholder="06 XX XX XX XX">
+              <input id="f-phone" name="Telephone" type="tel" placeholder="06 XX XX XX XX">
             </div>
           </div>
           <div class="f-group">
             <label for="f-subject">Sujet</label>
-            <select id="f-subject">
+            <select id="f-subject" name="Sujet">
               <option value="">Sélectionnez</option>
               <option>Je veux plus de clients</option>
               <option>Je veux un audit</option>
@@ -411,7 +412,7 @@
           </div>
           <div class="f-group">
             <label for="f-message">Message *</label>
-            <textarea id="f-message" placeholder="Décrivez rapidement votre situation, votre objectif ou votre problème…" required></textarea>
+            <textarea id="f-message" name="Message" placeholder="Décrivez rapidement votre situation, votre objectif ou votre problème…" required></textarea>
           </div>
           <button type="submit" class="f-btn">
             Envoyer ma demande
@@ -491,7 +492,7 @@
       <h4>Contact</h4>
       <ul>
         <li><a href="tel:+590602182020">06 02 18 20 20</a></li>
-        <li><a href="mailto:info@digitallis.fr">info@digitallis.fr</a></li>
+        <li><a href="mailto:contact@digitallis.fr">contact@digitallis.fr</a></li>
         <li style="color:rgba(255,255,255,0.6);font-size:14px;">195 rue François Fresneau<br>97122 Baie-Mahault<br>Guadeloupe</li>
       </ul>
     </div>

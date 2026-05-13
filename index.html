@@ -57,7 +57,7 @@
         "@type": "ContactPoint",
         "telephone": "+590-602-182-020",
         "contactType": "customer service",
-        "email": "info@digitallis.fr",
+        "email": "contact@digitallis.fr",
         "areaServed": "FR",
         "availableLanguage": ["French"]
       },
@@ -74,7 +74,7 @@
       "image": "https://www.digitallis.fr/assets/LOGO-DIGITALIS-2026-V2-GRIS.png",
       "url": "https://www.digitallis.fr/",
       "telephone": "+590-602-182-020",
-      "email": "info@digitallis.fr",
+      "email": "contact@digitallis.fr",
       "priceRange": "€€-€€€",
       "address": {
         "@type": "PostalAddress",
@@ -1584,11 +1584,12 @@
       <span class="audit-card-tag">Vérifier ma visibilité · 48h</span>
       <h3>Entreprises sélectionnées — <em>analyse sous 48h</em>.</h3>
       <p class="card-desc">Laissez-nous vos coordonnées — on s'occupe du reste. Sans engagement.</p>
-      <form class="audit-form" onsubmit="handleAudit(event)">
-        <input type="text" placeholder="Nom de votre entreprise" required>
-        <input type="text" placeholder="Votre prénom" required>
-        <input type="email" placeholder="Email professionnel" required>
-        <input type="tel" placeholder="Téléphone (optionnel)">
+      <form class="audit-form" onsubmit="digitallisForm(event, 'audit-homepage')">
+        <input type="text" name="entreprise" placeholder="Nom de votre entreprise" required>
+        <input type="text" name="prenom" placeholder="Votre prénom" required>
+        <input type="email" name="email" placeholder="Email professionnel" required>
+        <input type="tel" name="telephone" placeholder="Téléphone (optionnel)">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
         <button type="submit" class="btn btn-primary">
           Vérifier ma visibilité
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -1774,7 +1775,7 @@
       <h4>Contact</h4>
       <ul>
         <li><a href="tel:+590602182020">06 02 18 20 20</a></li>
-        <li><a href="mailto:info@digitallis.fr">info@digitallis.fr</a></li>
+        <li><a href="mailto:contact@digitallis.fr">contact@digitallis.fr</a></li>
         <li style="color:rgba(255,255,255,0.6);font-size:14px;">195 rue François Fresneau<br>97122 Baie-Mahault<br>Guadeloupe</li>
       </ul>
     </div>
@@ -1784,7 +1785,7 @@
         <li><a href="audit.html">Audit gratuit</a></li>
         <li><a href="blog.html">Le Blog</a></li>
         <li><a href="#faq">FAQ</a></li>
-        <li><a href="mailto:info@digitallis.fr">Devis personnalisé</a></li>
+        <li><a href="mailto:contact@digitallis.fr">Devis personnalisé</a></li>
       </ul>
     </div>
   </div>

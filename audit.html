@@ -578,31 +578,32 @@
         <div class="f-dot" id="ld3"></div>
       </div>
 
-      <form onsubmit="return false;">
+      <form onsubmit="digitallisForm(event, 'audit-page')">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
         <!-- Étape 1 : Informations essentielles -->
         <div class="f-step on" id="ls1">
           <div class="f-group">
             <label for="f-company">Nom de l'entreprise *</label>
-            <input id="f-company" type="text" placeholder="Ex : Coco Kafé" required>
+            <input id="f-company" name="Entreprise" type="text" placeholder="Ex : Coco Kafé" required>
           </div>
           <div class="f-group">
             <label for="f-web">Site web</label>
-            <input id="f-web" type="url" placeholder="https://…">
+            <input id="f-web" name="Site web" type="url" placeholder="https://…">
           </div>
           <div class="f-row">
             <div class="f-group">
               <label for="f-zone">Zone de chalandise *</label>
-              <input id="f-zone" type="text" placeholder="Ville ou région">
+              <input id="f-zone" name="Zone de chalandise" type="text" placeholder="Ville ou région">
             </div>
             <div class="f-group">
               <label for="f-sector">Secteur d'activité *</label>
-              <input id="f-sector" type="text" placeholder="Ex : Restauration">
+              <input id="f-sector" name="Secteur" type="text" placeholder="Ex : Restauration">
             </div>
           </div>
           <div class="f-row">
             <div class="f-group">
               <label for="f-size">Taille de l'entreprise</label>
-              <select id="f-size">
+              <select id="f-size" name="Taille entreprise">
                 <option value="">Sélectionnez</option>
                 <option>Indépendant / TPE</option>
                 <option>2 – 10 salariés</option>
@@ -612,7 +613,7 @@
             </div>
             <div class="f-group">
               <label for="f-clt">Type de clientèle</label>
-              <select id="f-clt">
+              <select id="f-clt" name="Type clientele">
                 <option value="">Sélectionnez</option>
                 <option>B2C</option>
                 <option>B2B</option>
@@ -630,7 +631,7 @@
         <div class="f-step" id="ls2">
           <div class="f-group">
             <label for="f-pain">Quel est votre principal frein à l'acquisition ? *</label>
-            <select id="f-pain">
+            <select id="f-pain" name="Frein principal">
               <option value="">Sélectionnez</option>
               <option>Manque de visibilité</option>
               <option>Leads insuffisants ou de mauvaise qualité</option>
@@ -641,12 +642,12 @@
           </div>
           <div class="f-group">
             <label for="f-expect">Qu'attendez-vous concrètement de cet audit ?</label>
-            <textarea id="f-expect" placeholder="Vos attentes principales…"></textarea>
+            <textarea id="f-expect" name="Attentes" placeholder="Vos attentes principales…"></textarea>
           </div>
           <div class="f-row">
             <div class="f-group">
               <label for="f-agency">Avez-vous déjà travaillé avec une agence ?</label>
-              <select id="f-agency">
+              <select id="f-agency" name="Experience agence">
                 <option value="">Sélectionnez</option>
                 <option>Oui, avec résultats</option>
                 <option>Oui, sans résultats</option>
@@ -655,7 +656,7 @@
             </div>
             <div class="f-group">
               <label for="f-budget">Budget marketing mensuel</label>
-              <select id="f-budget">
+              <select id="f-budget" name="Budget mensuel">
                 <option value="">Sélectionnez</option>
                 <option>0 €</option>
                 <option>&lt; 500 €</option>
@@ -680,7 +681,7 @@
         <div class="f-step" id="ls3">
           <div class="f-group">
             <label for="f-dec">Êtes-vous décisionnaire sur les sujets marketing / acquisition ?</label>
-            <select id="f-dec">
+            <select id="f-dec" name="Decisionnaire">
               <option value="">Sélectionnez</option>
               <option>Oui</option>
               <option>Non</option>
@@ -688,11 +689,11 @@
           </div>
           <div class="f-group">
             <label for="f-email">Email professionnel *</label>
-            <input id="f-email" type="email" placeholder="votre@email.com" required>
+            <input id="f-email" name="Email" type="email" placeholder="votre@email.com" required>
           </div>
           <div class="f-group">
             <label for="f-phone">Téléphone *</label>
-            <input id="f-phone" type="tel" placeholder="06 XX XX XX XX" required>
+            <input id="f-phone" name="Telephone" type="tel" placeholder="06 XX XX XX XX" required>
           </div>
           <div class="f-btns">
             <button type="button" class="f-btn f-btn-ghost magnetic" onclick="lS(2)">
@@ -934,7 +935,7 @@ function lS(n){
       <h4>Contact</h4>
       <ul>
         <li><a href="tel:+590602182020">06 02 18 20 20</a></li>
-        <li><a href="mailto:info@digitallis.fr">info@digitallis.fr</a></li>
+        <li><a href="mailto:contact@digitallis.fr">contact@digitallis.fr</a></li>
         <li style="color:rgba(255,255,255,0.6);font-size:14px;">195 rue François Fresneau<br>97122 Baie-Mahault<br>Guadeloupe</li>
       </ul>
     </div>

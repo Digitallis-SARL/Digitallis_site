@@ -140,21 +140,129 @@
     });
   });
 
-  // ─── Generic form handler ───
-  window.handleAudit = function(e) {
-    e.preventDefault();
-    var form = e.target;
-    var btn = form.querySelector('button');
-    var oldHTML = btn.innerHTML;
+  // ─── Web3Forms unified form handler ───
+  // Destination: contact@digitallis.fr (configured in Web3Forms dashboard)
+  var WEB3FORMS_KEY = '0555ec62-8c53-4c06-a957-0c56fbef86ca';
+  var WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
+  var FALLBACK_EMAIL = 'contact@digitallis.fr';
+
+  function collectFormData(form) {
+    var data = {};
+    var inputs = form.querySelectorAll('input, select, textarea');
+    inputs.forEach(function(input) {
+      if (input.type === 'submit' || input.type === 'button') return;
+      var key = input.name || input.id || input.getAttribute('aria-label') || input.placeholder;
+      if (!key) return;
+      var value = (input.value || '').trim();
+      if (value) data[key] = value;
+    });
+    return data;
+  }
+
+  function buildSubject(source, data) {
+    var labels = {
+      'audit-homepage': 'Demande d\'audit (Homepage)',
+      'audit-page': 'Demande d\'audit complète',
+      'contact': 'Nouveau message contact',
+      'newsletter': 'Nouvelle inscription newsletter'
+    };
+    var base = labels[source] || 'Nouveau formulaire';
+    var company = data['f-company'] || data['company'] || data['Nom de votre entreprise'] || data['Nom de l\'entreprise *'] || '';
+    var name = data['f-name'] || data['Nom complet *'] || data['Votre prénom'] || '';
+    var who = company || name;
+    return '[Digitallis] ' + base + (who ? ' — ' + who : '');
+  }
+
+  function buildFallbackMailto(source, data) {
+    var subject = encodeURIComponent(buildSubject(source, data));
+    var bodyLines = ['Formulaire : ' + (source || 'inconnu'), 'Page : ' + window.location.href, ''];
+    Object.keys(data).forEach(function(k) {
+      if (k === 'botcheck') return;
+      bodyLines.push(k + ' : ' + data[k]);
+    });
+    var body = encodeURIComponent(bodyLines.join('\n'));
+    return 'mailto:' + FALLBACK_EMAIL + '?subject=' + subject + '&body=' + body;
+  }
+
+  function showSuccess(btn, oldHTML) {
     btn.innerHTML = '✓ Reçu — on vous recontacte';
     btn.style.background = '#28C941';
     btn.style.color = '#fff';
-    form.reset();
+    btn.disabled = false;
     setTimeout(function() {
       btn.innerHTML = oldHTML;
       btn.style.background = '';
       btn.style.color = '';
-    }, 3500);
+    }, 4000);
+  }
+
+  function showError(btn, oldHTML, mailtoUrl) {
+    btn.innerHTML = '⚠ Erreur — cliquez pour envoyer par email';
+    btn.style.background = '#FFB020';
+    btn.style.color = '#000';
+    btn.disabled = false;
+    btn.onclick = function() { window.location.href = mailtoUrl; };
+    setTimeout(function() {
+      btn.innerHTML = oldHTML;
+      btn.style.background = '';
+      btn.style.color = '';
+      btn.onclick = null;
+    }, 8000);
+  }
+
+  window.digitallisForm = function(e, source) {
+    e.preventDefault();
+    var form = e.target.closest('form') || e.target;
+    var btn = form.querySelector('button[type="submit"]') || form.querySelector('button:last-of-type');
+    if (!btn) return false;
+
+    // Honeypot check (bots fill hidden field)
+    var honeypot = form.querySelector('input[name="botcheck"]');
+    if (honeypot && honeypot.value) return false;
+
+    var data = collectFormData(form);
+    var subject = buildSubject(source, data);
+    var oldHTML = btn.innerHTML;
+
+    btn.innerHTML = 'Envoi en cours…';
+    btn.disabled = true;
+
+    var payload = {
+      access_key: WEB3FORMS_KEY,
+      subject: subject,
+      from_name: 'Digitallis - Site web',
+      replyto: data['f-email'] || data['Email *'] || data['Email professionnel'] || data['votre@email.com'] || '',
+      _source: source || 'unknown',
+      _page: window.location.pathname
+    };
+    Object.keys(data).forEach(function(k) {
+      if (!payload[k]) payload[k] = data[k];
+    });
+
+    fetch(WEB3FORMS_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+      .then(function(r) { return r.json(); })
+      .then(function(res) {
+        if (res && res.success) {
+          form.reset();
+          showSuccess(btn, oldHTML);
+        } else {
+          showError(btn, oldHTML, buildFallbackMailto(source, data));
+        }
+      })
+      .catch(function() {
+        showError(btn, oldHTML, buildFallbackMailto(source, data));
+      });
+
+    return false;
+  };
+
+  // Backward compat: keep handleAudit working (homepage form uses it)
+  window.handleAudit = function(e) {
+    return window.digitallisForm(e, 'audit-homepage');
   };
 })();
 
