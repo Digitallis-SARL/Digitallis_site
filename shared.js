@@ -144,7 +144,7 @@
   // Destination: contact@digitallis.fr (configured in Web3Forms dashboard)
   var WEB3FORMS_KEY = '0555ec62-8c53-4c06-a957-0c56fbef86ca';
   var WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
-  var FALLBACK_EMAIL = 'contact@digitallis.fr';
+  var FALLBACK_EMAIL = 'info@digitallis.fr';
 
   function collectFormData(form) {
     var data = {};
