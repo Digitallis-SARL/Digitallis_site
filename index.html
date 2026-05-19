@@ -1133,6 +1133,22 @@
     box-shadow: 0 0 0 3px var(--accent-soft);
   }
   .audit-form .btn { width: 100%; justify-content: center; margin-top: 6px; }
+  .audit-cta-list {
+    list-style: none; padding: 0; margin: 0 0 28px;
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .audit-cta-list li {
+    display: flex; align-items: flex-start; gap: 12px;
+    font-size: 14px; line-height: 1.45; color: var(--text);
+  }
+  .audit-cta-list li svg {
+    flex-shrink: 0; color: var(--accent-dk); margin-top: 2px;
+    background: var(--accent-soft); border-radius: 6px; padding: 3px; box-sizing: content-box;
+  }
+  .audit-cta-btn {
+    width: 100%; justify-content: center; text-decoration: none;
+    padding: 16px 24px; font-size: 15px; font-weight: 600;
+  }
   .audit-small {
     margin-top: 16px; font-size: 12px; color: var(--muted); text-align: center;
     font-family: 'JetBrains Mono', monospace; letter-spacing: 0.04em;
@@ -1581,20 +1597,27 @@
     </div>
 
     <div class="audit-card fade-up theme-light">
-      <span class="audit-card-tag">Vérifier ma visibilité · 48h</span>
-      <h3>Entreprises sélectionnées — <em>analyse sous 48h</em>.</h3>
-      <p class="card-desc">Laissez-nous vos coordonnées — on s'occupe du reste. Sans engagement.</p>
-      <form class="audit-form" onsubmit="digitallisForm(event, 'audit-homepage')">
-        <input type="text" name="entreprise" placeholder="Nom de votre entreprise" required>
-        <input type="text" name="prenom" placeholder="Votre prénom" required>
-        <input type="email" name="email" placeholder="Email professionnel" required>
-        <input type="tel" name="telephone" placeholder="Téléphone (optionnel)">
-        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
-        <button type="submit" class="btn btn-primary">
-          Vérifier ma visibilité
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </button>
-      </form>
+      <span class="audit-card-tag">Audit gratuit · 48h</span>
+      <h3>Découvrez où vous perdez des clients <em>en 48h</em>.</h3>
+      <p class="card-desc">Un diagnostic complet de votre acquisition digitale, livré clé en main. Sans engagement, sans blabla.</p>
+      <ul class="audit-cta-list">
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Analyse complète : SEO, ads, réseaux, IA</span>
+        </li>
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Comparaison avec vos concurrents directs</span>
+        </li>
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Plan d'action prioritaire actionnable</span>
+        </li>
+      </ul>
+      <a href="/audit" class="btn btn-primary audit-cta-btn magnetic">
+        Demander mon audit gratuit
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
       <div class="audit-small">🔒 Confidentiel · Réponse humaine sous 24h · Analyse sous 48h</div>
     </div>
   </div>
