@@ -141,9 +141,19 @@
   });
 
   // ─── Unified form handler (Vercel Serverless + Resend) ───
-  // Endpoint: same-origin /api/submit (zero CORS issue).
-  // Destination email is configured server-side via RECIPIENT_EMAIL env var.
-  var SUBMIT_ENDPOINT = '/api/submit';
+  // Same-origin endpoints (zero CORS issue). Destination email = info@digitallis.fr
+  // (configured server-side via RECIPIENT_EMAIL env var).
+  //
+  // Routage par source :
+  //   - 'audit-page'  → /api/audit-submit (Airtable + PDF + email récap + webhook IA)
+  //   - autres        → /api/submit       (email récap simple)
+  var SUBMIT_ENDPOINTS = {
+    'audit-page': '/api/audit-submit',
+    'default':    '/api/submit'
+  };
+  function endpointFor(source) {
+    return SUBMIT_ENDPOINTS[source] || SUBMIT_ENDPOINTS.default;
+  }
   var FALLBACK_EMAIL = 'info@digitallis.fr';
 
   function collectFormData(form) {
@@ -242,7 +252,7 @@
       if (!payload[k]) payload[k] = data[k];
     });
 
-    fetch(SUBMIT_ENDPOINT, {
+    fetch(endpointFor(source), {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify(payload)
