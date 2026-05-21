@@ -1,5 +1,24 @@
 {
   "cleanUrls": true,
+  "crons": [
+    {
+      "path": "/api/cron/process-audits",
+      "schedule": "0 4 * * *"
+    }
+  ],
+  "functions": {
+    "api/cron/process-audits.js": {
+      "maxDuration": 300,
+      "memory": 2048
+    },
+    "api/test-audit.js": {
+      "maxDuration": 300,
+      "memory": 2048
+    },
+    "api/audit-submit.js": {
+      "maxDuration": 30
+    }
+  },
   "headers": [
     {
       "source": "/assets/frames/:file",

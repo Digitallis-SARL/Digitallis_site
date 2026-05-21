@@ -73,5 +73,10 @@ Allow: /
 User-agent: *
 Allow: /
 
+# ─── Zones privées : non indexées ───
+User-agent: *
+Disallow: /audit-concurrentiel
+Disallow: /api/
+
 # ─── Sitemap ───
 Sitemap: https://www.digitallis.fr/sitemap.xml

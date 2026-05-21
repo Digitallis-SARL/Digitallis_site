@@ -1,9 +1,16 @@
 {
   "name": "digitallis-site",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "private": true,
   "description": "Site Digitallis — HTML statique + Vercel Serverless Functions",
   "engines": {
     "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@sparticuz/chromium-min": "^131.0.1",
+    "@vercel/blob": "^0.27.0",
+    "airtable": "^0.12.2",
+    "pdfkit": "^0.15.0",
+    "puppeteer-core": "^23.10.4"
   }
 }

@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Audit concurrentiel personnalisé — Digitallis</title>
+<meta name="description" content="Déclenchez votre audit concurrentiel personnalisé Digitallis. Diagnostic complet sous 24-72h.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://www.digitallis.fr/audit-concurrentiel">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+<style>
+  .ac-wrap {
+    --bg: #FAFAF7; --bg-deep: #F4F2EA; --card: #FFFFFF;
+    --text: #1C1F26; --text-soft: #3A3F4A; --muted: #676F7E;
+    --accent: #FACC14; --accent-dk: #E8B800;
+    --border: #E8E6E0; --success: #28C941; --danger: #E5484D;
+    --shadow-lg: 0 28px 80px rgba(28, 31, 38, 0.10);
+    min-height: 100vh;
+    background: linear-gradient(180deg, #FDF8EC 0%, #FAFAF7 100%);
+    padding: 100px 24px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .ac-wrap::before {
+    content: ''; position: absolute; top: -200px; right: -200px;
+    width: 600px; height: 600px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(250, 204, 20, 0.18), transparent 70%);
+    pointer-events: none; z-index: 0;
+  }
+  .ac-inner { max-width: 920px; margin: 0 auto; position: relative; z-index: 1; }
+
+  .ac-topbar {
+    margin-bottom: 32px; font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--muted);
+  }
+  .ac-topbar a {
+    color: var(--text-soft); text-decoration: none; transition: color 0.2s;
+  }
+  .ac-topbar a:hover { color: var(--text); }
+
+  .ac-header { text-align: center; margin-bottom: 48px; }
+  .ac-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--accent-dk); font-weight: 600;
+    background: rgba(250, 204, 20, 0.12);
+    padding: 6px 14px; border-radius: 100px; margin-bottom: 20px;
+  }
+  .ac-header h1 {
+    font-family: 'Outfit', sans-serif; font-weight: 700;
+    font-size: clamp(32px, 4.5vw, 52px); line-height: 1.08;
+    letter-spacing: -0.03em; color: var(--text); margin: 0 0 18px;
+  }
+  .ac-header h1 em {
+    font-family: 'Instrument Serif', serif; font-weight: 400; font-style: italic;
+    color: var(--accent-dk);
+  }
+  .ac-header .lead {
+    color: var(--text-soft); font-size: 17px; line-height: 1.55;
+    max-width: 56ch; margin: 0 auto;
+  }
+
+  .ac-card {
+    background: #fff; border-radius: 24px;
+    padding: 44px; box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border);
+  }
+  @media (max-width: 640px) {
+    .ac-card { padding: 28px 20px; border-radius: 18px; }
+    .ac-wrap { padding: 80px 12px 60px; }
+  }
+
+  .ac-progress {
+    display: flex; gap: 8px; justify-content: center; margin-bottom: 32px;
+  }
+  .ac-dot {
+    width: 36px; height: 4px; border-radius: 100px;
+    background: var(--border); transition: all 0.4s ease;
+  }
+  .ac-dot.on { background: var(--accent); width: 56px; }
+  .ac-dot.done { background: var(--accent-dk); }
+
+  .ac-stepnum {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--accent-dk); font-weight: 600; margin-bottom: 8px;
+  }
+  .ac-steptitle {
+    font-family: 'Outfit', sans-serif; font-size: 22px; font-weight: 600;
+    color: var(--text); margin: 0 0 6px; letter-spacing: -0.01em;
+  }
+  .ac-stepsub {
+    color: var(--muted); font-size: 14px; margin-bottom: 28px; line-height: 1.5;
+  }
+
+  .ac-step { display: none; }
+  .ac-step.on { display: block; animation: fadeSlide 0.5s cubic-bezier(0.22, 1, 0.36, 1); }
+  @keyframes fadeSlide {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .ac-group { margin-bottom: 18px; }
+  .ac-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 600px) { .ac-row { grid-template-columns: 1fr; } }
+
+  .ac-label {
+    display: block; font-family: 'Outfit', sans-serif;
+    font-size: 13px; font-weight: 600; color: var(--text-soft);
+    margin-bottom: 6px; letter-spacing: 0.01em;
+  }
+  .ac-label .required { color: var(--accent-dk); }
+  .ac-label .hint {
+    display: block; font-weight: 400; font-size: 12px;
+    color: var(--muted); margin-top: 3px; line-height: 1.4;
+  }
+  .ac-input, .ac-select, .ac-textarea {
+    width: 100%; padding: 12px 14px;
+    font-family: 'Outfit', sans-serif; font-size: 14px;
+    color: var(--text); background: #FDFBF5;
+    border: 1.5px solid var(--border); border-radius: 10px;
+    outline: none; transition: all 0.2s ease;
+  }
+  .ac-input:focus, .ac-select:focus, .ac-textarea:focus {
+    border-color: var(--accent); background: #fff;
+    box-shadow: 0 0 0 3px rgba(250, 204, 20, 0.12);
+  }
+  .ac-textarea { resize: vertical; min-height: 90px; line-height: 1.55; }
+  .ac-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23676F7E' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+  }
+
+  .ac-nav {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 36px; padding-top: 28px; border-top: 1px solid var(--border);
+    gap: 12px;
+  }
+  .ac-btn {
+    padding: 14px 26px; font-family: 'Outfit', sans-serif;
+    font-size: 15px; font-weight: 600; border-radius: 12px;
+    cursor: pointer; transition: all 0.2s ease;
+    border: 1.5px solid transparent; letter-spacing: 0.01em;
+  }
+  .ac-btn-primary {
+    background: var(--accent); color: var(--text);
+    box-shadow: 0 4px 16px rgba(250, 204, 20, 0.3);
+  }
+  .ac-btn-primary:hover:not(:disabled) {
+    background: var(--accent-dk);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(250, 204, 20, 0.4);
+  }
+  .ac-btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+  .ac-btn-ghost {
+    background: transparent; color: var(--text-soft);
+    border-color: var(--border); text-decoration: none;
+    display: inline-block;
+  }
+  .ac-btn-ghost:hover { background: #FAF7EC; border-color: var(--accent); }
+  .ac-spacer { flex: 1; }
+
+  .ac-success { display: none; text-align: center; padding: 20px 0; }
+  .ac-success.show { display: block; }
+  .ac-success .check {
+    width: 72px; height: 72px; border-radius: 50%;
+    background: var(--success); display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 24px; box-shadow: 0 12px 40px rgba(40, 201, 65, 0.3);
+    animation: popIn 0.5s cubic-bezier(0.22, 1.6, 0.36, 1);
+  }
+  @keyframes popIn {
+    from { opacity: 0; transform: scale(0.5); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  .ac-success h2 {
+    font-family: 'Outfit', sans-serif; font-size: 28px; font-weight: 700;
+    color: var(--text); margin: 0 0 12px;
+  }
+  .ac-success p {
+    color: var(--muted); font-size: 15px; line-height: 1.6;
+    max-width: 50ch; margin: 0 auto 28px;
+  }
+  .ac-deliverables {
+    display: flex; flex-direction: column; gap: 10px;
+    max-width: 380px; margin: 0 auto 24px;
+  }
+  .ac-deliverable {
+    display: flex; align-items: center; gap: 14px;
+    padding: 14px 18px; background: var(--bg-deep);
+    border-radius: 12px; text-decoration: none;
+    color: var(--text); transition: all 0.2s ease;
+    border: 1.5px solid transparent;
+  }
+  .ac-deliverable:hover {
+    border-color: var(--accent); transform: translateY(-1px);
+  }
+  .ac-deliverable .icon {
+    width: 40px; height: 40px; border-radius: 10px;
+    background: #fff; display: flex; align-items: center; justify-content: center;
+    font-size: 18px; flex-shrink: 0;
+  }
+  .ac-deliverable .meta { flex: 1; text-align: left; }
+  .ac-deliverable .meta strong { display: block; font-size: 14px; font-weight: 600; }
+  .ac-deliverable .meta span { font-size: 12px; color: var(--muted); }
+
+  .ac-error {
+    color: var(--danger); font-size: 13px; font-weight: 500;
+    padding: 12px 16px; background: rgba(229, 72, 77, 0.08);
+    border-radius: 10px; border-left: 3px solid var(--danger);
+    margin-top: 16px; display: none;
+  }
+  .ac-error.show { display: block; }
+</style>
+</head>
+<body class="page-light">
+
+<div class="cursor-glow" id="glow"></div>
+
+<section class="ac-wrap">
+  <div class="ac-inner">
+
+    <div class="ac-topbar">
+      <a href="index.html">← Digitallis</a>
+    </div>
+
+    <div class="ac-header">
+      <div class="ac-eyebrow">
+        <span style="width:6px;height:6px;border-radius:50%;background:#FACC14"></span>
+        Audit concurrentiel personnalisé
+      </div>
+      <h1>Construisons votre <em>diagnostic stratégique</em>.</h1>
+      <p class="lead">4 étapes · 5 minutes · Rapport préliminaire instantané, audit complet livré sous 24-72h.</p>
+    </div>
+
+    <div class="ac-card">
+
+      <div class="ac-progress">
+        <div class="ac-dot on" id="dot1"></div>
+        <div class="ac-dot" id="dot2"></div>
+        <div class="ac-dot" id="dot3"></div>
+        <div class="ac-dot" id="dot4"></div>
+      </div>
+
+      <form id="auditForm" autocomplete="off">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+        <!-- ═══════════ ÉTAPE 1 : ENTREPRISE ═══════════ -->
+        <div class="ac-step on" id="step1">
+          <div class="ac-stepnum">Étape 1 sur 4</div>
+          <h2 class="ac-steptitle">Votre entreprise</h2>
+          <p class="ac-stepsub">Les informations de base pour cadrer l'audit.</p>
+
+          <div class="ac-group">
+            <label class="ac-label" for="entreprise">
+              Nom de l'entreprise <span class="required">*</span>
+            </label>
+            <input class="ac-input" id="entreprise" name="entreprise" type="text" placeholder="Ex : OIDANEOS" required>
+          </div>
+
+          <div class="ac-group">
+            <label class="ac-label" for="siteWeb">
+              Site web
+              <span class="hint">Laissez vide si vous n'avez pas encore de site.</span>
+            </label>
+            <input class="ac-input" id="siteWeb" name="siteWeb" type="text" placeholder="https://votre-site.com">
+          </div>
+
+          <div class="ac-row">
+            <div class="ac-group">
+              <label class="ac-label" for="zone">
+                Zone de chalandise <span class="required">*</span>
+              </label>
+              <input class="ac-input" id="zone" name="zone" type="text" placeholder="Ex : Guadeloupe, Martinique, Guyane" required>
+            </div>
+            <div class="ac-group">
+              <label class="ac-label" for="secteur">
+                Secteur d'activité <span class="required">*</span>
+                <span class="hint">Soyez précis.</span>
+              </label>
+              <input class="ac-input" id="secteur" name="secteur" type="text" placeholder="Ex : Formation IA & cybersécurité" required>
+            </div>
+          </div>
+
+          <div class="ac-group">
+            <label class="ac-label" for="effectif">Taille de l'entreprise</label>
+            <select class="ac-select" id="effectif" name="effectif">
+              <option value="">— Sélectionner —</option>
+              <option>Indépendant / TPE</option>
+              <option>2 - 10 salariés</option>
+              <option>11 - 50 salariés</option>
+              <option>50+</option>
+            </select>
+          </div>
+
+          <div class="ac-nav">
+            <a href="index.html" class="ac-btn ac-btn-ghost">← Quitter</a>
+            <div class="ac-spacer"></div>
+            <button type="button" class="ac-btn ac-btn-primary" data-next="2">Continuer →</button>
+          </div>
+        </div>
+
+        <!-- ═══════════ ÉTAPE 2 : CLIENTÈLE & FREIN ═══════════ -->
+        <div class="ac-step" id="step2">
+          <div class="ac-stepnum">Étape 2 sur 4</div>
+          <h2 class="ac-steptitle">Votre clientèle & vos freins</h2>
+          <p class="ac-stepsub">Pour identifier les bons concurrents et les bons leviers.</p>
+
+          <div class="ac-group">
+            <label class="ac-label" for="typeClientele">Type de clientèle</label>
+            <select class="ac-select" id="typeClientele" name="typeClientele">
+              <option value="">— Sélectionner —</option>
+              <option>B2C</option>
+              <option>B2B</option>
+              <option>Mix B2B / B2C</option>
+            </select>
+          </div>
+
+          <div class="ac-group">
+            <label class="ac-label" for="frein">
+              Frein principal aujourd'hui <span class="required">*</span>
+              <span class="hint">Qu'est-ce qui vous empêche concrètement de croître ?</span>
+            </label>
+            <select class="ac-select" id="frein" name="frein" required>
+              <option value="">— Sélectionner —</option>
+              <option>Manque de visibilité</option>
+              <option>Leads insuffisants ou de mauvaise qualité</option>
+              <option>Difficulté à se différencier</option>
+              <option>Dépendance au bouche-à-oreille</option>
+              <option>Autre</option>
+            </select>
+          </div>
+
+          <div class="ac-nav">
+            <button type="button" class="ac-btn ac-btn-ghost" data-prev="1">← Retour</button>
+            <div class="ac-spacer"></div>
+            <button type="button" class="ac-btn ac-btn-primary" data-next="3">Continuer →</button>
+          </div>
+        </div>
+
+        <!-- ═══════════ ÉTAPE 3 : ATTENTES & EXPÉRIENCE ═══════════ -->
+        <div class="ac-step" id="step3">
+          <div class="ac-stepnum">Étape 3 sur 4</div>
+          <h2 class="ac-steptitle">Vos attentes</h2>
+          <p class="ac-stepsub">Ce que vous voulez retirer de cet audit.</p>
+
+          <div class="ac-group">
+            <label class="ac-label" for="attente">
+              Qu'attendez-vous concrètement de cet audit ? <span class="required">*</span>
+              <span class="hint">Soyez précis : visibilité, leads, refonte du site, structuration LinkedIn, lancement publicitaire, automatisation…</span>
+            </label>
+            <textarea class="ac-textarea" id="attente" name="attente" placeholder="Ex : Reprendre le pilotage du site, améliorer la visibilité de l'offre IA et cybersécurité, structurer l'acquisition, développer ma présence LinkedIn." required style="min-height:120px"></textarea>
+          </div>
+
+          <div class="ac-group">
+            <label class="ac-label" for="experienceAgence">Avez-vous déjà travaillé avec une agence marketing ?</label>
+            <select class="ac-select" id="experienceAgence" name="experienceAgence">
+              <option value="">— Sélectionner —</option>
+              <option>Oui, avec résultats</option>
+              <option>Oui, sans résultat</option>
+              <option>Non, jamais</option>
+            </select>
+          </div>
+
+          <div class="ac-nav">
+            <button type="button" class="ac-btn ac-btn-ghost" data-prev="2">← Retour</button>
+            <div class="ac-spacer"></div>
+            <button type="button" class="ac-btn ac-btn-primary" data-next="4">Continuer →</button>
+          </div>
+        </div>
+
+        <!-- ═══════════ ÉTAPE 4 : CONTACT & PILOTAGE ═══════════ -->
+        <div class="ac-step" id="step4">
+          <div class="ac-stepnum">Étape 4 sur 4 — Dernière étape</div>
+          <h2 class="ac-steptitle">Pilotage & contact</h2>
+          <p class="ac-stepsub">Pour vous transmettre le rapport et préparer la suite.</p>
+
+          <div class="ac-row">
+            <div class="ac-group">
+              <label class="ac-label" for="email">
+                Email professionnel <span class="required">*</span>
+              </label>
+              <input class="ac-input" id="email" name="email" type="email" placeholder="vous@entreprise.com" required>
+            </div>
+            <div class="ac-group">
+              <label class="ac-label" for="telephone">Téléphone</label>
+              <input class="ac-input" id="telephone" name="telephone" type="tel" placeholder="06 90 00 00 00">
+            </div>
+          </div>
+
+          <div class="ac-row">
+            <div class="ac-group">
+              <label class="ac-label" for="decisionnaire">Êtes-vous décisionnaire ?</label>
+              <select class="ac-select" id="decisionnaire" name="decisionnaire">
+                <option value="">— Sélectionner —</option>
+                <option>Oui</option>
+                <option>Non</option>
+              </select>
+            </div>
+            <div class="ac-group">
+              <label class="ac-label" for="budget">
+                Budget mensuel envisagé
+                <span class="hint">Indicatif — aucun engagement.</span>
+              </label>
+              <select class="ac-select" id="budget" name="budget">
+                <option value="">— Sélectionner —</option>
+                <option>0 €</option>
+                <option>&lt; 500 €</option>
+                <option>500 – 1 500 €</option>
+                <option>1 500 €+</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="ac-error" id="errorBox"></div>
+
+          <div class="ac-nav">
+            <button type="button" class="ac-btn ac-btn-ghost" data-prev="3">← Retour</button>
+            <div class="ac-spacer"></div>
+            <button type="submit" class="ac-btn ac-btn-primary" id="submitBtn">
+              🚀 Lancer mon audit
+            </button>
+          </div>
+        </div>
+
+        <!-- ═══════════ SUCCÈS ═══════════ -->
+        <div class="ac-step" id="stepSuccess">
+          <div class="ac-success show">
+            <div class="check">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h2>Audit déclenché ✓</h2>
+            <p id="successMsg">Votre rapport préliminaire est prêt. L'audit complet vous parviendra par email sous 24 à 72 heures.</p>
+
+            <div class="ac-deliverables" id="deliverables"></div>
+
+            <a href="index.html" class="ac-btn ac-btn-ghost">Retour à digitallis.fr</a>
+          </div>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<script>
+(function() {
+  var form = document.getElementById('auditForm');
+  var submitBtn = document.getElementById('submitBtn');
+  var errorBox = document.getElementById('errorBox');
+
+  var totalSteps = 4;
+  var currentStep = 1;
+
+  function goToStep(n) {
+    document.querySelectorAll('.ac-step').forEach(function(s) { s.classList.remove('on'); });
+    var el = document.getElementById('step' + n);
+    if (el) el.classList.add('on');
+
+    for (var i = 1; i <= totalSteps; i++) {
+      var d = document.getElementById('dot' + i);
+      if (!d) continue;
+      d.classList.remove('on', 'done');
+      if (i < n) d.classList.add('done');
+      else if (i === n) d.classList.add('on');
+    }
+    currentStep = n;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function validateStep(n) {
+    var fields = document.querySelectorAll('#step' + n + ' [required]');
+    for (var i = 0; i < fields.length; i++) {
+      var f = fields[i];
+      if (!f.value.trim()) {
+        f.style.borderColor = '#E5484D';
+        f.focus();
+        (function(el) { setTimeout(function() { el.style.borderColor = ''; }, 1500); })(f);
+        return false;
+      }
+    }
+    return true;
+  }
+
+  document.querySelectorAll('[data-next]').forEach(function(b) {
+    b.addEventListener('click', function() {
+      if (!validateStep(currentStep)) return;
+      goToStep(parseInt(b.dataset.next, 10));
+    });
+  });
+  document.querySelectorAll('[data-prev]').forEach(function(b) {
+    b.addEventListener('click', function() {
+      goToStep(parseInt(b.dataset.prev, 10));
+    });
+  });
+
+  function showError(msg) {
+    errorBox.textContent = msg;
+    errorBox.classList.add('show');
+    setTimeout(function() { errorBox.classList.remove('show'); }, 8000);
+  }
+
+  function collectData() {
+    var data = {};
+    var inputs = form.querySelectorAll('input, select, textarea');
+    inputs.forEach(function(input) {
+      if (input.type === 'submit' || input.type === 'button') return;
+      if (input.name === 'botcheck') return;
+      if (!input.name) return;
+      var v = (input.value || '').trim();
+      if (v) data[input.name] = v;
+    });
+    return data;
+  }
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (!validateStep(4)) return;
+
+    var hp = form.querySelector('input[name="botcheck"]');
+    if (hp && hp.checked) return;
+
+    var data = collectData();
+    var oldHtml = submitBtn.innerHTML;
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = 'Génération en cours…';
+
+    fetch('/api/audit-submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    })
+      .then(function(r) { return r.json().then(function(j) { return { status: r.status, body: j }; }); })
+      .then(function(res) {
+        if (res.status === 200 && res.body.success) {
+          document.querySelectorAll('.ac-step').forEach(function(s) { s.classList.remove('on'); });
+          document.getElementById('stepSuccess').classList.add('on');
+          document.querySelector('.ac-progress').style.display = 'none';
+
+          var deliv = document.getElementById('deliverables');
+          var html = '';
+          if (res.body.pdfUrl) {
+            html += '<a href="' + res.body.pdfUrl + '" target="_blank" class="ac-deliverable">'
+              + '<span class="icon">📄</span>'
+              + '<span class="meta"><strong>Rapport préliminaire (PDF)</strong><span>Cliquer pour télécharger</span></span>'
+              + '</a>';
+          }
+          if (res.body.mdUrl) {
+            html += '<a href="' + res.body.mdUrl + '" target="_blank" class="ac-deliverable">'
+              + '<span class="icon">📝</span>'
+              + '<span class="meta"><strong>Version Markdown</strong><span>Format brut</span></span>'
+              + '</a>';
+          }
+          deliv.innerHTML = html;
+
+          if (!res.body.emailSent) {
+            document.getElementById('successMsg').textContent =
+              'Votre rapport préliminaire est prêt. (L\'email de confirmation n\'a pas pu être envoyé — utilisez les liens ci-dessous.)';
+          }
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          return;
+        }
+        showError((res.body && res.body.error) || 'Une erreur est survenue. Notre équipe a été notifiée.');
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = oldHtml;
+      })
+      .catch(function(err) {
+        console.error(err);
+        showError('Connexion impossible. Vérifiez votre connexion internet.');
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = oldHtml;
+      });
+  });
+})();
+</script>
+<script src="shared.js"></script>
+</body>
+</html>
