@@ -134,7 +134,7 @@
   .hero-content {
     position: absolute; inset: 0; z-index: 3;
     display: flex; flex-direction: column; justify-content: center;
-    padding: 0 8vw; gap: 0;
+    padding: clamp(100px, 12vh, 160px) 8vw 60px; gap: 0;
   }
   .hero-badge {
     display: inline-flex; align-items: center; gap: 8px;
@@ -154,10 +154,10 @@
 
   .hero h1 {
     font-family: 'Outfit', sans-serif; font-weight: 700;
-    font-size: clamp(44px, 7.2vw, 96px);
-    line-height: 1.02; letter-spacing: -0.035em;
-    color: var(--text); max-width: 11ch;
-    margin-bottom: 28px;
+    font-size: clamp(44px, 6.4vw, 88px);
+    line-height: 0.98; letter-spacing: -0.04em;
+    color: var(--text); max-width: 13ch;
+    margin-bottom: 24px;
   }
   .hero h1 em {
     font-family: 'Instrument Serif', serif; font-weight: 400;
