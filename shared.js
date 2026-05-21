@@ -141,18 +141,15 @@
   });
 
   // ─── Unified form handler (Vercel Serverless + Resend) ───
-  // Same-origin endpoints (zero CORS issue). Destination email = info@digitallis.fr
+  // Same-origin endpoint (zero CORS issue). Destination email = info@digitallis.fr
   // (configured server-side via RECIPIENT_EMAIL env var).
   //
-  // Routage par source :
-  //   - 'audit-page'  → /api/audit-submit (Airtable + PDF + email récap + webhook IA)
-  //   - autres        → /api/submit       (email récap simple)
-  var SUBMIT_ENDPOINTS = {
-    'audit-page': '/api/audit-submit',
-    'default':    '/api/submit'
-  };
-  function endpointFor(source) {
-    return SUBMIT_ENDPOINTS[source] || SUBMIT_ENDPOINTS.default;
+  // Note : /api/audit-submit existe (Airtable + PDF + webhook IA) mais retourne
+  // FUNCTION_INVOCATION_TIMEOUT en prod (PDF + Blob + Airtable trop long pour
+  // les 10s par défaut Vercel). Tant qu'il n'est pas optimisé, tous les formulaires
+  // restent sur /api/submit qui marche (email simple vers info@digitallis.fr).
+  function endpointFor(_source) {
+    return '/api/submit';
   }
   var FALLBACK_EMAIL = 'info@digitallis.fr';
 
